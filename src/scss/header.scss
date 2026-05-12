@@ -1,0 +1,33 @@
+
+header {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	list-style: none;
+	text-align: center;
+	width: 100%;
+	color: var(--white);
+	align-items: center;
+	padding: var(--pad-y-lg) var(--pad-x);
+	border-bottom: 1px solid var(--blue);
+	box-sizing: border-box;
+	li {
+		&:nth-child(1) {
+			justify-self: start;
+		}
+		&:nth-child(3){
+			justify-self: end;
+		}
+	}
+	#main-nav {
+		ul {
+			margin: 0px;
+			align-self: "center";
+			display: flex;
+			gap : var(--pad-x);
+			justify-content: center;
+			li {
+				list-style: none;
+			}
+		}
+	}
+}
