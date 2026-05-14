@@ -1,9 +1,9 @@
-import { SearchBar } from "../components/shared/SearchBar";
+import { ArchiveSearch } from "../components/ArchiveSearch";
 
 export function Archive() {
 
 	return <>
 			<h1>Archive</h1>
-			<SearchBar borderStyle="#000000"/>
+			<ArchiveSearch></ArchiveSearch>
 		</>
 }

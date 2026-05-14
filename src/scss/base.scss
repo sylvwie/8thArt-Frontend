@@ -1,16 +1,18 @@
 
 @use 'header';
 @use 'buttons';
+@use 'archiveSearch';
+@use 'searchBar';
+
 :root {
 
 	--font-primary : "JetBrains Mono";
-	--blue : #4EA5D9;
-	--orange :  #FF6B35;
+	--blue: #4EA5D9;
+    --aquamarine: #13C4A3;
+	--orange :  #FF6B35; 
 	--white: #F7F7FF;
 	--black :  #0B0F1B;
 
-
-	--testi-important: #13C4A3;
 	--border-radius : 14px;
 	--font-medium : 16px;
 	--font-small : 14px;
@@ -23,21 +25,23 @@
 
 	--easing : cubic-bezier(0.4, 0, 0.2, 1);
 	--timing : 0.3s;
-	
+	* {
+        box-sizing: border-box;
+    }
 }
 
 body {
 	color: var(--blue);
 	font-family: var(--font-primary);
-	
 	font-size: var(--font-medium);
 	font-style: normal;
 	font-weight: 200;
 	line-height: 1; /* 100% */	
 	background-color: var(--black);
-	color: black;
+	color: rgb(255, 255, 255);
 }
 
+// effetti grafici
 .dither-container {
 	width: 100% !important;
 	height: 100% !important;
@@ -49,8 +53,14 @@ body {
     opacity: 0.2;
 }
 
+.faulty-terminal-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-
+// crt effect
 .crt {
     height: 100%;
     width: 100%;

@@ -1,17 +1,19 @@
-import { SearchBar } from "../components/shared/SearchBar";
-import { SingleCard } from "../components/shared/SingleCard";
+import { ArchiveSearch } from "../components/ArchiveSearch";
+// import { SingleCard } from "../components/shared/SingleCard";
 
 export function Dashboard() {
-	const boxList = [
+	/*
+	const cardList = [
 		{ title: "titolo 1", description : 'descrizione 1'},
 		{ title: "titolo 2", description : 'descrizione 2'}
 	];
-	return <>
-		<h1>Dashboard</h1>
-		<SearchBar/>
-		<hr />
+	*/
 
-		{ boxList.map((box)=> <SingleCard text={box.title} description={box.description} />)}
+	return <>
+		<ArchiveSearch/>
+		<hr/>
+
+		{ /* cardList.map((card)=> <SingleCard text={card.title} description={card.description} />) */} 
 
 	</>
 }
