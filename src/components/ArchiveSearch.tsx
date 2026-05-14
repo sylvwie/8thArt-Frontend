@@ -1,9 +1,9 @@
+
 import {Logo} from './shared/Logo.tsx'
 import { SearchBar } from './shared/SearchBar.tsx';
 
 export function ArchiveSearch() {
-  return (
-    <div className="archive-search-wrapper">
+  return <div className="archive-search-wrapper">
       <div className="archive-search-container">
         <Logo />
         <div className="archive-search-logs">
@@ -23,5 +23,6 @@ export function ArchiveSearch() {
         </div>
       </div>
     </div>
-  );
+  
+
 }

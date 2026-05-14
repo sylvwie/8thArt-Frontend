@@ -1,7 +1,14 @@
+import { FilterBox } from "./FilterBox.tsx";
+import { useState } from 'react';
 
 export function SearchBar() {
+  const [filterOpen, setFilterOpen] = useState(false);
   return (
+  <>
     <div className="search-bar-wrapper">
+      <button className="filter-icon" aria-label="filter search" onClick={() => setFilterOpen((oldValue) => !oldValue)}>
+        <img src="/src/assets/icons/filter-icon.svg" alt="Filter Search Icon" />
+      </button>
       <div className="search-bar-container">
         <span className="search-bar-prefix" aria-hidden="true">&gt;</span>
         <input
@@ -20,10 +27,10 @@ export function SearchBar() {
         </div>
       </div>
     </div>
+    {filterOpen && <FilterBox />}
+  </>
   );
 }
-
-
 
 
 /*

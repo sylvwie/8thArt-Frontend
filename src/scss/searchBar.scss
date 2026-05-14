@@ -78,3 +78,35 @@
     }
   }
 }
+
+/*
+
+// filter icon
+.filter-icon-container {
+  width: 26px;
+  height: 26px;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .filter-icon {
+      display: flex;
+      background-color: none;
+      align-items: center;
+      padding: 0;
+      cursor: pointer;
+  
+      img {
+         width: 26px;
+        height: 26px;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+      }
+  
+      &:hover img {
+        opacity: 1;
+      }
+    }
+  }
+*/

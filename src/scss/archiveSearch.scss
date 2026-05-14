@@ -15,7 +15,7 @@
     margin: 0 auto;
 
     .logo {
-      width: 714px;
+      width: var(--widthLogoBig);
       height: auto;
       max-width: 100%;
       margin-top: 60px;
@@ -64,4 +64,3 @@
     flex-shrink: 0;
   }
 }
-
