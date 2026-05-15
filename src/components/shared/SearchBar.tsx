@@ -1,5 +1,8 @@
 import { FilterBox } from "./FilterBox.tsx";
 import { useState } from 'react';
+import filterIcon from "/src/assets/icons/filter-icon.svg";
+import crossRefIcon from "/src/assets/icons/cross-ref-icon.svg";
+import searchIcon from "/src/assets/icons/search-icon.svg";
 
 export function SearchBar() {
   const [filterOpen, setFilterOpen] = useState(false);
@@ -7,7 +10,7 @@ export function SearchBar() {
   <>
     <div className="search-bar-wrapper">
       <button className="filter-icon" aria-label="filter search" onClick={() => setFilterOpen((oldValue) => !oldValue)}>
-        <img src="/src/assets/icons/filter-icon.svg" alt="Filter Search Icon" />
+        <img src={filterIcon} alt="Filter" />
       </button>
       <div className="search-bar-container">
         <span className="search-bar-prefix" aria-hidden="true">&gt;</span>
@@ -19,17 +22,22 @@ export function SearchBar() {
         />
         <div className="search-bar-icons">
           <button className="search-icon" aria-label="Cross reference">
-            <img src="/src/assets/icons/crossref.svg" alt="" />
+            <img src={crossRefIcon} alt="" />
           </button>
           <button className="search-icon" aria-label="Search">
-            <img src="/src/assets/icons/search.svg" alt="" />
+            <img src={searchIcon} alt="" />
           </button>
         </div>
       </div>
     </div>
     {filterOpen && <FilterBox />}
+    <div className="status-logs">
+      <span>STATUS: ONLINE</span>
+      <span>UPTIME: 99.9%</span>
+      <span>PING: 12ms</span>
+    </div>
   </>
-  );
+  )
 }
 
 

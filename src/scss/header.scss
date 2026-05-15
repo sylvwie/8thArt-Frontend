@@ -10,6 +10,15 @@ header {
 	padding: var(--pad-y-lg) var(--pad-x);
 	border-bottom: 1px solid var(--blue);
 	box-sizing: border-box;
+
+	.header-hr{
+		width: 381.005px;
+		border: none;
+		border-top: 1px solid var(--blue);
+		margin: 0;
+		align-self: stretch;
+	}
+
 	li {
 		&:nth-child(1) {
 			justify-self: start;
@@ -18,6 +27,7 @@ header {
 			justify-self: end;
 		}
 	}
+
 	#main-nav {
 		ul {
 			margin: 0px;

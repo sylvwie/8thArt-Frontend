@@ -10,6 +10,7 @@ a {
 	border : 1px solid var(--blue);
 	color: var(--blue);
 	transition: all var(--timing) var(--easing);
+	
 	&:hover {
 		background-color: var(--blue);
 		color: var(--black);

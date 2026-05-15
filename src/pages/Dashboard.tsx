@@ -1,19 +1,39 @@
 import { ArchiveSearch } from "../components/ArchiveSearch";
-// import { SingleCard } from "../components/shared/SingleCard";
+import { DirectoryBar } from "../components/shared/DirectoryBar";
+import { SuggestedGameBox } from "../components/SuggestedGameBox";
+//import { GameCard } from "../components/shared/GameCard";
 
 export function Dashboard() {
 	/*
 	const cardList = [
-		{ title: "titolo 1", description : 'descrizione 1'},
-		{ title: "titolo 2", description : 'descrizione 2'}
+		{ gameTitle: "titolo 1", gameDescription : 'descrizione 1', gameSerie: 'serie 1' },
+		{ gameTitle: "titolo 2", gameDescription : 'descrizione 2', gameSerie: 'serie 2' }
 	];
 	*/
 
 	return <>
-		<ArchiveSearch/>
+
+		<div id="main-showcase">
+			<div className="showcase-side showcase-side-left">
+			</div>
+			<div className="showcase-center">
+				<ArchiveSearch/>
+			</div>
+
+			<div className="showcase-side showcase-side-right">
+				<SuggestedGameBox />
+				<SuggestedGameBox />
+				<SuggestedGameBox />
+			</div>
+		</div>
+		
 		<hr/>
 
-		{ /* cardList.map((card)=> <SingleCard text={card.title} description={card.description} />) */} 
+		<div id="homepage-content-section">
+			<DirectoryBar />
+		</div>
+
+		{ /* cardList.map((card)=> <GameCard gameTitle={card.gameTitle} gameDescription={card.gameDescription} gameSerie={card.gameSerie} />) */} 
 
 	</>
 }

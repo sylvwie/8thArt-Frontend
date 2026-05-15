@@ -1,0 +1,51 @@
+#suggested-game-box {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	height: 241px;
+	background: rgba(7, 18, 38, 0.95);
+	border: 1px solid var(--blue);
+	overflow: hidden;
+	//position: relative;
+
+	#suggested-game-box-head {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid var(--blue);
+		height: 33px;
+		padding: 0 12px;
+		font-family: var(--font-primary);
+
+		#suggested-game-icon {
+			width: 14px;
+			height: 14px;
+			margin-right: 10px;
+			flex-shrink: 0;
+		}
+
+		#suggested-game-text {
+			color: var(--orange);
+			font-size: 10px;
+			font-weight: 500;
+			letter-spacing: 0.08em;
+		}
+
+		#suggested-game-title {
+			margin-left: auto;
+
+			color: var(--white);
+
+			font-size: 10px;
+			font-family: var(--font-primary);
+			font-weight: 400;
+
+			letter-spacing: 0.04em;
+		}
+	}
+
+	#game-cover-container {
+		position: relative;
+		flex: 1;
+		position: center;
+	}
+}

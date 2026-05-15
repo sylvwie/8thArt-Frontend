@@ -1,8 +1,10 @@
-
 @use 'header';
 @use 'buttons';
 @use 'archiveSearch';
 @use 'searchBar';
+@use 'suggestedGameBox';
+@use 'filterBox';
+
 
 :root {
 
@@ -24,7 +26,7 @@
 	--pad-y-lg : 20px;
 
     // logo
-    --widthLogoBig: 714px;
+    --widthLogoBig: 500px;
     --widthLogoSmall: 357px;
 
 	--easing : cubic-bezier(0.4, 0, 0.2, 1);
@@ -43,6 +45,14 @@ body {
 	line-height: 1; /* 100% */	
 	background-color: var(--black);
 	color: rgb(255, 255, 255);
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--blue);
+    margin: 0;
+    align-self: stretch;
 }
 
 // effetti grafici
