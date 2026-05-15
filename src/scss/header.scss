@@ -10,14 +10,11 @@ header {
 	padding: var(--pad-y-lg) var(--pad-x);
 	border-bottom: 1px solid var(--blue);
 	box-sizing: border-box;
-
-	.header-hr{
-		width: 381.005px;
-		border: none;
-		border-top: 1px solid var(--blue);
-		margin: 0;
-		align-self: stretch;
-	}
+	background-color: var(--black);
+ 	position: sticky;
+	top: 0;
+  	left: 0;
+  	z-index: 1000; 
 
 	li {
 		&:nth-child(1) {

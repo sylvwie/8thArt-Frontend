@@ -48,7 +48,7 @@ export function FilterBox() {
 				<hr />
 
 				<div id="active-filters-counter-container">
-					<span className="active-filter-counter">ACTIVE_FILTERS: <span id="current_active_filters_num">NULL</span></span>
+					<span id="active-filter-counter">ACTIVE_FILTERS: <span id="current_active_filters_num">NULL</span></span>
 				</div>
 
 			</div>
