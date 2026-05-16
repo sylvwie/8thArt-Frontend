@@ -55,5 +55,5 @@ export function FilterBox() {
 		</div>
 	)
 }
-
+// aggiungere le opzioni selezionabili dei types nei select
 // sostituire NULL con il counter di filtri attivi

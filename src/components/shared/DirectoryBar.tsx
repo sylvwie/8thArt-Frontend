@@ -2,7 +2,7 @@
 
 export function DirectoryBar() {
 	return (
-		<div className="directory-bar-container">
+		<div id="directory-bar-container">
 			<span>~</span>
 			<span>/</span>
 			<span>archive</span>

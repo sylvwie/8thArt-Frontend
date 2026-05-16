@@ -1,0 +1,148 @@
+// Footer
+#footer {
+  width: 100%;
+  
+  #footer-container {
+    font-family: var(--font-primary);
+    border: 1px solid var(--blue);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    padding: 26px 49px 26px 49px;
+    gap: 10px;
+  }
+
+
+  // Left 
+ #footer-column-left {
+		grid-column: 1;
+		grid-row: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		align-self: center;
+ 
+		#site-description {
+      font-family: inherit;
+			font-size: 0.65rem;
+			font-weight: 600;
+			letter-spacing: 0.05em;
+			color: var(--orange);
+			line-height: 1.4;
+			max-width: 180px;
+		}
+ 
+		#footer-collabs-container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 1rem;
+ 
+			img {
+				height: 28px;
+				width: auto;
+				object-fit: contain;
+			}
+		}
+	}
+
+  // Center Logo
+  #footer-logo-container {
+		grid-column: 2;
+		grid-row: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 3rem;
+ 
+		img {
+			height: 90px;
+			width: auto;
+			object-fit: contain;
+		}
+	}
+
+  // Right
+  #footer-column-right {
+		grid-column: 3;
+		grid-row: 1;
+		display: flex;
+		justify-content: flex-end;
+		align-self: center;
+ 
+		#navigate-columns {
+			display: flex;
+			flex-direction: row;
+			gap: 2.5rem;
+
+			.footer-nav-group {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+ 
+			.footer-title-text {
+        font-family: inherit;
+				font-size: 0.8rem;
+				font-weight: 700;
+				color: var(--orange);
+				letter-spacing: 0.04em;
+				text-transform: none;
+				margin-bottom: 0.25rem;
+			}
+ 
+			.footer-navigation-text {
+        font-family: inherit;
+				font-size: 0.72rem;
+				font-weight: 400;
+				color: var(--white);
+				letter-spacing: 0.02em;
+				cursor: pointer;
+				transition: color 0.2s ease;
+ 
+				&:hover {
+					color: rgba(255, 255, 255, 0.7);
+				}
+			}
+		}
+	}
+
+  // Bottom Row
+  #footer-bottom-row {
+		grid-column: 1 / -1;
+    font-family: inherit;
+		grid-row: 2;
+    padding-top: 15px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top: 1px solid var(--blue);
+ 
+		#footer-credits-text {
+			display: flex;
+			align-items: center;
+		}
+ 
+		#footer-help-row {
+			display: flex;
+			flex-direction: row;
+			gap: 1.5rem;
+			align-items: center;
+		}
+ 
+		.footer-bottom-text {
+			font-size: 0.6rem;
+			font-weight: 500;
+			color: var(--white);
+			letter-spacing: 0.08em;
+			cursor: pointer;
+			transition: color 0.2s ease;
+ 
+			&:hover {
+				color: var(--white);
+			}
+		}
+	}
+}

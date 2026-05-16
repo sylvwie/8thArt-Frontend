@@ -31,6 +31,7 @@ export function Dashboard() {
 
 		<div id="homepage-content-section">
 			<DirectoryBar />
+			{/* <GameCard /> */}
 		</div>
 
 		{ /* cardList.map((card)=> <GameCard gameTitle={card.gameTitle} gameDescription={card.gameDescription} gameSerie={card.gameSerie} />) */} 
