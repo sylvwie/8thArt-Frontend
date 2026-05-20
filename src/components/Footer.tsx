@@ -1,11 +1,12 @@
 import LogoIcon from "/src/assets/logos/logo.svg";
 import IedLogo from "/src/assets/logos/ied-logo.svg";
 import FivezerofiveGamesLogo from "/src/assets/logos/505-games-logo.svg";
+import dither from "/src/assets/template/dither.mp4";
 
 export function Footer() {
 	return (
 		<div id="footer">
-			<video src="/dither.mp4" muted loop autoPlay playsInline={true}></video>
+			<video id="footer-dither" src={dither} muted loop autoPlay playsInline={true}></video>
 			<div id="footer-container">
 
 				<div id="footer-column-left">

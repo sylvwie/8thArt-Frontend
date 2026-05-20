@@ -54,6 +54,9 @@ function Layout() {
 	return <>
 
 		<FaultyTerminal
+		  	className="faulty-terminal"
+  			style={{}}
+
 			scale={1.3}
 			digitSize={1.2}
 			scanlineIntensity={0.5}
@@ -71,7 +74,7 @@ function Layout() {
 
 		<Header />
 		<main>
-		<Outlet />
+			<Outlet />
 		</main>
 		<Footer />
 

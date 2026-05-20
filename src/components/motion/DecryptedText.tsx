@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 
 const styles = {
   wrapper: {
@@ -19,6 +19,7 @@ const styles = {
 };
 
 export default function DecryptedText({
+
   text,
   speed = 50,
   maxIterations = 10,

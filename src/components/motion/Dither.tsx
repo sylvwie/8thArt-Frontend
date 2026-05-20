@@ -1,3 +1,5 @@
+/*
+
 // eslint-disable react/no-unknown-property 
 import { useRef, useEffect, forwardRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
@@ -331,3 +333,4 @@ export default function Dither({
     </Canvas>
   );
 }
+*/

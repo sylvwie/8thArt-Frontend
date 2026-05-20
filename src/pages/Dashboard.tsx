@@ -1,5 +1,4 @@
 import { ArchiveSearch } from "../components/ArchiveSearch";
-import { DirectoryBar } from "../components/shared/DirectoryBar";
 //import { GameCard } from "../components/shared/GameCard";
 
 export function Dashboard() {

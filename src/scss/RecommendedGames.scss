@@ -17,7 +17,6 @@
 		width: 240px;
 	}
 
-
 	@media screen and (max-width : 800px) {
 		display: none;
 	}
@@ -70,7 +69,6 @@
 	.game-cover-container {
 		position: relative;
 		flex: 1;
-		position: center;
 		img {
 			position: absolute;
 			top : 0px;

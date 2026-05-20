@@ -1,5 +1,8 @@
 import logoGif from "/src/assets/logos/logo.gif";
 import hiddenIcon from "/src/assets/icons/hidden-icon.svg";
+import googleIcon from "/src/assets/icons/google.svg";
+import facebookIcon from "/src/assets/icons/facebook.svg";
+import appleIcon from "/src/assets/icons/apple.svg"; 
 
 export function Login() {
 
@@ -23,9 +26,9 @@ export function Login() {
             <span className="login-title">Log in</span>
             
             <div id="login-buttons">
-              <span className="google-login-button"> <img className="google-logo"></img> Continue with Google</span>
-              <span className="google-login-button"> <img className="facebook-logo"></img> Continue with Facebook</span>
-              <span className="google-login-button"> <img className="apple-logo"></img> Continue with Apple</span>
+              <span className="google-login-button"> <img className="google-logo" src={googleIcon} alt="Google Logo" /> Continue with Google</span>
+              <span className="google-login-button"> <img className="facebook-logo" src={facebookIcon} alt="Facebook Logo" /> Continue with Facebook</span>
+              <span className="google-login-button"> <img className="apple-logo" src={appleIcon} alt="Apple Logo" /> Continue with Apple</span>
             </div>
 
             <div className="login-form">
