@@ -1,5 +1,6 @@
 import {Logo} from './shared/Logo.tsx'
 import { SearchBar } from './shared/SearchBar.tsx';
+import { RecommendedGames } from "../components/RecommendedGames";
 
 export function ArchiveSearch() {
   return (
@@ -16,6 +17,12 @@ export function ArchiveSearch() {
           </span>
         </div>
         <SearchBar />
+        <div className="showcase-side showcase-side-right">
+          <RecommendedGames />
+          <RecommendedGames />
+          <RecommendedGames />
+        </div>
+		
       </div>
     </div>
   )

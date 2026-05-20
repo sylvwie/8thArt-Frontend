@@ -3,16 +3,16 @@ import suggestedGameBoxCover from "/src/assets/template/suggested-games-cover-te
 
 export function RecommendedGames() {
 	return (
-		<div id="suggested-game-box">
-			<div id="suggested-game-box-head">
-				<img src={suggestedGameBoxIcon} alt="Suggested Game" id="suggested-game-icon"/> 
-				<span id="suggested-game-text">MAY INTEREST YOU.sys</span>
-				<span id="suggested-game-title">Game Title</span>
+		<div className="suggested-game-box">
+			<div className="suggested-game-box-head">
+				<img src={suggestedGameBoxIcon} alt="Suggested Game" className="suggested-game-icon"/> 
+				<span className="suggested-game-text">MAY INTEREST YOU.sys</span>
+				<span className="suggested-game-title">Game Title</span>
 			</div>
-			<div id="game-cover-container">
-				<img src={suggestedGameBoxCover} alt="Suggested Game Cover" id="suggested-game-cover"/>
+			<div className="game-cover-container">
+				<img src={suggestedGameBoxCover} alt="Suggested Game Cover" className="suggested-game-cover"/>
 			</div>
-		</div>
+		</div> 
 	)
 }
 
