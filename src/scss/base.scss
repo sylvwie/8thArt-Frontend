@@ -2,9 +2,10 @@
 @use 'buttons';
 @use 'archiveSearch';
 @use 'searchBar';
-@use 'suggestedGameBox';
+@use 'recommendedGames';
 @use 'filterBox';
 @use 'footer';
+@use 'login';
 
 :root {
 
@@ -15,10 +16,12 @@
 	--white: #F7F7FF;
 	--black :  #0B0F1B;
 
+
 	--border-radius : 14px;
 	--font-medium : 16px;
 	--font-small : 14px;
 	--font-large : 20px;
+    --font-weight: 400;
 
 	--pad-x : 18px;
 	--pad-y : 10px;

@@ -31,7 +31,7 @@ export function Footer() {
 							<span className="footer-title-text">Archive</span>
 							<span className="footer-navigation-text">Latest Games</span>
 							<span className="footer-navigation-text">Stories</span>
-							<span className="footer-navigation-text">Top 5 Games</span>
+							<span className="footer-navigation-text">Top Games</span>
 						</div>
 					</div>
 				</div>
