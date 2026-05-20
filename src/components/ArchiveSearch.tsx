@@ -1,6 +1,7 @@
 import {Logo} from './shared/Logo.tsx'
 import { SearchBar } from './shared/SearchBar.tsx';
 import { RecommendedGames } from "../components/RecommendedGames";
+import DecryptedText from './motion/DecryptedText.tsx';
 
 export function ArchiveSearch() {
   return (
@@ -8,12 +9,95 @@ export function ArchiveSearch() {
       <div className="archive-search-container">
         <Logo />
         <div className="archive-search-logs">
-          <span className="log-line"><span className="ok-text">[ OK ]</span> Initializing system...</span>
-          <span className="log-line"><span className="ok-text">[ OK ]</span> Loading archive...</span>
-          <span className="log-line"><span className="ok-text">[ OK ]</span> Connecting to network...</span>
-          <span className="log-line"><span className="ok-text">[ OK ]</span> System ready.</span>
+          
+          <span className="log-line"><span className="ok-text">
+             <DecryptedText 
+                  text="[0K]"
+                  sequential
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+            </span> 
+             <DecryptedText 
+                text="Initializing system..."
+                sequential
+                delay={100}
+                useOriginalCharsOnly={false}
+          ></DecryptedText>
+          </span>
+          <span className="log-line"><span className="ok-text">
+             <DecryptedText 
+                  text="[0K]"
+                  delay={200}
+                  sequential
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+            
+            </span> 
+             <DecryptedText 
+                text="Loading archive..."
+                sequential
+                delay={300}
+                useOriginalCharsOnly={false}
+          ></DecryptedText>
+          </span>
+          <span className="log-line"><span className="ok-text">
+             <DecryptedText 
+                  text="[0K]"
+                  delay={400}
+                  sequential
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+            </span> 
+             <DecryptedText 
+                text="Connecting to network..."
+                sequential
+                delay={500}
+                useOriginalCharsOnly={false}
+          ></DecryptedText>
+          </span>
+          <span className="log-line"><span className="ok-text">
+             <DecryptedText 
+                  text="[0K]"
+                  sequential
+                  delay={600}
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+            
+            </span> 
+             <DecryptedText 
+                text="System ready."
+                sequential
+                delay={700}
+                useOriginalCharsOnly={false}
+          ></DecryptedText>
+          </span>
           <span className="welcome-text">
-            &gt; Welcome, <span className="user-name-text">user</span>. Type in the search bar your game of choice. 
+          &gt; 
+            <DecryptedText 
+                  text="Welcome, "
+                  sequential
+                  delay={800}
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+
+            
+
+            <span className="user-name-text"><DecryptedText 
+                  text="user"
+                  sequential
+                  delay={820}
+                  useOriginalCharsOnly={false}
+            ></DecryptedText></span>
+            
+            
+            <DecryptedText 
+                  text=". Type in the search bar your game of choice. "
+                  sequential
+                  delay={900}
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+            
+            
           </span>
         </div>
         <SearchBar />

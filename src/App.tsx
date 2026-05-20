@@ -7,10 +7,8 @@ import { Shop } from './pages/Shop'
 import { Archive } from './pages/Archive'
 import { About } from './pages/About'
 import { Profile } from './pages/Profile'
-import Dither from './components/motion/Dither.tsx';
-//import FaultyTerminal from './components/motion/FaultyTerminal.tsx';
 import { Footer } from './components/Footer.tsx'
-import { FaultyTerminal } from './components/FaultyTerminal.tsx'
+import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
 
 export default function App() {
 	const router = createBrowserRouter([

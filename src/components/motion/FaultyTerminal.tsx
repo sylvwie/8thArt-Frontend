@@ -1,29 +1,5 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
-import React, { useEffect, useRef, useMemo, useCallback } from 'react';
-import './FaultyTerminal.css';
-
-type Vec2 = [number, number];
-
-export interface FaultyTerminalProps extends React.HTMLAttributes<HTMLDivElement> {
-  scale?: number;
-  gridMul?: Vec2;
-  digitSize?: number;
-  timeScale?: number;
-  pause?: boolean;
-  scanlineIntensity?: number;
-  glitchAmount?: number;
-  flickerAmount?: number;
-  noiseAmp?: number;
-  chromaticAberration?: number;
-  dither?: number | boolean;
-  curvature?: number;
-  tint?: string;
-  mouseReact?: boolean;
-  mouseStrength?: number;
-  dpr?: number;
-  pageLoadAnimation?: boolean;
-  brightness?: number;
-}
+import { useEffect, useRef, useMemo, useCallback } from 'react';
 
 const vertexShader = `
 attribute vec2 position;
@@ -161,14 +137,14 @@ float digit(vec2 p){
 
 float onOff(float a, float b, float c)
 {
-	return step(c, sin(iTime + a * cos(iTime * b))) * uFlickerAmount;
+  return step(c, sin(iTime + a * cos(iTime * b))) * uFlickerAmount;
 }
 
 float displace(vec2 look)
 {
     float y = look.y - mod(iTime * 0.25, 1.0);
     float window = 1.0 / (1.0 + 50.0 * y * y);
-	  return sin(look.y * 20.0 + iTime) * 0.0125 * onOff(4.0, 2.0, 0.8) * (1.0 + cos(iTime * 60.0)) * window;
+    return sin(look.y * 20.0 + iTime) * 0.0125 * onOff(4.0, 2.0, 0.8) * (1.0 + cos(iTime * 60.0)) * window;
 }
 
 vec3 getColor(vec2 p){
@@ -231,7 +207,7 @@ void main() {
 }
 `;
 
-function hexToRgb(hex: string): [number, number, number] {
+function hexToRgb(hex) {
   let h = hex.replace('#', '').trim();
   if (h.length === 3)
     h = h
@@ -242,7 +218,7 @@ function hexToRgb(hex: string): [number, number, number] {
   return [((num >> 16) & 255) / 255, ((num >> 8) & 255) / 255, (num & 255) / 255];
 }
 
-export default function FaultyTerminal({
+export function FaultyTerminal({
   scale = 1,
   gridMul = [2, 1],
   digitSize = 1.5,
@@ -251,7 +227,7 @@ export default function FaultyTerminal({
   scanlineIntensity = 0.3,
   glitchAmount = 1,
   flickerAmount = 1,
-  noiseAmp = 1,
+  noiseAmp = 0,
   chromaticAberration = 0,
   dither = 0,
   curvature = 0.2,
@@ -264,22 +240,22 @@ export default function FaultyTerminal({
   className,
   style,
   ...rest
-}: FaultyTerminalProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const programRef = useRef<Program>(null);
-  const rendererRef = useRef<Renderer>(null);
+}) {
+  const containerRef = useRef(null);
+  const programRef = useRef(null);
+  const rendererRef = useRef(null);
   const mouseRef = useRef({ x: 0.5, y: 0.5 });
   const smoothMouseRef = useRef({ x: 0.5, y: 0.5 });
   const frozenTimeRef = useRef(0);
-  const rafRef = useRef<number>(0);
-  const loadAnimationStartRef = useRef<number>(0);
-  const timeOffsetRef = useRef<number>(Math.random() * 100);
+  const rafRef = useRef(0);
+  const loadAnimationStartRef = useRef(0);
+  const timeOffsetRef = useRef(Math.random() * 100);
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
 
   const ditherValue = useMemo(() => (typeof dither === 'boolean' ? (dither ? 1 : 0) : dither), [dither]);
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
+  const handleMouseMove = useCallback(e => {
     const ctn = containerRef.current;
     if (!ctn) return;
     const rect = ctn.getBoundingClientRect();
@@ -347,7 +323,7 @@ export default function FaultyTerminal({
     resizeObserver.observe(ctn);
     resize();
 
-    const update = (t: number) => {
+    const update = t => {
       rafRef.current = requestAnimationFrame(update);
 
       if (pageLoadAnimation && loadAnimationStartRef.current === 0) {
@@ -376,7 +352,7 @@ export default function FaultyTerminal({
         smoothMouse.x += (mouse.x - smoothMouse.x) * dampingFactor;
         smoothMouse.y += (mouse.y - smoothMouse.y) * dampingFactor;
 
-        const mouseUniform = program.uniforms.uMouse.value as Float32Array;
+        const mouseUniform = program.uniforms.uMouse.value;
         mouseUniform[0] = smoothMouse.x;
         mouseUniform[1] = smoothMouse.y;
       }
@@ -386,12 +362,12 @@ export default function FaultyTerminal({
     rafRef.current = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    if (mouseReact) ctn.addEventListener('mousemove', handleMouseMove);
+    if (mouseReact) window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       resizeObserver.disconnect();
-      if (mouseReact) ctn.removeEventListener('mousemove', handleMouseMove);
+      if (mouseReact) window.removeEventListener('mousemove', handleMouseMove);
       if (gl.canvas.parentElement === ctn) ctn.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
       loadAnimationStartRef.current = 0;
