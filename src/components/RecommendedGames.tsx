@@ -12,7 +12,7 @@ export function RecommendedGames() {
 			<div className="game-cover-container">
 				<img src={suggestedGameBoxCover} alt="Suggested Game Cover" className="suggested-game-cover"/>
 			</div>
-		</div>
+		</div> 
 	)
 }
 

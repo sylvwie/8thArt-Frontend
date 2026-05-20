@@ -1,5 +1,5 @@
 import { ArchiveSearch } from "../components/ArchiveSearch";
-import { RecommendedGames } from "../components/RecommendedGames";
+import { DirectoryBar } from "../components/shared/DirectoryBar";
 //import { GameCard } from "../components/shared/GameCard";
 
 export function Dashboard() {
@@ -17,12 +17,6 @@ export function Dashboard() {
 			</div>
 			<div className="showcase-center">
 				<ArchiveSearch/>
-			</div>
-
-			<div className="showcase-side showcase-side-right">
-				<RecommendedGames />
-				<RecommendedGames />
-				<RecommendedGames />
 			</div>
 		</div>
 		

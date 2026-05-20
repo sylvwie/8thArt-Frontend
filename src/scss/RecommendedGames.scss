@@ -2,12 +2,35 @@
 	display: flex;
 	flex-direction: column;
 	width: 300px;
-	height: 241px;
+	aspect-ratio: 300 / 241;
 	background: rgba(7, 18, 38, 0.95);
 	border: 1px solid var(--blue);
 	overflow: hidden;
 	position: absolute;
 
+	top : var(--pad-x);
+	right: calc(-1 * var(--pad-x));
+	
+	transform: translateX(100%);
+
+	@media screen and (max-width : 1024px) {
+		width: 240px;
+	}
+
+
+	@media screen and (max-width : 800px) {
+		display: none;
+	}
+	
+
+	&:nth-of-type(2){
+		transform: translateY(90%) translateX(70%);
+	}
+
+	&:nth-of-type(3){
+		transform: translateY(180%) translateX(100%);
+	}
+	
 	.suggested-game-box-head {
 		display: flex;
 		align-items: center;
@@ -15,6 +38,7 @@
 		height: 33px;
 		padding: 0 12px;
 		font-family: var(--font-primary);
+		white-space: nowrap;
 
 		.suggested-game-icon {
 			width: 14px;
@@ -47,5 +71,13 @@
 		position: relative;
 		flex: 1;
 		position: center;
+		img {
+			position: absolute;
+			top : 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
