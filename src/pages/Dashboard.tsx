@@ -1,5 +1,4 @@
 import { ArchiveSearch } from "../components/ArchiveSearch";
-import { DirectoryBar } from "../components/shared/DirectoryBar";
 import { RecommendedGames } from "../components/RecommendedGames";
 //import { GameCard } from "../components/shared/GameCard";
 
@@ -30,7 +29,6 @@ export function Dashboard() {
 		<hr/>
 
 		<div id="homepage-content-section">
-			<DirectoryBar />
 			{/* <GameCard /> */}
 		</div>
 

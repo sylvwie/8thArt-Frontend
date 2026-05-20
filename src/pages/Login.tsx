@@ -19,7 +19,6 @@ export function Login() {
             </div>
           </div>
 
-
           <div id="login-form-container">
             <span className="login-title">Log in</span>
             

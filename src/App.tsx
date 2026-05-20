@@ -8,7 +8,6 @@ import { Archive } from './pages/Archive'
 import { About } from './pages/About'
 import { Profile } from './pages/Profile'
 import Dither from './components/motion/Dither.tsx';
-//import FaultyTerminal from './components/motion/FaultyTerminal.tsx';
 import { Footer } from './components/Footer.tsx'
 
 export default function App() {
@@ -74,21 +73,3 @@ function Layout() {
 		<div className="crt"></div>
 	</>
 }
-
-/*	
-		<FaultyTerminal>
-			scale={1.3}
-			digitSize={1.2}
-			scanlineIntensity={0.5}
-			glitchAmount={1}
-			flickerAmount={1}
-			noiseAmp={0.85}
-			chromaticAberration={0}
-			dither={0.1}
-			curvature={0.15}
-			tint="#87bcdb"
-			mouseReact
-			mouseStrength={0.15}
-			brightness={0.6}
-		</FaultyTerminal>
-*/
