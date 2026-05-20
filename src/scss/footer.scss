@@ -1,7 +1,16 @@
 // Footer
 #footer {
   width: 100%;
-  
+  overflow: hidden;
+  position: relative;
+  video {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+  }
   #footer-container {
     font-family: var(--font-primary);
     border: 1px solid var(--blue);

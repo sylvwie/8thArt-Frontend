@@ -5,6 +5,7 @@ import FivezerofiveGamesLogo from "/src/assets/logos/505-games-logo.svg";
 export function Footer() {
 	return (
 		<div id="footer">
+			<video src="/dither.mp4" muted loop autoPlay playsInline={true}></video>
 			<div id="footer-container">
 
 				<div id="footer-column-left">

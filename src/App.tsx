@@ -10,6 +10,7 @@ import { Profile } from './pages/Profile'
 import Dither from './components/motion/Dither.tsx';
 //import FaultyTerminal from './components/motion/FaultyTerminal.tsx';
 import { Footer } from './components/Footer.tsx'
+import { FaultyTerminal } from './components/FaultyTerminal.tsx'
 
 export default function App() {
 	const router = createBrowserRouter([
@@ -54,15 +55,20 @@ export default function App() {
 function Layout() {
 	return <>
 
-		<Dither
-			waveColor={[0.5, 0.5, 0.5]}
-			disableAnimation={false}
-			enableMouseInteraction={true}
-			mouseRadius={0.3}
-			colorNum={2}
-			waveAmplitude={0.3}
-			waveFrequency={3}
-			waveSpeed={0.04}
+		<FaultyTerminal
+			scale={1.3}
+			digitSize={1.2}
+			scanlineIntensity={0.5}
+			glitchAmount={1}
+			flickerAmount={1}
+			noiseAmp={0.85}
+			chromaticAberration={0}
+			dither={0.1}
+			curvature={0.15}
+			tint="#2a4553"
+			mouseReact
+			mouseStrength={0.15}
+			brightness={0.6}
 		/>
 
 		<Header />
