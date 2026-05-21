@@ -1,8 +1,10 @@
 .suggested-game-box {
 	display: flex;
 	flex-direction: column;
-	width: 298px;
-	aspect-ratio: 298 / 241;
+	width: 258px;
+	aspect-ratio: 258 / 201;
+	// width: 298px;
+	// aspect-ratio: 298 / 241;
 	background: var(--black);
 	border: 1px solid var(--blue);
 	overflow: hidden;
