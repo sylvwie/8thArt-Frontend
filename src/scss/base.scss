@@ -2,7 +2,7 @@
 @use 'buttons';
 @use 'archiveSearch';
 @use 'searchBar';
-@use 'recommendedGames';
+@use 'suggestedGames';
 @use 'filterBox';
 @use 'footer';
 @use 'login';
@@ -155,4 +155,5 @@ hr {
   height: 100%;
   position: fixed;
   overflow: hidden;
+  z-index: -100;
 }

@@ -1,7 +1,7 @@
 import suggestedGameBoxIcon from "/src/assets/icons/suggested-game-icon.svg";
 import suggestedGameBoxCover from "/src/assets/template/suggested-games-cover-template.png";
 
-export function RecommendedGames() {
+export function SuggestedGames() {
 	return (
 		<div className="suggested-game-box">
 			<div className="suggested-game-box-head">

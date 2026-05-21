@@ -1,9 +1,9 @@
 .suggested-game-box {
 	display: flex;
 	flex-direction: column;
-	width: 300px;
-	aspect-ratio: 300 / 241;
-	background: rgba(7, 18, 38, 0.95);
+	width: 298px;
+	aspect-ratio: 298 / 241;
+	background: var(--black);
 	border: 1px solid var(--blue);
 	overflow: hidden;
 	position: absolute;
@@ -11,7 +11,7 @@
 	top : var(--pad-x);
 	right: calc(-1 * var(--pad-x));
 	
-	transform: translateX(100%);
+	transform: translateX(90%);
 
 	@media screen and (max-width : 1024px) {
 		width: 240px;
@@ -27,7 +27,7 @@
 	}
 
 	&:nth-of-type(3){
-		transform: translateY(180%) translateX(100%);
+		transform: translateY(180%) translateX(90%);
 	}
 	
 	.suggested-game-box-head {
@@ -35,7 +35,10 @@
 		align-items: center;
 		border-bottom: 1px solid var(--blue);
 		height: 33px;
-		padding: 0 12px;
+		padding: 8px 12px;
+		gap: 69px;
+		flex-shrink: 0;
+		align-self: stretch;
 		font-family: var(--font-primary);
 		white-space: nowrap;
 
@@ -48,7 +51,7 @@
 
 		.suggested-game-text {
 			color: var(--orange);
-			font-size: 10px;
+			font-size: 9px;
 			font-weight: 500;
 			letter-spacing: 0.08em;
 		}
@@ -58,7 +61,7 @@
 
 			color: var(--white);
 
-			font-size: 10px;
+			font-size: 9px;
 			font-family: var(--font-primary);
 			font-weight: 400;
 

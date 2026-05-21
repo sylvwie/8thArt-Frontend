@@ -1,6 +1,6 @@
 import {Logo} from './shared/Logo.tsx'
 import { SearchBar } from './shared/SearchBar.tsx';
-import { RecommendedGames } from "../components/RecommendedGames";
+import { SuggestedGames } from "./SuggestedGames.tsx";
 import DecryptedText from './motion/DecryptedText.tsx';
 
 export function ArchiveSearch() {
@@ -24,6 +24,23 @@ export function ArchiveSearch() {
                 useOriginalCharsOnly={false}
           ></DecryptedText>
           </span>
+          
+          <span className="log-line"><span className="ok-text">
+             <DecryptedText 
+                  text="[0K] "
+                  delay={400}
+                  sequential
+                  useOriginalCharsOnly={false}
+            ></DecryptedText>
+            </span> 
+             <DecryptedText 
+                text="Connecting to network..."
+                sequential
+                delay={500}
+                useOriginalCharsOnly={false}
+          ></DecryptedText>
+          </span>
+
           <span className="log-line"><span className="ok-text">
              <DecryptedText 
                   text="[0K] "
@@ -37,21 +54,6 @@ export function ArchiveSearch() {
                 text="Loading archive..."
                 sequential
                 delay={300}
-                useOriginalCharsOnly={false}
-          ></DecryptedText>
-          </span>
-          <span className="log-line"><span className="ok-text">
-             <DecryptedText 
-                  text="[0K] "
-                  delay={400}
-                  sequential
-                  useOriginalCharsOnly={false}
-            ></DecryptedText>
-            </span> 
-             <DecryptedText 
-                text="Connecting to network..."
-                sequential
-                delay={500}
                 useOriginalCharsOnly={false}
           ></DecryptedText>
           </span>
@@ -102,9 +104,9 @@ export function ArchiveSearch() {
         </div>
         <SearchBar />
         <div className="showcase-side showcase-side-right">
-          <RecommendedGames />
-          <RecommendedGames />
-          <RecommendedGames />
+          <SuggestedGames />
+          <SuggestedGames />
+          <SuggestedGames />
         </div>
 		
       </div>
