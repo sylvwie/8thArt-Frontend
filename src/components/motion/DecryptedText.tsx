@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
-const styles = {
+const styles: { wrapper: React.CSSProperties; srOnly: React.CSSProperties } = {
   wrapper: {
     display: 'inline-block',
     whiteSpace: 'pre-wrap'
@@ -18,8 +18,23 @@ const styles = {
   }
 };
 
-export default function DecryptedText({
+export interface DecryptedTextProps extends React.HTMLAttributes<HTMLSpanElement> {
+  text: string;
+  speed?: number;
+  maxIterations?: number;
+  sequential?: boolean;
+  revealDirection?: 'start' | 'end' | 'center';
+  useOriginalCharsOnly?: boolean;
+  characters?: string;
+  className?: string;
+  parentClassName?: string;
+  encryptedClassName?: string;
+  animateOn?: 'view' | 'click' | 'hover' | 'inViewHover';
+  delay?: number;
+  clickMode?: 'once' | 'toggle';
+}
 
+export default function DecryptedText({
   text,
   speed = 50,
   maxIterations = 10,
@@ -34,27 +49,27 @@ export default function DecryptedText({
   delay = 0,
   clickMode = 'once',
   ...props
-}) {
-  const [displayText, setDisplayText] = useState(text);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [revealedIndices, setRevealedIndices] = useState(new Set());
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const [isDecrypted, setIsDecrypted] = useState(animateOn !== 'click');
-  const [direction, setDirection] = useState('forward');
+}: DecryptedTextProps) {
+  const [displayText, setDisplayText] = useState<string>(text);
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [revealedIndices, setRevealedIndices] = useState<Set<number>>(new Set<number>());
+  const [hasAnimated, setHasAnimated] = useState<boolean>(false);
+  const [isDecrypted, setIsDecrypted] = useState<boolean>(animateOn !== 'click');
+  const [direction, setDirection] = useState<'forward' | 'reverse'>('forward');
 
-  const containerRef = useRef(null);
-  const orderRef = useRef([]);
-  const pointerRef = useRef(0);
-  const intervalRef = useRef(null);
+  const containerRef = useRef<HTMLSpanElement | null>(null);
+  const orderRef = useRef<number[]>([]);
+  const pointerRef = useRef<number>(0);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const availableChars = useMemo(() => {
+  const availableChars = useMemo<string[]>(() => {
     return useOriginalCharsOnly
-      ? Array.from(new Set(text.split(''))).filter(char => char !== ' ')
+      ? Array.from(new Set(text.split(''))).filter((char) => char !== ' ')
       : characters.split('');
   }, [useOriginalCharsOnly, text, characters]);
 
   const shuffleText = useCallback(
-    (originalText, currentRevealed) => {
+    (originalText: string, currentRevealed: Set<number>): string => {
       return originalText
         .split('')
         .map((char, i) => {
@@ -68,8 +83,8 @@ export default function DecryptedText({
   );
 
   const computeOrder = useCallback(
-    len => {
-      const order = [];
+    (len: number): number[] => {
+      const order: number[] = [];
       if (len <= 0) return order;
       if (revealDirection === 'start') {
         for (let i = 0; i < len; i++) order.push(i);
@@ -97,13 +112,13 @@ export default function DecryptedText({
     [revealDirection]
   );
 
-  const fillAllIndices = useCallback(() => {
-    const s = new Set();
+  const fillAllIndices = useCallback((): Set<number> => {
+    const s = new Set<number>();
     for (let i = 0; i < text.length; i++) s.add(i);
     return s;
   }, [text]);
 
-  const removeRandomIndices = useCallback((set, count) => {
+  const removeRandomIndices = useCallback((set: Set<number>, count: number): Set<number> => {
     const arr = Array.from(set);
     for (let i = 0; i < count && arr.length > 0; i++) {
       const idx = Math.floor(Math.random() * arr.length);
@@ -113,7 +128,7 @@ export default function DecryptedText({
   }, []);
 
   const encryptInstantly = useCallback(() => {
-    const emptySet = new Set();
+    const emptySet = new Set<number>();
     setRevealedIndices(emptySet);
     setDisplayText(shuffleText(text, emptySet));
     setIsDecrypted(false);
@@ -123,9 +138,9 @@ export default function DecryptedText({
     if (sequential) {
       orderRef.current = computeOrder(text.length);
       pointerRef.current = 0;
-      setRevealedIndices(new Set());
+      setRevealedIndices(new Set<number>());
     } else {
-      setRevealedIndices(new Set());
+      setRevealedIndices(new Set<number>());
     }
     setDirection('forward');
     setIsAnimating(true);
@@ -152,7 +167,7 @@ export default function DecryptedText({
 
     let currentIteration = 0;
 
-    const getNextIndex = revealedSet => {
+    const getNextIndex = (revealedSet: Set<number>): number => {
       const textLength = text.length;
       switch (revealDirection) {
         case 'start':
@@ -179,7 +194,7 @@ export default function DecryptedText({
     };
 
     intervalRef.current = setInterval(() => {
-      setRevealedIndices(prevRevealed => {
+      setRevealedIndices((prevRevealed) => {
         if (sequential) {
           // Forward
           if (direction === 'forward') {
@@ -190,7 +205,7 @@ export default function DecryptedText({
               setDisplayText(shuffleText(text, newRevealed));
               return newRevealed;
             } else {
-              clearInterval(intervalRef.current);
+              window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
               setIsAnimating(false);
               setIsDecrypted(true);
               return prevRevealed;
@@ -204,13 +219,13 @@ export default function DecryptedText({
               newRevealed.delete(idxToRemove);
               setDisplayText(shuffleText(text, newRevealed));
               if (newRevealed.size === 0) {
-                clearInterval(intervalRef.current);
+                window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
                 setIsAnimating(false);
                 setIsDecrypted(false);
               }
               return newRevealed;
             } else {
-              clearInterval(intervalRef.current);
+              window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
               setIsAnimating(false);
               setIsDecrypted(false);
               return prevRevealed;
@@ -222,7 +237,7 @@ export default function DecryptedText({
             setDisplayText(shuffleText(text, prevRevealed));
             currentIteration++;
             if (currentIteration >= maxIterations) {
-              clearInterval(intervalRef.current);
+              window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
               setIsAnimating(false);
               setDisplayText(text);
               setIsDecrypted(true);
@@ -241,12 +256,12 @@ export default function DecryptedText({
             setDisplayText(shuffleText(text, nextSet));
             currentIteration++;
             if (nextSet.size === 0 || currentIteration >= maxIterations) {
-              clearInterval(intervalRef.current);
+              window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
               setIsAnimating(false);
               setIsDecrypted(false);
               // ensure final scrambled state
               setDisplayText(shuffleText(text, new Set()));
-              return new Set();
+              return new Set<number>();
             }
             return nextSet;
           }
@@ -255,7 +270,7 @@ export default function DecryptedText({
       });
     }, speed);
 
-    return () => clearInterval(intervalRef.current);
+    return () => window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
   }, [
     isAnimating,
     text,
@@ -295,7 +310,7 @@ export default function DecryptedText({
   const triggerHoverDecrypt = useCallback(() => {
     if (isAnimating) return;
 
-    setRevealedIndices(new Set());
+    setRevealedIndices(new Set<number>());
     setIsDecrypted(false);
     setDisplayText(text);
     setDirection('forward');
@@ -303,9 +318,9 @@ export default function DecryptedText({
   }, [isAnimating, text]);
 
   const resetToPlainText = useCallback(() => {
-    clearInterval(intervalRef.current);
+    window.clearInterval(intervalRef.current as ReturnType<typeof setInterval>);
     setIsAnimating(false);
-    setRevealedIndices(new Set());
+    setRevealedIndices(new Set<number>());
     setDisplayText(text);
     setIsDecrypted(true);
     setDirection('forward');
@@ -315,8 +330,8 @@ export default function DecryptedText({
   useEffect(() => {
     if (animateOn !== 'view' && animateOn !== 'inViewHover') return;
 
-    const observerCallback = entries => {
-      entries.forEach(entry => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting && !hasAnimated) {
           setTimeout(()=>{
             triggerDecrypt();
@@ -352,7 +367,7 @@ export default function DecryptedText({
       setDisplayText(text);
       setIsDecrypted(true);
     }
-    setRevealedIndices(new Set());
+    setRevealedIndices(new Set<number>());
     setDirection('forward');
   }, [animateOn, text, encryptInstantly]);
 
@@ -369,11 +384,11 @@ export default function DecryptedText({
         : {};
 
   return (
-    <motion.span className={parentClassName} ref={containerRef} style={styles.wrapper} {...animateProps} {...props}>
+    <motion.span className={parentClassName} ref={containerRef} style={styles.wrapper} {...animateProps} {...(props as any)}>
       <span style={styles.srOnly}>{displayText}</span>
 
       <span aria-hidden="true">
-        {displayText.split('').map((char, index) => {
+        {displayText.split('').map((char: string, index: number) => {
           const isRevealedOrDone = revealedIndices.has(index) || (!isAnimating && isDecrypted);
 
           return (
