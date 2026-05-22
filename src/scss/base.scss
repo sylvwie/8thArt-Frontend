@@ -1,11 +1,11 @@
-@use 'header';
-@use 'buttons';
-@use 'archiveSearch';
-@use 'searchBar';
-@use 'suggestedGames';
-@use 'filterBox';
-@use 'footer';
-@use 'login';
+@use 'header.scss';
+@use 'buttons.scss';
+@use 'archiveSearch.scss';
+@use 'searchBar.scss';
+@use 'suggestedGames.scss';
+@use 'filterBox.scss';
+@use 'footer.scss';
+@use 'login.scss';
 
 :root {
 
@@ -15,7 +15,6 @@
 	--orange :  #FF6B35; 
 	--white: #F7F7FF;
 	--black :  #0B0F1B;
-
 
 	--border-radius : 14px;
 	--font-medium : 16px;
