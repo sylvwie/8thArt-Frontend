@@ -15,7 +15,7 @@ export function SearchBar() {
       <div className="search-bar-container">
         <span className="search-bar-prefix" aria-hidden="true">&gt;</span>
         <input
-          className="search-bar-input"
+          id="search-bar-input"
           type="text"
           placeholder="search..."
           aria-label="Search"

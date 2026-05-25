@@ -8,7 +8,6 @@ export function Dashboard() {
 		{ gameTitle: "titolo 2", gameSerie: 'serie 2', gameDev: 'dev 2', gameCoverImage: 'https://www.mobygames.com/images/covers/l/1234567-game-title-windows-front-cover.jpg', gameTag: 'tag2' }
 	];
 	
-
 	return <>
 		<div id="main-showcase">
 			<div className="showcase-side showcase-side-left">

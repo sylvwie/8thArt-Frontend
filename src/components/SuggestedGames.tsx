@@ -6,7 +6,7 @@ export function SuggestedGames() {
 		<div className="suggested-game-box">
 			<div className="suggested-game-box-head">
 				<img src={suggestedGameBoxIcon} alt="Suggested Game" className="suggested-game-icon"/> 
-				<span className="suggested-game-text">MAY INTEREST YOU.sys</span>
+				<span className="suggested-game-text">MAY INTEREST YOU</span>
 				<span className="suggested-game-title">Game Title</span>
 			</div>
 			<div className="game-cover-container">

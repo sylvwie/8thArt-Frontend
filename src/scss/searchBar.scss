@@ -1,3 +1,4 @@
+// Wrapper
 .search-bar-wrapper {
   display: flex;
   align-items: center;
@@ -5,6 +6,7 @@
   width: 100%;
   font-family: var(--font-primary);
   
+  // Container
   .search-bar-container {
     position: relative;
     width: 100%;
@@ -13,6 +15,7 @@
     flex: 1;
     height: 40px;
     
+    // Prefix Symbol
     .search-bar-prefix {
       position: absolute;
       left: 12px;
@@ -22,7 +25,8 @@
       z-index: 2;
     }
     
-    .search-bar-input {
+    // Input
+    #search-bar-input {
       width: 100%;
       height: 40px;
       background: var(--black);
@@ -48,6 +52,7 @@
       }
     }
     
+    // Cross Ref and Search Icons
     .search-bar-icons {
       position: absolute; 
       display: flex;
@@ -79,6 +84,7 @@
   }
 }
 
+// Logs Text
 .status-logs {
     width: 100%;
     display: flex;
@@ -92,7 +98,7 @@
     flex-shrink: 0;
   }
 
-
+  // Filter Icon
   .filter-icon {
     width: 26px;
     height: 26px;

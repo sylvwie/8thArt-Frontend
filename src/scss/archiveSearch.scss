@@ -1,3 +1,4 @@
+// Wrapper
 .archive-search-wrapper {
   //min-height: 60svh;
   display: flex;
@@ -8,6 +9,7 @@
   justify-content: center;
   position: relative;
 
+  // Container
   .archive-search-container {
     width: 60%;
     max-width: 1228px;
@@ -19,6 +21,7 @@
     margin: 0 auto;
     position: relative;
 
+    // Big Logo
     .logo {
       width: var(--widthLogoBig);
       height: auto;
@@ -26,6 +29,7 @@
       margin-top: 50px;
     }
 
+    // Inizialize Logs
     .archive-search-logs {
       width: 100%;
       max-width: 1228px;

@@ -1,8 +1,10 @@
+// Wrapper
 #filter-box-wrapper {
 	display: flex;
 	width: 806px;
 	margin-top: 15px;
 
+	// Container
 	#filter-box-container {
 		font-family: var(--font-primary);
 		min-height: 192px;
@@ -17,7 +19,7 @@
 		width: 100%;
 		display: flex;
 
-		// HEADER
+		// Header
 		#filter-box {
 			display: flex;
 			height: 28px;
@@ -40,7 +42,7 @@
 			}
 		}
 
-		// PARAMS 
+		// Filter Params 
 		#filter-params-box-container {
 			width: 100%;
 			display: flex;
@@ -74,7 +76,7 @@
 					letter-spacing: 0.05em;
 				}
 
-				// INPUT
+				// Input Selection
 				.filter-params-select-wrapper {
 					position: relative;
 					width: 100%;
@@ -88,7 +90,7 @@
 						border: 1px solid var(--blue);
 						border-radius: 4px;
 						padding: 6px 28px 6px 10px;
-						appearance: none; // freccia nativa
+						appearance: none; 
 						-webkit-appearance: none; 
 						outline: none;
 

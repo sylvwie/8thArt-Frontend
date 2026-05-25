@@ -9,6 +9,7 @@ import { About } from './pages/About'
 import { Profile } from './pages/Profile'
 import { Footer } from './components/Footer.tsx'
 import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
+import { Register } from './pages/Register.tsx'
 
 export default function App() {
 	const router = createBrowserRouter([
@@ -26,6 +27,10 @@ export default function App() {
 				{
 					path: 'login',
 					element: <Login />
+				},
+				{
+					path: 'register',
+					element: <Register />
 				},
 				{
 					path: 'shop',
