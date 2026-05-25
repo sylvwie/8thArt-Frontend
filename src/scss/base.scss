@@ -7,8 +7,7 @@
 @use './footer.scss';
 @use './login.scss';
 @use './register.scss';
-@use './notLoggedInProfile.scss';
-@use './loggedInProfile.scss';
+@use './profileBox.scss';
 
 :root {
 	--font-primary : "JetBrains Mono";
