@@ -6,6 +6,7 @@ import openEye from "/src/assets/icons/open-eye.svg";
 import googleIcon from "/src/assets/icons/google.svg";
 import facebookIcon from "/src/assets/icons/facebook.svg";
 import appleIcon from "/src/assets/icons/apple.svg";
+import squares1 from '/src/assets/icons/squares1.png';
 
 export function Register() {
   const navigate = useNavigate();
@@ -36,7 +37,8 @@ export function Register() {
 
             <div className="register-form">
               <div className="register-form-header">
-                <span>Register.exe</span>
+                <img src={squares1} alt="squares1 icon" className="squares1" />
+                <span className="title-exe">Register.exe</span>
               </div>
 
               <div className="register-form-body">

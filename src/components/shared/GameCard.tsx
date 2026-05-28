@@ -1,26 +1,54 @@
+import viewGameIcon from '/src/assets/icons/view-game-icon.svg';
+
+// Questo è box dei singoli giochi visibile nella sezione Games del Developer e della Console
+
 type GameCardProps = {
-	game: Game;
+	game: GameInfo;
 }
 
-export type Game = {
-	gameTag: string;
-	gameTitle: string;
-	gameSerie: string;
-	gameDev: string;
-	gameCoverImage: string;
+export type GameInfo = {
+	rating: string;
+	coverImage: string;
+
+	title: string;
+	description: string;
+	genre: string;
+	developer: string;
+	release: string;
 }
 
-export function GameCard({game}: GameCardProps) {
+
+export function GameCard({ game }: GameCardProps) {
 	return (
-		<div className="gamecard-wrapper">
-			<div className="gamecard-cover-container">
-				<button className="gamecard-gametag">{game.gameTag}</button>
-				<img src={game.gameCoverImage} alt={game.gameTitle} />
-			</div>
-			<div className="gamecard-info-container">
-				<span>{game.gameTitle}</span>
-				<span>{game.gameSerie}</span>
-				<span>{game.gameDev}</span>
+		<div id="gamecard-wrapper">
+			<div id="gamecard-container">
+
+				<div id="gamecard-cover-container">
+					<button className="gamecard-rating">{game.rating}</button>
+					<img className="gamecard-cover" src={game.coverImage} alt="game cover" />
+				</div>
+
+				<div id="gamecard-info-container">
+					<div id="gamecard-info-overview">
+						<span className="gamecard-title">{game.title}</span>
+						<p className="gamecard-description">{game.description}</p>
+					</div>
+
+					<div id="game-info-specifics">
+						<span className="gamecard-genre">{game.genre}</span>
+						<span className="gamecard-dev">{game.developer}</span>
+						<span className="gamecard-release">{game.release}</span>
+
+						<button className="gamecard-tags">TAG</button>
+						{/* componente genre / tag */}
+					</div>
+
+					<button id="gamecard-view-game-btn">
+						<img id='gamecard-view-game-icon' src={viewGameIcon} alt="View Game" />
+						[ View Game ]
+					</button>
+				</div>
+
 			</div>
 		</div>
 	)

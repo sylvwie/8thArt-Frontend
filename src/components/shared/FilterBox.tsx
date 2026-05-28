@@ -1,4 +1,4 @@
-import filterIcon from "/src/assets/icons/filter-icon.svg";
+import filterIcon from "/src/assets/icons/filter-icon.png";
 
 export function FilterBox() {
 	return (

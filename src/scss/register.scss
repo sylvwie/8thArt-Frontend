@@ -10,6 +10,7 @@
 #register-wrapper {
 	width: 100%;
 	min-height: 100vh;
+	margin: 20vh 0vh 20vh 0vh;
 
 	display: flex;
 	align-items: center;
@@ -41,10 +42,9 @@
 			align-items: center;
 
 			.logo-gif {
-				width: var(--widthLogoBig);
+				width: 658px;
 				height: auto;
-
-				padding-bottom: 60px;
+				padding-bottom: 40px;
 			}
 
 			.status-logs {
@@ -110,12 +110,20 @@
 
 					border-bottom: 1px solid var(--blue);
 
-					span {
+					img {
+						width: 32px;
+						margin-right: 10px;
+						align-items: center;
+						gap: 4px;
+					}
+
+					.title-exe {
 						font-family: var(--font-primary), monospace;
 						font-size: var(--font-small);
 						font-weight: var(--font-weight);
+						letter-spacing: 0.04em;
 
-						color: var(--blue);
+						color: var(--aquamarine);
 					}
 				}
 

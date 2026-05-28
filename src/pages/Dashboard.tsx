@@ -1,29 +1,49 @@
 import { ArchiveSearch } from "../components/ArchiveSearch";
-import { GameCard, type Game } from "../components/shared/GameCard";
+import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components/FeaturedStoriesCard";
 
 export function Dashboard() {
-	
-	const cardList: Game[] = [
-		{ gameTitle: "titolo 1", gameSerie: 'serie 1', gameDev: 'dev 1', gameCoverImage: 'https://www.mobygames.com/images/covers/l/1234567-game-title-windows-front-cover.jpg', gameTag: 'tag1' },
-		{ gameTitle: "titolo 2", gameSerie: 'serie 2', gameDev: 'dev 2', gameCoverImage: 'https://www.mobygames.com/images/covers/l/1234567-game-title-windows-front-cover.jpg', gameTag: 'tag2' }
+
+	const cardList: FeaturedStoriesShowcase[] = [
+		{ tag: "Y2K", articleTitle: "Y2K Aesthetic: The Retro-Future of Gaming", gameCoverImage: 'https://www.mobygames.com/images/covers/{gameCoverImage}' },
+		{ tag: "Cyberpunk", articleTitle: "Cyberpunk: Exploring Dystopian Futures", gameCoverImage: 'https://www.mobygames.com/images/covers/{gameCoverImage}' },
+		{ tag: "Souls-like", articleTitle: "Souls-like: the Challenging Combat", gameCoverImage: 'https://www.mobygames.com/images/covers/{gameCoverImage}' },
+		{ tag: "Lo-fi", articleTitle: "Lo-fi Games: The Art of Chiptune and Nostalgia", gameCoverImage: 'https://www.mobygames.com/images/covers/{gameCoverImage}' },
+		{ tag: "Survival Horror", articleTitle: "Survival Horror: The Art of Fear and Suspense", gameCoverImage: 'https://www.mobygames.com/images/covers/{gameCoverImage}' },
+		{ tag: "Pixel Art", articleTitle: "Pixel Art Games: The Charm of Retro Graphics", gameCoverImage: 'https://www.mobygames.com/images/covers/{gameCoverImage}' },
 	];
-	
+
 	return <>
-		<div id="main-showcase">
-			<div className="showcase-side showcase-side-left">
+
+		<div>
+			<div id="main-showcase">
+				<div className="showcase-side showcase-side-left"></div>
+				<div className="showcase-center">
+					<ArchiveSearch />
+				</div>
+				<div className="showcase-side showcase-side-right"></div>
 			</div>
-			<div className="showcase-center">
-				<ArchiveSearch/>
+
+			<hr />
+
+			<div id="homepage-content-section">
+				<div className="featuredstoriescard-title-text-container">
+					<span id="featuredstoriescard-title-text">
+						&gt;_FEATURED STORIES
+					</span>
+
+					<span id="featuredstoriescard-title-desc">
+						Curated narratives exploring gaming's most compelling worlds
+					</span>
+				</div>
+
+				<div className="featured-stories-row">
+					{cardList.map((card, index) => (
+						<div className="featuredstoriescard-frame" key={index}>
+							<FeaturedStoriesCard story={card} />
+						</div>
+					))}
+				</div>
 			</div>
 		</div>
-		
-		<hr/>
-
-		<div id="homepage-content-section">
-			{cardList.map((card) => (
-				<GameCard game={card} />
-			))}
-		</div>
-
 	</>
 }

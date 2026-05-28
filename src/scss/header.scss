@@ -27,14 +27,54 @@ header {
 
 	// Navbar container
 	#main-nav {
-		ul {
-			margin: 0px;
-			align-self: "center";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 28px;
+	
+		.nav-btn {
 			display: flex;
-			gap : var(--pad-x);
+			align-items: center;
 			justify-content: center;
-			li {
-				list-style: none;
+			gap: 10px;
+	
+			padding: 10px 24px;
+	
+			border: 1px solid var(--blue);
+			border-radius: 999px;
+	
+			background: var(--black);
+	
+			color: var(--blue);
+			text-decoration: none;
+	
+			font-family: var(--font-primary);
+			font-size: 1rem;
+			font-weight: 400;
+			letter-spacing: 0.04em;
+	
+			transition:
+				transform 0.2s ease,
+				box-shadow 0.2s ease,
+				border-color 0.2s ease;
+	
+			img {
+				width: 18px;
+				height: 18px;
+				object-fit: contain;
+			}
+	
+			span {
+				line-height: 1;
+			}
+	
+			&:hover {
+				background-color: var(--blue);
+				color: var(--black);
+			}
+	
+			&:active {
+				transform: scale(0.98);
 			}
 		}
 	}

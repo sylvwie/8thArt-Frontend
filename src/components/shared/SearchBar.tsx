@@ -1,11 +1,13 @@
 import { FilterBox } from "./FilterBox.tsx";
 import { useState } from 'react';
-import filterIcon from "/src/assets/icons/filter-icon.svg";
-import crossRefIcon from "/src/assets/icons/cross-ref-icon.svg";
+import filterIcon from "/src/assets/icons/filter-icon.png";
+import crossRefIcon from "/src/assets/icons/cross-reference-empty.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
+import { CrossRefDropInBox } from "./CrossRefIDropInBox.tsx";
 
 export function SearchBar() {
   const [filterOpen, setFilterOpen] = useState(false);
+  const [crossRefBoxOpen, setCrossRefBoxOpen] = useState(false);
   return (
   <>
     <div className="search-bar-wrapper">
@@ -21,7 +23,7 @@ export function SearchBar() {
           aria-label="Search"
         />
         <div className="search-bar-icons">
-          <button className="search-icon" aria-label="Cross reference">
+          <button className="search-icon" aria-label="Cross reference" onClick={() => setCrossRefBoxOpen((oldValue) => !oldValue)}>
             <img src={crossRefIcon} alt="" />
           </button>
           <button className="search-icon" aria-label="Search">
@@ -31,6 +33,7 @@ export function SearchBar() {
       </div>
     </div>
     {filterOpen && <FilterBox />}
+    {crossRefBoxOpen && <CrossRefDropInBox />}
     <div className="status-logs">
       <span>STATUS: ONLINE</span>
       <span>UPTIME: 99.9%</span>

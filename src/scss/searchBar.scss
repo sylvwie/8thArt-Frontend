@@ -100,8 +100,6 @@
 
   // Filter Icon
   .filter-icon {
-    width: 26px;
-    height: 26px;
     margin-left: -2.5rem;
     border: 0px;
     position: relative;
@@ -111,8 +109,10 @@
     background-color: transparent;
     padding: 0;
     cursor: pointer;
-  
-      img {
+    
+    img {
+        width: 26px;
+        height: 26px;
         opacity: 0.8;
         transition: opacity 0.2s;
       }

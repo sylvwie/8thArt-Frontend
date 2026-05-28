@@ -6,6 +6,8 @@ import googleIcon from "/src/assets/icons/google.svg";
 import facebookIcon from "/src/assets/icons/facebook.svg";
 import appleIcon from "/src/assets/icons/apple.svg";
 import { useNavigate } from "react-router-dom";
+import squares1 from '/src/assets/icons/squares1.png';
+
 
 export function Login() {
   const navigate = useNavigate();
@@ -46,7 +48,8 @@ export function Login() {
 
             <div className="login-form">
               <div className="login-form-header">
-                <span>Login.exe</span>
+                <img src={squares1} alt="squares1 icon" className="squares1" />
+                <span className="title-exe">Login.exe</span>
               </div>
 
               <div className="login-form-body">

@@ -1,5 +1,6 @@
 @use './header.scss';
 @use './buttons.scss';
+@use './dashboard.scss';
 @use './archiveSearch.scss';
 @use './searchBar.scss';
 @use './suggestedGames.scss';
@@ -8,6 +9,10 @@
 @use './login.scss';
 @use './register.scss';
 @use './profileBox.scss';
+@use './gameCard.scss';
+@use './featuredStoriesCard.scss';
+@use './crossRefDropInBox.scss';   
+@use './thankYouPopUp.scss';
 
 :root {
 	--font-primary : "JetBrains Mono";
@@ -39,12 +44,16 @@
     }
 }
 
+main {
+    min-height: calc(100vh - 79px - 204px);
+}
+
 body {
 	color: var(--blue);
 	font-family: var(--font-primary);
 	font-size: var(--font-medium);
 	font-style: normal;
-	font-weight: 200;
+    font-weight: 200;
 	line-height: 1; 
 	background-color: var(--black);
 	color: rgb(255, 255, 255);

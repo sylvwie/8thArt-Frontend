@@ -103,10 +103,13 @@ export function ArchiveSearch() {
           </span>
         </div>
         <SearchBar />
+        <div className="showcase-side showcase-side-left">
+          <SuggestedGames />
+          <SuggestedGames />
+          <SuggestedGames />
+        </div>
+
         <div className="showcase-side showcase-side-right">
-          <SuggestedGames />
-          <SuggestedGames />
-          <SuggestedGames />
         </div>
 		
       </div>

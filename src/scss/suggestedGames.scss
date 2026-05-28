@@ -4,8 +4,6 @@
 	flex-direction: column;
 	width: 258px;
 	aspect-ratio: 258 / 201;
-	// width: 298px;
-	// aspect-ratio: 298 / 241;
 	background: var(--black);
 	border: 1px solid var(--blue);
 	overflow: hidden;
@@ -14,7 +12,8 @@
 	top : var(--pad-x);
 	right: calc(-1 * var(--pad-x));
 	
-	transform: translateX(90%);
+	transform: translateY(10%) translateX(-360%);
+	//transform: translateX(90%);
 
 	@media screen and (max-width : 1024px) {
 		width: 240px;
@@ -26,12 +25,20 @@
 	
 
 	&:nth-of-type(2){
-		transform: translateY(90%) translateX(70%);
+		transform: translateY(90%) translateX(-340%);
 	}
 
 	&:nth-of-type(3){
-		transform: translateY(180%) translateX(90%);
+		transform: translateY(170%) translateX(-360%);
 	}
+
+	// &:nth-of-type(2){
+	// 	transform: translateY(90%) translateX(70%);
+	// }
+
+	// &:nth-of-type(3){
+	// 	transform: translateY(180%) translateX(90%);
+	// }
 	
 	// Header
 	.suggested-game-box-head {

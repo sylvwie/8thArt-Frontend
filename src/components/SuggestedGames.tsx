@@ -16,4 +16,4 @@ export function SuggestedGames() {
 	)
 }
 
-// inserire il game title e la game cover 
+// inserire chiamata api di game title e la game cover 

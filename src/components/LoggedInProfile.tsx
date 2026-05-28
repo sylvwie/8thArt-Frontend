@@ -1,6 +1,6 @@
 import profilePicture from "/src/assets/template/propic-template.webp";
-import bookmarkIcon from "/src/assets/icons/bookmark.svg";
-import cartIcon from "/src/assets/icons/cart.svg";
+import bookmarkIcon from "/src/assets/icons/bookmark.png";
+import cartIcon from "/src/assets/icons/cart.png";
 
 export function LoggedInProfileBox() {
 	return <>
