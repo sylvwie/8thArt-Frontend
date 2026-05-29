@@ -7,7 +7,6 @@ type FeaturedStoriesCardProps = {
 export type FeaturedStoriesShowcase = {
 	tag: string;
 	articleTitle: string;
-	// substyle?: string;
 	gameCoverImage: string;
 }
 

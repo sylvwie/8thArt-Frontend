@@ -1,5 +1,5 @@
 import suggestedGameBoxIcon from "/src/assets/icons/suggested-game-icon.svg";
-import suggestedGameBoxCover from "/src/assets/template/suggested-games-cover-template.png";
+import gameCoverTemplate from "/src/assets/template/game-cover-template.png";
 
 export function SuggestedGames() {
 	return (
@@ -10,7 +10,7 @@ export function SuggestedGames() {
 				<span className="suggested-game-title">Game Title</span>
 			</div>
 			<div className="game-cover-container">
-				<img src={suggestedGameBoxCover} alt="Suggested Game Cover" className="suggested-game-cover"/>
+				<img src={gameCoverTemplate} alt="Suggested Game Cover" className="suggested-game-cover"/>
 			</div>
 		</div> 
 	)

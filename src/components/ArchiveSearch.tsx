@@ -13,7 +13,7 @@ export function ArchiveSearch() {
 
                                     <span className="ok-text">
                                           <DecryptedText
-                                                text="[0K] "
+                                                text="[ 0K ] "
                                                 sequential
                                                 useOriginalCharsOnly={false}
                                           ></DecryptedText>
@@ -29,7 +29,7 @@ export function ArchiveSearch() {
 
                               <span className="log-line"><span className="ok-text">
                                     <DecryptedText
-                                          text="[0K] "
+                                          text="[ 0K ] "
                                           delay={400}
                                           sequential
                                           useOriginalCharsOnly={false}
@@ -45,7 +45,7 @@ export function ArchiveSearch() {
 
                               <span className="log-line"><span className="ok-text">
                                     <DecryptedText
-                                          text="[0K] "
+                                          text="[ 0K ] "
                                           delay={200}
                                           sequential
                                           useOriginalCharsOnly={false}
@@ -61,7 +61,7 @@ export function ArchiveSearch() {
 
                               <span className="log-line"><span className="ok-text">
                                     <DecryptedText
-                                          text="[0K] "
+                                          text="[ 0K ] "
                                           sequential
                                           delay={600}
                                           useOriginalCharsOnly={false}
