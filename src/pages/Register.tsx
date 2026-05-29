@@ -7,7 +7,7 @@ import googleIcon from "/src/assets/icons/google.svg";
 import facebookIcon from "/src/assets/icons/facebook.svg";
 import appleIcon from "/src/assets/icons/apple.svg";
 import squares1 from '/src/assets/icons/squares1.png';
-import { StatusLog } from "../components/shared/statusLog";
+import { StatusLog } from "../components/shared/StatusLog";
 
 export function Register() {
   const navigate = useNavigate();

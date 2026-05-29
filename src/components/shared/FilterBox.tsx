@@ -1,6 +1,6 @@
 //import filterIcon from "/src/assets/icons/filter-icon.png";
 
-import { FiltersSelection } from "./filtersSelection";
+import { FiltersSelection } from "./FiltersSelection";
 
 export function FilterBox() {
 	return (
