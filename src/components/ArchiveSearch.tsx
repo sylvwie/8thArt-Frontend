@@ -1,6 +1,6 @@
 import {Logo} from './shared/Logo.tsx'
 import { SearchBar } from './shared/SearchBar.tsx';
-import { SuggestedGames } from "./SuggestedGames.tsx";
+// import { SuggestedGames } from "./SuggestedGames.tsx";
 import DecryptedText from './motion/DecryptedText.tsx';
 
 export function ArchiveSearch() {
@@ -103,14 +103,11 @@ export function ArchiveSearch() {
           </span>
         </div>
         <SearchBar />
-        <div className="showcase-side showcase-side-left">
+        {/* <div className="showcase-side showcase-side-left">
           <SuggestedGames />
           <SuggestedGames />
           <SuggestedGames />
-        </div>
-
-        <div className="showcase-side showcase-side-right">
-        </div>
+        </div> */}
 		
       </div>
     </div>

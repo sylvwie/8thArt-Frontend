@@ -1,50 +1,47 @@
-// #main-showcase {
-//   width: 100%;
-//   max-width: 1600px;
-//   margin: 0 auto;
-//   display: grid;
-//   grid-template-columns: 260px 1fr 260px;
-//   gap: 0;
-//   align-items: start;
-//   position: relative;
-// }
+#main-showcase {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	grid-template-columns: 1fr;
+}
 
-// .showcase-center {
-//   position: relative;
-//   z-index: 1;
+.showcase-center {
+	width: 100%;
+	max-width: 1600px;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
 
-//   display: flex;
-//   justify-content: center;
-// }
+.showcase-side {
+	position: absolute;
+	top: 0;
+	margin-top: 40px;
+	left: 22px;
 
-// .showcase-side {
-//   position: relative;
-//   z-index: 2;
-//   pointer-events: auto;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 24px;
-// }
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
 
-// .showcase-side-left {
-//   transform: translateX(80px) translateY(60px);
-// }
+	z-index: 10;
 
-// .showcase-side-right {
-//   transform: translateX(-80px) translateY(120px);
-// }
+	.suggested-game-box {
+		margin-top: -25px;
+	}
 
-// @media (max-width: 1200px) {
-//   #main-showcase {
-//     grid-template-columns: 1fr;
-//   }
+	.suggested-game-box:nth-child(2) {
+		margin-left: 60px;
+		z-index: 11;
+	}
 
-//   .showcase-side {
-//     display: none;
-//   }
-// }
+	.suggested-game-box:nth-child(3) {
+		z-index: 12;
+	}
+}
 
 
+// CONTENT
 #homepage-content-section {
   display: flex;
   flex-direction: column;
@@ -53,6 +50,7 @@
 
   margin-top: 24px;
   padding: 0 21px;
+  margin-bottom: 10vh;
 }
 
 .featuredstoriescard-title-text-container {
@@ -66,7 +64,7 @@
 	margin-bottom: 22px;
 
 	#featuredstoriescard-title-text {
-		font-family: "JetBrains Mono", monospace;
+		font-family: var(--font-primary);
 		font-size: 20px;
 		font-style: normal;
 		font-weight: 400;
@@ -79,7 +77,7 @@
 	}
 
 	#featuredstoriescard-title-desc {
-		font-family: "JetBrains Mono", monospace;
+		font-family: var(--font-primary);
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 400;
@@ -124,4 +122,58 @@
 .featuredstoriescard-frame {
   flex: 0 0 auto;
 	width: 350px;
+}
+
+/* Responsive */
+
+@media (max-width: 1280px) {
+	#main-showcase {
+		gap: 24px;
+	}
+
+	.showcase-suggested-games {
+		.suggested-game-box {
+			width: 220px;
+		}
+	}
+}
+
+// MOBILE
+@media (max-width: 1024px) {
+	#main-showcase {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.showcase-center {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.showcase-side {
+		position: static;
+		width: 100%;
+
+		display: flex;
+		flex-direction: row;
+
+		margin-top: 24px;
+		padding: 0 16px;
+
+		gap: 16px;
+
+		overflow-x: auto;
+		overflow-y: hidden;
+
+		justify-content: flex-start;
+
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
+	.showcase-side::-webkit-scrollbar {
+		display: none;
+	}
+
 }

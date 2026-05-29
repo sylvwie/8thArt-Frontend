@@ -1,5 +1,6 @@
 import { ArchiveSearch } from "../components/ArchiveSearch";
 import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components/FeaturedStoriesCard";
+import { SuggestedGames } from "../components/SuggestedGames";
 
 export function Dashboard() {
 
@@ -16,11 +17,14 @@ export function Dashboard() {
 
 		<div>
 			<div id="main-showcase">
-				<div className="showcase-side showcase-side-left"></div>
 				<div className="showcase-center">
 					<ArchiveSearch />
 				</div>
-				<div className="showcase-side showcase-side-right"></div>
+				<div className="showcase-side">
+					<SuggestedGames />
+					<SuggestedGames />
+					<SuggestedGames />
+				</div> 
 			</div>
 
 			<hr />
