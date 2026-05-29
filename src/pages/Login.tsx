@@ -7,6 +7,7 @@ import facebookIcon from "/src/assets/icons/facebook.svg";
 import appleIcon from "/src/assets/icons/apple.svg";
 import { useNavigate } from "react-router-dom";
 import squares1 from '/src/assets/icons/squares1.png';
+import { StatusLog } from "../components/shared/statusLog";
 
 
 export function Login() {
@@ -27,11 +28,7 @@ export function Login() {
           <div className="logo-wrapper">
             <img src={logoGif} className="logo-gif" alt="Logo Gif" />
 
-            <div className="auth-status-logs">
-              <span>STATUS: ONLINE</span>
-              <span>UPTIME: 99.9%</span>
-              <span>PING: 12ms</span>
-            </div>
+            <StatusLog />
 
           </div>
 
@@ -49,7 +46,7 @@ export function Login() {
             <div className="login-form">
               <div className="login-form-header">
                 <img src={squares1} alt="squares1 icon" className="squares1" />
-                <span className="title-exe">Login.exe</span>
+                <span className="auth-header-title">Login</span>
               </div>
 
               <div className="login-form-body">

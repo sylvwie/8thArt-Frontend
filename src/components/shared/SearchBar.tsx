@@ -4,6 +4,7 @@ import filterIcon from "/src/assets/icons/filter-icon.png";
 import crossRefIcon from "/src/assets/icons/cross-reference-empty.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
 import { CrossRefDropInBox } from "./CrossRefIDropInBox.tsx";
+import { StatusLog } from "./statusLog.tsx";
 
 export function SearchBar() {
   const [filterOpen, setFilterOpen] = useState(false);
@@ -34,29 +35,7 @@ export function SearchBar() {
     </div>
     {filterOpen && <FilterBox />}
     {crossRefBoxOpen && <CrossRefDropInBox />}
-    <div className="status-logs">
-      <span>STATUS: ONLINE</span>
-      <span>UPTIME: 99.9%</span>
-      <span>PING: 12ms</span>
-    </div>
+    <StatusLog />
   </>
   )
 }
-
-
-/*
-type SearchBarProps = {
-	borderStyle?: string
-}
-
-export function SearchBar({ borderStyle } : SearchBarProps) {
-	return <input className = "searchbar" style =
-	{
-		{
-			backgroundColor: '#ffffff',
-			borderColor: borderStyle ?? '#000000', // esempio di props
-			color: '#242424'
-		}
-	} type="text" placeholder="Search" />
-}
-*/

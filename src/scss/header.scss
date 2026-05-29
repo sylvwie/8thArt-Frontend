@@ -3,7 +3,6 @@ header {
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	list-style: none;
-	text-align: center;
 	width: 100%;
 	color: var(--orange);
 	align-items: center;
@@ -23,6 +22,22 @@ header {
 		&:nth-child(3){
 			justify-self: end;
 		}
+	}
+
+	// profile button and dropdown
+	.profile-wrapper {
+		position: relative;
+	}
+
+	.profile-dropdown {
+		position: absolute;
+		top: 100%;
+		right: 0;
+
+		margin-top: 10px;
+		// margin-top: 30px;
+
+		z-index: 2000;
 	}
 
 	// Navbar container
@@ -81,7 +96,8 @@ header {
 }
 
 
-// HEADER MOBILE
+// --------------------------------------------------------
+// RESPONSIVE MOBILE
 
 // 844
 @media (max-width: 844px) {

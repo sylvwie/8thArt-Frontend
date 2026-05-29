@@ -7,6 +7,7 @@ import googleIcon from "/src/assets/icons/google.svg";
 import facebookIcon from "/src/assets/icons/facebook.svg";
 import appleIcon from "/src/assets/icons/apple.svg";
 import squares1 from '/src/assets/icons/squares1.png';
+import { StatusLog } from "../components/shared/statusLog";
 
 export function Register() {
   const navigate = useNavigate();
@@ -25,11 +26,7 @@ export function Register() {
           <div className="logo-wrapper">
             <img src={logoGif} className="logo-gif" alt="Logo Gif" />
 
-            <div className="status-logs">
-              <span>STATUS: ONLINE</span>
-              <span>UPTIME: 99.9%</span>
-              <span>PING: 12ms</span>
-            </div>
+            <StatusLog />
           </div>
 
           <div id="register-form-container">
@@ -38,7 +35,7 @@ export function Register() {
             <div className="register-form">
               <div className="register-form-header">
                 <img src={squares1} alt="squares1 icon" className="squares1" />
-                <span className="title-exe">Register.exe</span>
+                <span className="auth-header-title">Register</span>
               </div>
 
               <div className="register-form-body">
