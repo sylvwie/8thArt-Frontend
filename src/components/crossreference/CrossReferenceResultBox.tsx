@@ -26,26 +26,35 @@ export function CrossReferenceResultBox() {
 				<div className="cross-reference-result-upper-content-info">
 					{/* develper */}
 					<div className="cross-reference-result-upper-content-info-developer">
+						<span>[ DEVELOPER ]</span>
 					</div>
 
 					{/* genre */}
 					<div className="cross-reference-result-upper-content-info-genre">
+						<span>[ GENRE ]</span>
 					</div>
 
 					{/* platforms */}
 					<div className="cross-reference-result-upper-content-info-platforms">
+						<span>[ PLATFORMS ]</span>
+						<span className="platforms-list"></span>
 					</div>
 
 					{/* synopsis */}
 					<div className="cross-reference-result-upper-content-info-synopsis">
+						<span>[ SYNOPSIS ]</span>
+						<p className="synopsis"></p>
 					</div>
 
 					{/* release */}
 					<div className="cross-reference-result-upper-content-info-release">
+						<span>[ RELEASE ]</span>
+						<span className="release-date"></span>
 					</div>
 
 					{/* key feature */}
 					<div className="cross-reference-result-upper-content-info-keyfeature">
+						<span>[ KEY FEATURE ]</span>
 					</div>
 				
 					{/* palette */}
@@ -71,7 +80,7 @@ export function CrossReferenceResultBox() {
 				{/* analysis report - right */}
 				<div className="cross-reference-result-lower-content-analysis">
 					{/* visual composition */}
-					
+
 					{/* technical markers  */}
 
 					{/* identified elements */}
