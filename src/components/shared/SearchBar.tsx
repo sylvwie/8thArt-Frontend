@@ -3,7 +3,7 @@ import { useState } from 'react';
 import filterIcon from "/src/assets/icons/filter-icon.png";
 import crossRefIcon from "/src/assets/icons/cross-reference-empty.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
-import { CrossRefDropInBox } from "./CrossRefIDropInBox.tsx";
+import { CrossRefDropInBox } from "../crossreference/CrossRefIDropInBox.tsx";
 import { StatusLog } from "./StatusLog.tsx";
 
 export function SearchBar() {

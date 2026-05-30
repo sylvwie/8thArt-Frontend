@@ -1,9 +1,18 @@
-import { ArchiveSearch } from "../components/ArchiveSearch";
-import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components/FeaturedStoriesCard";
-import { SuggestedGames } from "../components/SuggestedGames";
+import { useShowcaseStore } from "../store/useShowcaseStore";
 import gameCoverTemplate from "/src/assets/template/game-cover-template.png";
 
+import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components/FeaturedStoriesCard";
+import { SuggestedGames } from "../components/SuggestedGames";
+
+import { ArchiveSearch } from "../components/ArchiveSearch";
+import { CrossSearchBox } from "../components/crossreference/CrossSearchUpload";
+import { CrossSearchScanning } from "../components/crossreference/CrossSearchScanning";
+import { CrossSearchResult } from "../components/crossreference/CrossSearchResult";
+
 export function Dashboard() {
+
+	const view = useShowcaseStore((s) => s.view);
+	const hideSuggestedGames = useShowcaseStore((s) => s.ui.hideSuggestedGames);
 
 	const cardList: FeaturedStoriesShowcase[] = [
 		{ tag: "Y2K", articleTitle: "Y2K Aesthetic: The Retro-Future of Gaming", gameCoverImage: gameCoverTemplate },
@@ -19,12 +28,26 @@ export function Dashboard() {
 		<div>
 			<div id="main-showcase">
 				<div className="showcase-center">
-					<ArchiveSearch />
-				</div>
+
+				{view.screen === "archive-search" && <ArchiveSearch />}
+
+				{view.screen === "cross-search" && (
+					<>
+						{view.step === "uploading" && <CrossSearchBox />}
+						{view.step === "scanning" && <CrossSearchScanning />}
+						{view.step === "result" && <CrossSearchResult />}
+					</>
+				)}
+
+			</div>
 				<div className="showcase-side">
-					<SuggestedGames />
-					<SuggestedGames />
-					<SuggestedGames />
+					{!hideSuggestedGames && (
+						<>
+							<SuggestedGames />
+							<SuggestedGames />
+							<SuggestedGames />
+						</>
+					)}
 				</div> 
 			</div>
 

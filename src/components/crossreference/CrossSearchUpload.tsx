@@ -1,11 +1,16 @@
-import DecryptedText from "./motion/DecryptedText";
-import { Logo } from "./shared/Logo";
-import { StatusLog } from "./shared/StatusLog";
+import { useShowcaseStore } from "../../store/useShowcaseStore";
+
 import closeIcon from "/src/assets/icons/close-icon.svg";
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 import crossRefEmpty from "/src/assets/icons/cross-reference-empty.png";
+
+import DecryptedText from "../motion/DecryptedText";
+import { Logo } from "../shared/Logo";
+import { StatusLog } from "../shared/StatusLog";
  
  export function CrossSearchBox() {
+	const setStep = useShowcaseStore((s) => s.setStep);
+	const goToArchive = useShowcaseStore((s) => s.goToArchive);
 	return (
 		<div className="cross-search-section">
 				<div className="cross-search-container">
@@ -40,7 +45,9 @@ import crossRefEmpty from "/src/assets/icons/cross-reference-empty.png";
 						<span id="cross-search-header-text"> [ ANALYSIS HUB ]</span>
 						<div id="cross-search-header-buttons">
 							<button id="cross-search-reset-button">RESET</button>
-							<button id="cross-search-close-button"><img src={closeIcon} alt="Close" /></button>
+							<button id="cross-search-close-button" onClick={goToArchive}>
+								<img src={closeIcon} alt="Close" />
+							</button>
 						</div>
 					</div>
 
@@ -48,7 +55,10 @@ import crossRefEmpty from "/src/assets/icons/cross-reference-empty.png";
 						<img src={crossRefEmpty} alt="Cross Reference Empty" />
 						<div id="cross-search-body-text-container">
 							<span id="cross-search-box-body-text"> [ DROP IMAGE ALPHA-PATTERN ]</span>
-							<span>or click to browse</span>
+
+							<button onClick={() => setStep("scanning")}>
+								<span>Click to Start Scanning</span>
+							</button>
 						</div>
 					</div>
 				</div>

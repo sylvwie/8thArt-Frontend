@@ -1,7 +1,11 @@
+import { useShowcaseStore } from '../../store/useShowcaseStore';
+
 import crossrefDropInBoxIcon from '/src/assets/icons/cross-reference-empty.png';
 import squares2 from '/src/assets/icons/squares2.png';
 
 export function CrossRefDropInBox() {
+	const goToCrossSearch = useShowcaseStore((s) => s.goToCrossSearch);
+
   return (
 	<div id="crossref-dropin-wrapper">
 		<div id="crossref-dropin-container">
@@ -18,7 +22,12 @@ export function CrossRefDropInBox() {
 				<div id="crossref-dropin-body-right">
 					<div id="crossref-dropin-dropzone">
 						<img src={crossrefDropInBoxIcon} alt="crossref icon" id="crossref-dropin-box-icon" />
-						<button id="crossref-dropin-dropzone-text"> [ TRY ME! ] </button>
+						<button
+							id="crossref-dropin-dropzone-text"
+							onClick={goToCrossSearch}
+						>
+							[ TRY ME! ]
+						</button>
 					</div>
 				</div>
 			</div>

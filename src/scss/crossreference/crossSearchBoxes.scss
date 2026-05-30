@@ -1,3 +1,5 @@
+// Cross Search UPLOAD + SCANNING + RESULT 
+
 // Section
 .cross-search-section {
   display: flex;
@@ -247,6 +249,11 @@
             text-transform: uppercase;
           }
 
+          button {
+            background-color: transparent;
+            border-color: transparent;
+          }
+
           span:last-child {
             font-family: var(--font-primary);
             font-size: 12px;
@@ -296,6 +303,24 @@
             letter-spacing: 0.06em;
             text-transform: uppercase;
           }
+
+          button {
+            background-color: transparent;
+            border-color: transparent;
+
+            span:last-child {
+              color: var(--white);
+              font-family: var(--font-primary);
+              font-size: 12px;
+              letter-spacing: 0.04em;
+              opacity: 0.75;
+            }
+            
+            span:last-child:hover {
+            opacity: 0.9;
+            cursor: pointer;
+          }
+          }
         }
         // inserire la barra di caricamento "progress-bar" !!!
       }
@@ -311,7 +336,6 @@
         align-items: center;
         justify-content: center;
         background-color: transparent;
-        // il resto del contenuto di questa div si trova in crossReferenceResultBox.scss
       }
     }
   }

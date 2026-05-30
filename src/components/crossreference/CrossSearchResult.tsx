@@ -1,11 +1,14 @@
-import { CrossReferenceResultbox } from "./CrossReferenceResultBox";
-import DecryptedText from "./motion/DecryptedText";
-import { Logo } from "./shared/Logo";
-import { StatusLog } from "./shared/StatusLog";
+import { useShowcaseStore } from "../../store/useShowcaseStore";
+
 import closeIcon from "/src/assets/icons/close-icon.svg";
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
+import DecryptedText from "../motion/DecryptedText";
+import { Logo } from "../shared/Logo";
+import { StatusLog } from "../shared/StatusLog";
+import { CrossReferenceResultBox } from "./CrossReferenceResultBox";
  
  export function CrossSearchResult() {
+	const goToArchive = useShowcaseStore((s) => s.goToArchive);
 	return (
 		<div className="cross-search-section">
 				<div className="cross-search-container">
@@ -21,7 +24,7 @@ import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 									></DecryptedText>
 							</span>
 
-							<span id="img-received-text-alt">
+							<span id="img-received-text">
 								<DecryptedText
 										text="Image received..."
 										sequential
@@ -89,13 +92,17 @@ import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 				<div className="cross-search-container">
 				<img id="special-background" src={specialBgAscii} alt="Special Background" />
 
-					<div id="cross-search-result-header">
-						<button id="cross-search-result-close-button"><img src={closeIcon} alt="Close" /></button>
+					<div className="cross-search-header">
+						<span id="cross-search-header-text"></span>
+						<div id="cross-search-header-buttons">
+							<button id="cross-search-reset-button">RESET</button>
+							<button id="cross-search-close-button" onClick={goToArchive}>
+								<img src={closeIcon} alt="Close" />
+							</button>
+						</div>
 					</div>
-
-					<div className="cross-search-result-body">
-						<CrossReferenceResultbox />
-					</div>
+					{/* CONTENUTO DEL RISULTATO */}
+					<CrossReferenceResultBox></CrossReferenceResultBox>
 				</div>
 			</div>	
 				<StatusLog></StatusLog>

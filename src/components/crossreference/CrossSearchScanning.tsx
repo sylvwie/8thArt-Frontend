@@ -1,11 +1,16 @@
-import DecryptedText from "./motion/DecryptedText";
-import { Logo } from "./shared/Logo";
-import { StatusLog } from "./shared/StatusLog";
+import { useShowcaseStore } from "../../store/useShowcaseStore";
+
 import closeIcon from "/src/assets/icons/close-icon.svg";
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 import crossRefFull from "/src/assets/icons/cross-reference-full.png";
+
+import DecryptedText from "../motion/DecryptedText";
+import { Logo } from "../shared/Logo";
+import { StatusLog } from "../shared/StatusLog";
  
  export function CrossSearchScanning() {
+	const setStep = useShowcaseStore((s) => s.setStep);
+	const goToArchive = useShowcaseStore((s) => s.goToArchive);
 	return (
 		<div className="cross-search-section">
 				<div className="cross-search-container">
@@ -93,7 +98,9 @@ import crossRefFull from "/src/assets/icons/cross-reference-full.png";
 						<span id="cross-search-header-text"> [ ANALYSIS HUB ]</span>
 						<div id="cross-search-header-buttons">
 							<button id="cross-search-reset-button">RESET</button>
-							<button id="cross-search-close-button"><img src={closeIcon} alt="Close" /></button>
+							<button id="cross-search-close-button" onClick={goToArchive}>
+								<img src={closeIcon} alt="Close" />
+							</button>
 						</div>
 					</div>
 
@@ -101,6 +108,9 @@ import crossRefFull from "/src/assets/icons/cross-reference-full.png";
 						<img src={crossRefFull} alt="Cross Reference Full" />
 						<div id="cross-search-body-text-container">
 							<span id="cross-search-scanning-body-text"> [ ANALYZING PATTERN DATA  ]</span>
+							<button onClick={() => setStep("result")}>
+								<span>See result</span>
+							</button>
 							{/* <span> Inserire barra di caricamento "progress-bar" </span> */}
 						</div>
 					</div>

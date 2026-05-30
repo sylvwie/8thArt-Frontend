@@ -15,9 +15,12 @@
 @use './profileBox.scss';
 @use './gameCard.scss';
 @use './featuredStoriesCard.scss';
-@use './crossRefDropInBox.scss';   
 @use './thankYouPopUp.scss';
-@use './crossSearchBoxes.scss';
+
+// Cross Reference
+@use './crossreference/crossSearchBoxes.scss'; // cross search upload + scanning + result
+@use './crossreference/crossRefDropInBox.scss';  // cross ref drop in box
+@use './crossreference/crossReferenceResultBox.scss'; // cross ref result box
 
 :root {
 	--font-primary : "JetBrains Mono";
