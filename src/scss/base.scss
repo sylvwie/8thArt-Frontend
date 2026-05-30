@@ -18,9 +18,9 @@
 @use './thankYouPopUp.scss';
 
 // Cross Reference
-@use './crossreference/crossSearchBoxes.scss'; // cross search upload + scanning + result
-@use './crossreference/crossRefDropInBox.scss';  // cross ref drop in box
-@use './crossreference/crossReferenceResultBox.scss'; // cross ref result box
+@use './crossreference_style/crossSearchBoxes.scss'; // cross search upload + scanning + result
+@use './crossreference_style/crossRefDropInBox.scss';  // cross ref drop in box
+@use './crossreference_style/crossReferenceResultBox.scss'; // cross ref result box
 
 :root {
 	--font-primary : "JetBrains Mono";
