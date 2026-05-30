@@ -1,4 +1,4 @@
-import viewGameIcon from '/src/assets/icons/view-game-icon.svg';
+import { ViewGameBtn } from "../shared/viewGameBtn.tsx";
 
 // Questo è box dei singoli giochi visibile nella sezione Games del Developer e della Console
 
@@ -20,8 +20,8 @@ export type GameInfo = {
 
 export function GameCard({ game }: GameCardProps) {
 	return (
-		<div id="gamecard-wrapper">
-			<div id="gamecard-container">
+		<div className="gamecard-wrapper">
+			<div className="gamecard-container">
 
 				<div id="gamecard-cover-container">
 					<button className="gamecard-rating">{game.rating}</button>
@@ -43,10 +43,7 @@ export function GameCard({ game }: GameCardProps) {
 						{/* componente genre / tag */}
 					</div>
 
-					<button id="gamecard-view-game-btn">
-						<img className='gamecard-view-game-icon' src={viewGameIcon} alt="View Game" />
-						[ View Game ]
-					</button>
+					<ViewGameBtn/>
 				</div>
 
 			</div>

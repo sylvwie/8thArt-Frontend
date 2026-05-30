@@ -1,17 +1,14 @@
 // Pages
-@use './pages_style/dashboard.scss';
 @use './pages_style/login.scss';
 @use './pages_style/register.scss';
+@use './pages_style/dashboard.scss';
 @use './pages_style/about.scss';
 
 // Components
 @use './buttons.scss';
 @use './header.scss';
 @use './footer.scss';
-@use './archiveSearch.scss';
-@use './searchBar.scss';
 @use './suggestedGames.scss';
-@use './filterBox.scss';
 @use './profileBox.scss';
 @use './featuredStoriesCard.scss';
 @use './thankYouPopUp.scss';
@@ -20,6 +17,13 @@
 @use './crossreference_style/crossSearchBoxes.scss'; // cross search upload + scanning + result
 @use './crossreference_style/crossRefDropInBox.scss';  // cross ref drop in box
 @use './crossreference_style/crossReferenceResultBox.scss'; // cross ref result box
+
+// Search
+@use './archiveSearch.scss';
+@use './filterBox.scss';
+@use './searchBar.scss';
+@use './searchResults.scss'; // risultati di ricerca sotto la searchbar 
+
 
 // Archive Components
 @use './archive_style/gameCard.scss';
@@ -56,6 +60,7 @@
 
 main {
     min-height: calc(100vh - 79px - 204px);
+    padding-top: 80px;
 }
 
 body {
