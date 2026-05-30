@@ -1,4 +1,4 @@
-import { ViewGameBtn } from "../shared/viewGameBtn.tsx";
+import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 
 // Questo è box dei singoli giochi visibile nella sezione Games del Developer e della Console
 

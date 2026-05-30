@@ -1,6 +1,6 @@
 // Box di risultato inserito nel container CrossSearchResult
 import templateCover from "/src/assets/template/game-cover-template.png";
-import { ViewGameBtn } from "../shared/viewGameBtn.tsx";
+import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 
 export function CrossReferenceResultBox() {
 	return (
