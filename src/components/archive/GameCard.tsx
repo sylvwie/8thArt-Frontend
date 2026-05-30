@@ -44,7 +44,7 @@ export function GameCard({ game }: GameCardProps) {
 					</div>
 
 					<button id="gamecard-view-game-btn">
-						<img id='gamecard-view-game-icon' src={viewGameIcon} alt="View Game" />
+						<img className='gamecard-view-game-icon' src={viewGameIcon} alt="View Game" />
 						[ View Game ]
 					</button>
 				</div>

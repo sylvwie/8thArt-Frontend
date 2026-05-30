@@ -13,7 +13,6 @@
 @use './suggestedGames.scss';
 @use './filterBox.scss';
 @use './profileBox.scss';
-@use './archive_style/gameCard.scss';
 @use './featuredStoriesCard.scss';
 @use './thankYouPopUp.scss';
 
@@ -21,6 +20,9 @@
 @use './crossreference_style/crossSearchBoxes.scss'; // cross search upload + scanning + result
 @use './crossreference_style/crossRefDropInBox.scss';  // cross ref drop in box
 @use './crossreference_style/crossReferenceResultBox.scss'; // cross ref result box
+
+// Archive Components
+@use './archive_style/gameCard.scss';
 
 :root {
 	--font-primary : "JetBrains Mono";
