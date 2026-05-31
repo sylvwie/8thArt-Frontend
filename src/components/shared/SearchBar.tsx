@@ -27,17 +27,14 @@ export function SearchBar() {
     };
   }, [query]);
 
-  // Whenever debouncedQuery changes, simulate an API call
   useEffect(() => {
-    if (debouncedQuery) {
-      (async ()=>{
-        let r = await fetch(`https://bf7b645636fe.dverso.io/api/games/games/search/?q=${encodeURIComponent(debouncedQuery)}`);
-        //let r = await fetch(`/api/mock/search.json`);
-        let json = await r.json();
-        setResults(json.results);
-      })()
-      // Make API call here
-    }
+    if (!debouncedQuery) return;
+    const controller = new AbortController();
+    fetch(`https://cqft3ppix5lafhomkq83xeeb.204.168.159.152.sslip.io/api/games/games/search/?q=${encodeURIComponent(debouncedQuery)}`, { signal: controller.signal })
+      .then(r => r.json())
+      .then(json => setResults(json.results))
+      .catch(e => { if (e.name !== 'AbortError') throw e; });
+    return () => controller.abort();
   }, [debouncedQuery]);
 
   return (
