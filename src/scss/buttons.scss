@@ -1,4 +1,4 @@
-// Generic Buttons
+// Buttons
 a {
 	text-decoration: none;
 	color: inherit;
@@ -14,5 +14,44 @@ a {
 	&:hover {
 		background-color: var(--blue);
 		color: var(--black);
+	}
+}
+
+/* VIEW GAME BTN */
+
+.view-game-button {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding: 8px 0 0 0;
+
+	#gamecard-view-game-btn {
+		display: flex;
+		width: 231px;
+		padding: 11px 0;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+		border: 1px solid var(--blue);
+		background: var(--black);
+		color: var(--blue);
+		border-radius: var(--border-radius);
+		font-family: var(--font-primary);
+		font-size: var(--font-medium);
+		font-weight: var(--font-weight);
+		cursor: pointer;
+		transition: color var(--timing) var(--easing);
+
+		&:hover {
+			background: var(--blue);
+			color: var(--black);
+			height: 100%;
+		}
+
+		.gamecard-view-game-icon {
+			width: 18px;
+			height: 18px;
+			object-fit: contain;
+		}
 	}
 }
