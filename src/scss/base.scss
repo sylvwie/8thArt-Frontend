@@ -12,6 +12,8 @@
 @use './profileBox.scss';
 @use './featuredStoriesCard.scss';
 @use './thankYouPopUp.scss';
+@use './archiveSearch.scss';
+@use './filterBox.scss';
 
 // Cross Reference
 @use './crossreference_style/crossSearchBoxes.scss'; // cross search upload + scanning + result
@@ -19,10 +21,8 @@
 @use './crossreference_style/crossReferenceResultBox.scss'; // cross ref result box
 
 // Search
-@use './archiveSearch.scss';
-@use './filterBox.scss';
-@use './searchBar.scss';
-@use './searchResults.scss'; // risultati di ricerca sotto la searchbar 
+@use './search_style/searchBar.scss';
+@use './search_style/searchResults.scss'; // risultati di ricerca sotto la searchbar 
 
 
 // Archive Components

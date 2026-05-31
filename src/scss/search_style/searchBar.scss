@@ -122,3 +122,16 @@
         opacity: 1;
       }
     }
+
+// Loading Text
+.search-loading {
+    font-family: var(--font-primary);
+    height: 25px;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    margin: 10px;
+    color: var(--white);
+    font-size: 16px;
+    opacity: 0.85;
+}
