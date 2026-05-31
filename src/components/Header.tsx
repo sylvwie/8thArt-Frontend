@@ -1,30 +1,55 @@
-import { Link } from "react-router-dom"
-import { Navbar } from "./Navbar"
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import { Navbar } from "./Navbar";
 import { NotLoggedInProfileBox } from "./NotLoggedInProfile";
-// import { LoggedInProfileBox } from "./LoggedInProfile";
+
+import ProfileIcon from "/src/assets/icons/profile-icon.svg";
+import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.png";
+// import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.svg";
 
 export function Header() {
-const [profileBoxOpen, setProfileBoxOpen] = useState(false);
-	return <>
-			<header>
-				<li ><Link to={'/dashboard'}>&gt;_8thart v1.0.0</Link></li> 
-				<Navbar/> 
+	const [profileBoxOpen, setProfileBoxOpen] = useState(false);
 
-				<li
-					className="btn profile-wrapper"
-						onMouseEnter={() => setProfileBoxOpen(true)}
-						onMouseLeave={() => setProfileBoxOpen(false)}
+	return (
+		<>
+			<header>
+				<Link id="header-logo" to="/dashboard">
+					&gt;_8thart v1.0.0
+				</Link>
+
+				<Navbar />
+
+				<div
+					id="profile-btn-wrapper"
+					onMouseEnter={() => setProfileBoxOpen(true)}
+					onMouseLeave={() => setProfileBoxOpen(false)}
 				>
-					<Link to={'/profile'}>Profile</Link>
+					<Link id="profile-btn-container" to="/profile">
+						<div className="profile-icon">
+							<img
+								className="icon-default"
+								src={ProfileIcon}
+								alt="Profile"
+							/>
+
+							<img
+								className="icon-hover"
+								src={ProfileIconVariant}
+								alt="Profile"
+							/>
+						</div>
+
+						<span>Profile</span>
+					</Link>
 
 					{profileBoxOpen && (
 						<div className="profile-dropdown">
 							<NotLoggedInProfileBox />
 						</div>
 					)}
-				</li>
+				</div>
 			</header>
 		</>
+	);
 }
-
