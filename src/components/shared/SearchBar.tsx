@@ -26,16 +26,18 @@ export function SearchBar() {
   //   };
   // }, [query]);
 
-  // useEffect(() => {
-  //   if (debouncedQuery) {
-  //     (async ()=>{
-  //       const r = await fetch(`https://cqft3ppix5lafhomkq83xeeb.dverso.io/api/games/games/search/?q=${encodeURIComponent(debouncedQuery)}`);
-  //       const json = await r.json();
-  //       setResults(json.results);
-  //     })()
-  //     // Make API call here
-  //   }
-  // }, [debouncedQuery]);
+
+  /*
+  useEffect(() => {
+    if (!debouncedQuery) return;
+    const controller = new AbortController();
+    fetch(`https://cqft3ppix5lafhomkq83xeeb.204.168.159.152.sslip.io/api/games/games/search/?q=${encodeURIComponent(debouncedQuery)}`, { signal: controller.signal })
+      .then(r => r.json())
+      .then(json => setResults(json.results))
+      .catch(e => { if (e.name !== 'AbortError') throw e; });
+    return () => controller.abort();
+  }, [debouncedQuery]);
+  */
 
   return (
     <>
