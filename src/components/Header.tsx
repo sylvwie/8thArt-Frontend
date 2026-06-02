@@ -6,6 +6,7 @@ import { NotLoggedInProfileBox } from "./NotLoggedInProfile";
 
 import ProfileIcon from "/src/assets/icons/profile-icon.svg";
 import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.png";
+// import ProfileIcon from "/src/assets/icons/profile-icon.png";
 // import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.svg";
 
 export function Header() {
@@ -14,7 +15,7 @@ export function Header() {
 	return (
 		<>
 			<header>
-				<Link id="header-logo" to="/dashboard">
+				<Link id="header-logo" to="/">
 					&gt;_8thart v1.0.0
 				</Link>
 

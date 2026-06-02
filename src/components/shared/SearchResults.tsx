@@ -1,10 +1,11 @@
-import type { SearchResult } from "../search/Search";
+import { Link } from "react-router-dom";
+import type { SearchResultProps } from "../search/SearchResultProps";
 
-type Props = {
-  results: SearchResult[];
+type SearchProps = {
+  results: SearchResultProps[];
 };
 
-export function SearchResults({ results }: Props) {
+export function SearchResults({ results }: SearchProps) {
   return (
     <div id="search-results-wrapper">
       {results.map((result) => (
@@ -19,7 +20,9 @@ export function SearchResults({ results }: Props) {
             </div>
             <div className="search-result-info">
               <span className="search-result-title">
-                {result.title}
+                <Link to={`/game-detail`}>
+                  {result.title}
+                </Link>
               </span>
               <p className="search-result-description">
                 this is where the description of the game belongs, the real description will be added later when the api will be ready, for now let's just pretend this is the game description. Ok it's not really a description, but it will be maybe.

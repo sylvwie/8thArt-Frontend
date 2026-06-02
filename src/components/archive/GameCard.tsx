@@ -47,6 +47,7 @@ export function GameCard({ game }: GameCardProps) {
 				</div>
 
 			</div>
+			{/* aggiungo special background*/}
 		</div>
 	)
 }

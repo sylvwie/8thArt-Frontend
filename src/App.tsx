@@ -10,6 +10,8 @@ import { Profile } from './pages/Profile'
 import { Footer } from './components/Footer.tsx'
 import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
 import { Register } from './pages/Register.tsx'
+import { GameDetail } from './pages/GameDetail.tsx'
+import { FeaturedStory } from './pages/FeaturedStory.tsx'
 
 export default function App() {
 	const router = createBrowserRouter([
@@ -47,6 +49,14 @@ export default function App() {
 				{
 					path: 'profile',
 					element: <Profile />
+				},
+				{
+					path: 'game-detail',
+					element: <GameDetail />
+				},
+				{
+					path: 'featured-story',
+					element: <FeaturedStory />
 				},
 			]
 		},

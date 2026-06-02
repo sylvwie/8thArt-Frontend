@@ -1,10 +1,12 @@
-//import { ArchiveSearch } from "../components/ArchiveSearch";
-import { SearchBar } from "../components/shared/SearchBar";
+import { ArchiveSearchBar } from "../components/shared/ArchiveSearchBar.tsx";
 
 export function Archive() {
 
 	return <>
-			<h1>Archive</h1>
-			<SearchBar></SearchBar>
+			<div className="archive-wrapper">
+				<div className="archive-searchbar-container">
+					<ArchiveSearchBar />
+				</div>
+			</div>
 		</>
 }

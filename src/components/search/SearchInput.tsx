@@ -1,4 +1,4 @@
-// DA IMPLEMENTARE IN FUTURO IN SearchBar.tsx, ora è tutto già all0interno di SearchBar.tsx
+// DA IMPLEMENTARE IN FUTURO IN SearchBar.tsx, ora è tutto già all'interno di SearchBar.tsx
 
 // import searchIcon from "/src/assets/icons/search-icon.svg";
 

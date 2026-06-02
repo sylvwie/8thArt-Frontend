@@ -3,6 +3,7 @@
 @use './pages_style/register.scss';
 @use './pages_style/dashboard.scss';
 @use './pages_style/about.scss';
+@use './pages_style/archive.scss';
 
 // Components
 @use './buttons.scss';
@@ -21,12 +22,13 @@
 @use './crossreference_style/crossReferenceResultBox.scss'; // cross ref result box
 
 // Search
-@use './search_style/searchBar.scss';
+@use './search_style/searchBar.scss'; // barra di ricerca e componenti figlie
 @use './search_style/searchResults.scss'; // risultati di ricerca sotto la searchbar 
 
 
 // Archive Components
 @use './archive_style/gameCard.scss';
+@use './archive_style/gameDetail.scss';
 
 :root {
 	--font-primary : "JetBrains Mono";
@@ -90,6 +92,18 @@ canvas {
   height: 100%;
   pointer-events: none;
   z-index: 0;
+}
+
+// Global archive search bar 
+.archive-searchbar-container{
+	max-width: 848px;
+	width: 100%;
+	padding-left: 3rem;
+
+	#filter-box-wrapper {
+		margin-top: 10px;
+
+	}
 }
 
 // linea
