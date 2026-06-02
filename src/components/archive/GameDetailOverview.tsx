@@ -1,13 +1,14 @@
 import arrowLeft from "../../assets/icons/arrow-left.png";
 import arrowRight from "../../assets/icons/arrow-right.png";
+import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
+import saveIcon from "/src/assets/icons/save-icon.png"; 
+// import saveIconVariant from "/src/assets/icons/save-icon-variant.png"; 
 
 export function GameDetailOverview() {
 	return (
 		<div className="game-overview">
 
-			{/* ===================================================== */}
 			{/* MAIN INFO */}
-			{/* ===================================================== */}
 
 			<div className="game-overview__main">
 
@@ -25,62 +26,63 @@ export function GameDetailOverview() {
 						</button>
 					</div>
 
-					<div className="game-overview__block">
-						<span className="game-overview__label">
-							[ GENRE ]
-						</span>
+					<div className= "game-overview__blocks"> 
+						<div className="game-overview__block">
+							<span className="game-overview__label">
+								[ GENRE ]
+							</span>
 
-						<div className="game-overview__tags">
-							<button className="game-overview__tag">genre</button>
-							<button className="game-overview__tag">genre</button>
-							<button className="game-overview__tag">genre</button>
-							<button className="game-overview__tag">genre</button>
+							<div className="game-overview__tags">
+								<button className="game-overview__tag">genre</button>
+								<button className="game-overview__tag">genre</button>
+								<button className="game-overview__tag">genre</button>
+								<button className="game-overview__tag">genre</button>
+							</div>
+						</div>
+
+						<div className="game-overview__block">
+							<span className="game-overview__label">
+								[ PLATFORMS ]
+							</span>
+
+							<div className="game-overview__tags">
+								<button className="game-overview__tag">platform</button>
+								<button className="game-overview__tag">platform</button>
+								<button className="game-overview__tag">platform</button>
+								<button className="game-overview__tag">platform</button>
+							</div>
+						</div>
+
+						<div className="game-overview__block">
+							<span className="game-overview__label">
+								[ DEVELOPER ]
+							</span>
+
+							<span className="game-overview__value">
+								developer
+							</span>
+						</div>
+
+						<div className="game-overview__block">
+							<span className="game-overview__label">
+								[ RELEASE ]
+							</span>
+
+							<span className="game-overview__value">
+								release date
+							</span>
+						</div>
+
+						<div className="game-overview__block">
+							<span className="game-overview__label">
+								[ DESCRIPTION ]
+							</span>
+
+							<p className="game-overview__description">
+								description text
+							</p>
 						</div>
 					</div>
-
-					<div className="game-overview__block">
-						<span className="game-overview__label">
-							[ PLATFORMS ]
-						</span>
-
-						<div className="game-overview__tags">
-							<button className="game-overview__tag">platform</button>
-							<button className="game-overview__tag">platform</button>
-							<button className="game-overview__tag">platform</button>
-							<button className="game-overview__tag">platform</button>
-						</div>
-					</div>
-
-					<div className="game-overview__block">
-						<span className="game-overview__label">
-							[ DEVELOPER ]
-						</span>
-
-						<span className="game-overview__value">
-							developer
-						</span>
-					</div>
-
-					<div className="game-overview__block">
-						<span className="game-overview__label">
-							[ RELEASE ]
-						</span>
-
-						<span className="game-overview__value">
-							release date
-						</span>
-					</div>
-
-					<div className="game-overview__block">
-						<span className="game-overview__label">
-							[ DESCRIPTION ]
-						</span>
-
-						<p className="game-overview__description">
-							description text
-						</p>
-					</div>
-
 				</div>
 
 				{/* RIGHT COLUMN */}
@@ -129,9 +131,7 @@ export function GameDetailOverview() {
 
 			</div>
 
-			{/* ===================================================== */}
 			{/* COVERS */}
-			{/* ===================================================== */}
 
 			<section className="game-overview__section">
 
@@ -143,51 +143,49 @@ export function GameDetailOverview() {
 
 					<div className="game-overview__cover-card">
 						<span>Front Cover</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Inside Cover Left Flap</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Inside Cover Right Flap</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Back Cover</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Side</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Manual Front</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Manual Back</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Physical Game</span>
-						<img className="game-overview__cover-image" src="" alt="" />
+						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
 					</div>
 
 				</div>
 
 			</section>
 
-			{/* ===================================================== */}
 			{/* SCREENSHOTS */}
-			{/* ===================================================== */}
 
 			<section className="game-overview__section">
 
@@ -213,7 +211,7 @@ export function GameDetailOverview() {
 							/>
 
 							<button className="game-overview__save-button">
-								<img src="" alt="save" />
+								<img src={saveIcon} alt="save" />
 							</button>
 						</div>
 
@@ -236,9 +234,7 @@ export function GameDetailOverview() {
 
 			</section>
 
-			{/* ===================================================== */}
 			{/* ART BOOK */}
-			{/* ===================================================== */}
 
 			<section className="game-overview__section">
 
@@ -247,20 +243,16 @@ export function GameDetailOverview() {
 				</h3>
 
 				<div className="game-overview__artbook-grid">
-					<img className="game-overview__artbook-image" src="" alt="" />
-					<img className="game-overview__artbook-image" src="" alt="" />
-					<img className="game-overview__artbook-image" src="" alt="" />
-					<img className="game-overview__artbook-image" src="" alt="" />
-					<img className="game-overview__artbook-image" src="" alt="" />
-					<img className="game-overview__artbook-image" src="" alt="" />
-					<img className="game-overview__artbook-image" src="" alt="" />
+					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
+					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
+					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
+					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
+					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
 				</div>
 
 			</section>
 
-			{/* ===================================================== */}
 			{/* SIMILAR GAMES */}
-			{/* ===================================================== */}
 
 			<section className="game-overview__section">
 
@@ -269,7 +261,24 @@ export function GameDetailOverview() {
 				</h3>
 
 				<div className="game-overview__similar-games">
-					{/* future cards */}
+					<div>
+						{/* <GameCard /> */}
+					</div>
+					<div>
+						{/* <GameCard />  */}
+					</div>
+					<div>
+						{/* <GameCard />  */}
+					</div>
+					<div>
+						{/* <GameCard />  */}
+					</div>
+					<div>
+						{/* <GameCard />  */}
+					</div>
+					<div>
+						{/* <GameCard />  */}
+					</div>
 				</div>
 
 			</section>
