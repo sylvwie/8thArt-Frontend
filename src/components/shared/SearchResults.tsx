@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { SearchResultProps } from "../search/SearchResultProps";
+import { ViewGameBtn } from "./ViewGameBtn";
 
 type SearchProps = {
   results: SearchResultProps[];
@@ -28,6 +29,9 @@ export function SearchResults({ results }: SearchProps) {
                 this is where the description of the game belongs, the real description will be added later when the api will be ready, for now let's just pretend this is the game description. Ok it's not really a description, but it will be maybe.
                 {/* {result.description} */}
               </p>
+              <div className="view-game-button">
+                  <ViewGameBtn/>
+              </div>
             </div>
           </div>
         </div>

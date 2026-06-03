@@ -9,10 +9,10 @@ type GameCardProps = {
 export type GameInfo = {
 	rating: string;
 	coverImage: string;
-
+	tags: string;
 	title: string;
 	description: string;
-	genre: string;
+	genres: string[];
 	developer: string;
 	release: string;
 }
@@ -35,19 +35,20 @@ export function GameCard({ game }: GameCardProps) {
 					</div>
 
 					<div id="game-info-specifics">
-						<span className="gamecard-genre">{game.genre}</span>
+						<span className="gamecard-genre">{game.genres.join(", ")}</span>
 						<span className="gamecard-dev">{game.developer}</span>
 						<span className="gamecard-release">{game.release}</span>
 
-						<button className="gamecard-tags">TAG</button>
+						<button className="gamecard-tags">{game.tags}</button>
 						{/* componente genre / tag */}
 					</div>
 
-					<ViewGameBtn/>
+					<div className="view-game-button">
+						<ViewGameBtn/>
+					</div>
 				</div>
 
 			</div>
-			{/* aggiungo special background*/}
 		</div>
 	)
 }

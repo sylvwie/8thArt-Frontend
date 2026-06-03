@@ -2,9 +2,11 @@ import arrowLeft from "../../assets/icons/arrow-left.png";
 import arrowRight from "../../assets/icons/arrow-right.png";
 import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
 import saveIcon from "/src/assets/icons/save-icon.png"; 
+import {GameCard} from "./GameCard";
 // import saveIconVariant from "/src/assets/icons/save-icon-variant.png"; 
 
 export function GameDetailOverview() {
+
 	return (
 		<div className="game-overview">
 
@@ -248,6 +250,7 @@ export function GameDetailOverview() {
 					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
 					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
 					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
+					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
 				</div>
 
 			</section>
@@ -261,24 +264,26 @@ export function GameDetailOverview() {
 				</h3>
 
 				<div className="game-overview__similar-games">
-					<div>
-						{/* <GameCard /> */}
-					</div>
-					<div>
-						{/* <GameCard />  */}
-					</div>
-					<div>
-						{/* <GameCard />  */}
-					</div>
-					<div>
-						{/* <GameCard />  */}
-					</div>
-					<div>
-						{/* <GameCard />  */}
-					</div>
-					<div>
-						{/* <GameCard />  */}
-					</div>
+					<GameCard game={{
+						rating: "★ 9.4",
+						coverImage: gameCoverTemplate,
+						title: "Hollow Knight",
+						description: "Hollow Knight takes place in the ruined, insectoid kingdom of Hallownest. Its story follows The Knight as they uncover the truth of a supernatural, mind-controlling plague known as the Infection. The kingdom's fall, the origins of the plague, and the Knight's ultimate mission are deeply intertwined",
+						genres: ["Metroidvania", "Action", "Adventure"],
+						developer: "Team Cherry",
+						release: "24-02-2017",
+						tags: "Indie"
+					}} />
+					<GameCard game={{
+						rating: "★ 9.5",
+						coverImage: gameCoverTemplate,
+						title: "Hollow Knight: SilkSong",
+						description: "Silksong follows Hornet, the princess-protector of Hallownest, after she is captured and brought to the unfamiliar, song-haunted kingdom of Pharloom. Hornet must ascend to a gilded Citadel to uncover the truth behind her kidnapping, defeat the entity controlling the inhabitants, and ultimately seek her freedom.",
+						genres: ["Metroidvania", "Action", "Adventure"],
+						developer: "Team Cherry",
+						release: "04-09-2025",
+						tags: "Indie"
+					}} />
 				</div>
 
 			</section>

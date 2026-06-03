@@ -1,6 +1,9 @@
 import { GameDetailOverview } from "../components/archive/GameDetailOverview";
 import { ArchiveSearchBar } from "../components/shared/ArchiveSearchBar";
-import gameCoverTemplate from "/src/assets/template/game-cover-template.png";
+import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
+import overviewIcon from "/src/assets/icons/overview-icon.png";
+import galleryIcon from "/src/assets/icons/gallery-icon.png";
+import shopIcon from "/src/assets/icons/shop-icon.png";
 
 export function GameDetail() {
 	return (
@@ -38,14 +41,17 @@ export function GameDetail() {
 					{/* TABS */}
 					<div className="game-detail__tabs">
 						<button className="game-detail__tab game-detail__tab--active">
+							<img src={overviewIcon} alt="Overview" />
 							Overview
 						</button>
 
 						<button className="game-detail__tab game-detail__tab--active">
+							<img src={galleryIcon} alt="Gallery" />
 							Gallery
 						</button>
 
 						<button className="game-detail__tab game-detail__tab--active">
+							<img src={shopIcon} alt="Shop" />
 							Shop
 						</button>
 					</div>
