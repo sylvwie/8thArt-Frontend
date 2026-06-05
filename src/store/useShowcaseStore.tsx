@@ -1,6 +1,5 @@
-import { create } from "zustand";
-
 // STATE MANAGER FOR THE MAIN SHOWCASE COMPONENTS IN DASHBOARD
+import { create } from "zustand";
 
 export type ShowcaseScreen =
 	| "archive-search"
@@ -16,22 +15,27 @@ type ShowcaseStore = {
 	view: {
 		screen: ShowcaseScreen;
 		step: CrossSearchStep;
-		data: {
-			image?: File | null;
-			result?: unknown;
-		};
+			data: {
+				file?: File | null;
+				result?: unknown;
+			};
 	};
 
 	ui: {
 		hideSuggestedGames: boolean;
 	};
 
+	uploadProgress: number;
+
 	// navigation / actions
-	goToArchive: () => void;
-	goToCrossSearch: () => void;
+	setUploadProgress: (progress: number) => void;
+	resetUpload: () => void;
 
 	setStep: (step: CrossSearchStep) => void;
 	setData: (data: Partial<ShowcaseStore["view"]["data"]>) => void;
+
+	goToArchive: () => void;
+	goToCrossSearch: () => void;
 };
 
 export const useShowcaseStore = create<ShowcaseStore>((set) => ({
@@ -45,6 +49,23 @@ export const useShowcaseStore = create<ShowcaseStore>((set) => ({
 		hideSuggestedGames: false,
 	},
 
+	uploadProgress: 0,
+
+	setUploadProgress: (progress) =>
+		set({
+			uploadProgress: progress,
+		}),
+
+	resetUpload: () =>
+		set((state) => ({
+			uploadProgress: 0,
+			view: {
+				...state.view,
+				step: "uploading",
+				data: {},
+			},
+		})),
+
 	goToArchive: () =>
 		set({
 			view: {
@@ -55,6 +76,7 @@ export const useShowcaseStore = create<ShowcaseStore>((set) => ({
 			ui: {
 				hideSuggestedGames: false,
 			},
+			uploadProgress: 0,
 		}),
 
 	goToCrossSearch: () =>
@@ -67,6 +89,7 @@ export const useShowcaseStore = create<ShowcaseStore>((set) => ({
 			ui: {
 				hideSuggestedGames: true,
 			},
+			uploadProgress: 0,
 		}),
 
 	setStep: (step) =>

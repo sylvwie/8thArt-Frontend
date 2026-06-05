@@ -3,12 +3,22 @@ import { useShowcaseStore } from "../../store/useShowcaseStore";
 import closeIcon from "/src/assets/icons/close-icon.svg";
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 import DecryptedText from "../motion/DecryptedText";
+
 import { Logo } from "../shared/Logo";
 import { StatusLog } from "../shared/StatusLog";
 import { CrossReferenceResultBox } from "./CrossReferenceResultBox";
+//import { MediaPreview } from "../upload/MediaPreview";
  
  export function CrossSearchResult() {
+
+	const resetUpload = useShowcaseStore((s) => s.resetUpload);
 	const goToArchive = useShowcaseStore((s) => s.goToArchive);
+
+	// MEDIA PREVIEW
+	// const file = useShowcaseStore(
+	// 	(s) => s.view.data.file
+	// );
+
 	return (
 		<div className="cross-search-section">
 				<div className="cross-search-container">
@@ -93,16 +103,26 @@ import { CrossReferenceResultBox } from "./CrossReferenceResultBox";
 				<img id="special-background" src={specialBgAscii} alt="Special Background" />
 
 					<div className="cross-search-header">
-						<span id="cross-search-header-text"></span>
+						<span id="cross-search-header-text"></span> 
+
 						<div id="cross-search-header-buttons">
-							<button id="cross-search-reset-button">RESET</button>
+							{/* RESET BTN */}
+							<button id="cross-search-reset-button" onClick={resetUpload}>
+								RESET
+							</button>
+							{/* CLOSE BTN */}
 							<button id="cross-search-close-button" onClick={goToArchive}>
 								<img src={closeIcon} alt="Close" />
 							</button>
 						</div>
 					</div>
+					
 					{/* CONTENUTO DEL RISULTATO */}
-					<CrossReferenceResultBox></CrossReferenceResultBox>
+					{/* {file && (
+						<MediaPreview file={file} />
+					)} */}
+
+					<CrossReferenceResultBox />
 				</div>
 			</div>	
 				<StatusLog></StatusLog>
