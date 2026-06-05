@@ -297,7 +297,7 @@
         background-repeat: no-repeat;
         will-change: background-image;
 
-        // ??
+        // cross ref logo
         img {
           width: 153px;
           position: relative;
@@ -311,16 +311,18 @@
             position: absolute;
             inset: 0;
   
-            background: var(--black);
-            opacity: 0.30;
+            background: var(--orange);
+            opacity: 0.05;
   
             z-index: 1;
           }
 
         #cross-search-body-text-container {
           display: flex;
+          width: 100%;
           gap: 15px;
           flex-direction: column;
+          align-items: flex-start;
           justify-content: left;
           position: relative;
           z-index: 3;
@@ -328,8 +330,7 @@
           #cross-search-scanning-body-text {
             font-family: var(--font-primary);
             font-size: 12px;
-            align-self: flex-start;
-            justify-self: flex-start;
+            text-align: left;
             color: var(--aquamarine);
             letter-spacing: 0.06em;
             text-transform: uppercase;
@@ -342,7 +343,7 @@
 
             margin-top: 16px;
 
-            background: rgba(255, 255, 255, 0.08);
+            background: var(--orange);
 
             border: 1px solid var(--blue);
             border-radius: 4px;

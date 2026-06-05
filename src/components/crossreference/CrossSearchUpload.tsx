@@ -93,8 +93,9 @@ export function CrossSearchBox() {
 								<span id="cross-search-box-body-text">
 									[ DROP IMAGE ALPHA-PATTERN ]
 								</span>
-
+								
 								<DropZone onFileDrop={handleFileDrop} />
+
 							</div>
 						</div>
 					</div>

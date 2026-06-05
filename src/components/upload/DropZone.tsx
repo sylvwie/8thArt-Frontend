@@ -34,7 +34,7 @@ export function DropZone({ onFileDrop }: DropZoneProps) {
           }
         }}
       >
-        <span>Drop image, video or audio here</span>
+        <span>Click or Drop your file here</span>
       </div>
 
       <input

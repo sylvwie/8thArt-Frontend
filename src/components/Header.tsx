@@ -4,11 +4,8 @@ import { Link } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { NotLoggedInProfileBox } from "./NotLoggedInProfile";
 
-import ProfileIcon from "/src/assets/icons/profile-icon.svg";
+import ProfileIcon from "/src/assets/icons/profile-icon.png";
 import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.png";
-// import ProfileIcon from "/src/assets/icons/profile-icon.png";
-// import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.svg";
-
 export function Header() {
 	const [profileBoxOpen, setProfileBoxOpen] = useState(false);
 
