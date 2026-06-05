@@ -1,9 +1,9 @@
 import arrowLeft from "../../assets/icons/arrow-left.png";
 import arrowRight from "../../assets/icons/arrow-right.png";
-import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
+import noImagetemplate from "/src/assets/template/template-no-image.jpg";
 import saveIcon from "/src/assets/icons/save-icon.png"; 
-import {GameCard} from "./GameCard";
 // import saveIconVariant from "/src/assets/icons/save-icon-variant.png"; 
+import {GameCard} from "./GameCard";
 
 export function GameDetailOverview() {
 
@@ -20,11 +20,11 @@ export function GameDetailOverview() {
 
 					<div className="game-overview__header">
 						<span className="game-overview__game-id">
-							GAME ID:
+							 GAME ID: {/* qui va l'id del gioco */}
 						</span>
 
 						<button className="game-overview__rating">
-							★ rate num
+							★ rate num {/* qui va l'id del gioco */}
 						</button>
 					</div>
 
@@ -35,6 +35,7 @@ export function GameDetailOverview() {
 							</span>
 
 							<div className="game-overview__tags">
+								{/* qui vanno i generi del gioco */}
 								<button className="game-overview__tag">genre</button>
 								<button className="game-overview__tag">genre</button>
 								<button className="game-overview__tag">genre</button>
@@ -48,6 +49,7 @@ export function GameDetailOverview() {
 							</span>
 
 							<div className="game-overview__tags">
+								{/* qui vanno le piattaformedel gioco */}
 								<button className="game-overview__tag">platform</button>
 								<button className="game-overview__tag">platform</button>
 								<button className="game-overview__tag">platform</button>
@@ -61,6 +63,7 @@ export function GameDetailOverview() {
 							</span>
 
 							<span className="game-overview__value">
+								{/* qui vanno il developer */}
 								developer
 							</span>
 						</div>
@@ -71,6 +74,7 @@ export function GameDetailOverview() {
 							</span>
 
 							<span className="game-overview__value">
+								{/* qui vanno la data di rilascio */}
 								release date
 							</span>
 						</div>
@@ -81,6 +85,7 @@ export function GameDetailOverview() {
 							</span>
 
 							<p className="game-overview__description">
+								{/* qui va la descrizione del gioco */}
 								description text
 							</p>
 						</div>
@@ -100,11 +105,12 @@ export function GameDetailOverview() {
 
 							<img
 								className="game-overview__esrb-image"
-								src=""
+								src={noImagetemplate}
 								alt="ESRB rating"
 							/>
 
 							<ul className="game-overview__esrb-list">
+								{/* qui va l'esbr rating del gioco' */}
 								<li>ESRB RATING 1</li>
 								<li>ESRB RATING 2</li>
 								<li>ESRB RATING 3</li>
@@ -121,9 +127,10 @@ export function GameDetailOverview() {
 						</div>
 
 						<div className="game-overview__panel-body">
+							{/* qui va il logo del gioco */ }
 							<img
 								className="game-overview__logo"
-								src=""
+								src={noImagetemplate}
 								alt="Game logo"
 							/>
 						</div>
@@ -145,42 +152,43 @@ export function GameDetailOverview() {
 
 					<div className="game-overview__cover-card">
 						<span>Front Cover</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						{/* in ogniuna di queste va la cover */ }
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Front Cover" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Inside Cover Left Flap</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Inside Cover Left Flap" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Inside Cover Right Flap</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Inside Cover Right Flap" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Back Cover</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Back Cover" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Side</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Side" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Manual Front</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Manual Front" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Manual Back</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Manual Back" />
 					</div>
 
 					<div className="game-overview__cover-card">
 						<span>Physical Game</span>
-						<img className="game-overview__cover-image" src={gameCoverTemplate} alt="" />
+						<img className="game-overview__cover-image" src={noImagetemplate} alt="Physical Game" />
 					</div>
 
 				</div>
@@ -208,8 +216,8 @@ export function GameDetailOverview() {
 						<div className="game-overview__screenshot-large-box">
 							<img
 								className="game-overview__screenshot-large"
-								src=""
-								alt=""
+								src={noImagetemplate}
+								alt="Large screenshot"
 							/>
 
 							<button className="game-overview__save-button">
@@ -218,10 +226,10 @@ export function GameDetailOverview() {
 						</div>
 
 						<div className="game-overview__thumbnails">
-							<img className="game-overview__thumbnail" src="" alt="" />
-							<img className="game-overview__thumbnail" src="" alt="" />
-							<img className="game-overview__thumbnail" src="" alt="" />
-							<img className="game-overview__thumbnail" src="" alt="" />
+							<img className="game-overview__thumbnail" src={noImagetemplate} alt="Thumbnail 1" />
+							<img className="game-overview__thumbnail" src={noImagetemplate} alt="Thumbnail 2" />
+							<img className="game-overview__thumbnail" src={noImagetemplate} alt="Thumbnail 3" />
+							<img className="game-overview__thumbnail" src={noImagetemplate} alt="Thumbnail 4" />
 						</div>
 
 					</div>
@@ -245,12 +253,12 @@ export function GameDetailOverview() {
 				</h3>
 
 				<div className="game-overview__artbook-grid">
-					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
-					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
-					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
-					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
-					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
-					<img className="game-overview__artbook-image" src={gameCoverTemplate} alt="" />
+					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 1" />
+					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 2" />
+					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 3" />
+					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 4" />
+					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 5" />
+					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 6" />
 				</div>
 
 			</section>
@@ -264,9 +272,10 @@ export function GameDetailOverview() {
 				</h3>
 
 				<div className="game-overview__similar-games">
+					{/* temporanei da sostituire con i game card dinamici */}
 					<GameCard game={{
 						rating: "★ 9.4",
-						coverImage: gameCoverTemplate,
+						coverImage: noImagetemplate,
 						title: "Hollow Knight",
 						description: "Un cavaliere esplora il regno in rovina di Nidosacro per sconfiggere l'Infezione, una piaga mentale generata dalla dea falena Splendore, sigillandola o distruggendola nel mondo dei sogni.",
 						genres: ["Metroidvania", "Action", "Adventure"],
@@ -276,7 +285,7 @@ export function GameDetailOverview() {
 					}} />
 					<GameCard game={{
 						rating: "★ 9.5",
-						coverImage: gameCoverTemplate,
+						coverImage: noImagetemplate,
 						title: "Hollow Knight: SilkSong",
 						description: "Hornet viene catturata e portata nel regno di Pharloom. Per liberarsi e scoprire la verità sul suo rapimento, deve scalare il mondo fino alla Cittadella, affrontando una maledizione legata alla seta e alla musica.",
 						genres: ["Metroidvania", "Action", "Adventure"],

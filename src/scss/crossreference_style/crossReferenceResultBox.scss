@@ -52,6 +52,8 @@
 		}
 	}
 
+	/* COVER */
+
 	.cross-reference-result-upper-content-cover {
 		position: relative;
 		display: flex;
@@ -72,10 +74,20 @@
 			border-radius: 8px;
 			border: 1px solid var(--blue);
 		}
+		
+	}
+	
+	/* TITLE */
+	.cross-reference-result-upper-content-title {
+		position: relative;
+		width: 1056px;
+		display: flex;
+		justify-content: flex-start;
+		overflow: hidden;
+		flex-shrink: 0;
 
 		.game-title {
 			position: relative;
-			z-index: 1;
 			color: var(--aquamarine);
 			font-family: var(--font-primary);
 			font-size: 36px;

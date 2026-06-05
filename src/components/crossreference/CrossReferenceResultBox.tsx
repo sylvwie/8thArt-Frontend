@@ -1,8 +1,17 @@
 // Box di risultato inserito nel container CrossSearchResult
-import templateCover from "/src/assets/template/game-cover-template.png";
+import templateCover from "/src/assets/template/template-no-image.jpg";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
+import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
 
-export function CrossReferenceResultBox() {
+type Props = {
+	game: CrossReferenceProps;
+	similarGames: CrossReferenceProps[];
+};
+export function CrossReferenceResultBox({ game, similarGames }: Props) {
+
+	const genreList = Object.values(game.genres).flat();
+	const platformList = game.platforms; 
+
 	return (
 		<div id="cross-reference-result-container">
 
@@ -17,8 +26,10 @@ export function CrossReferenceResultBox() {
 
 				{/* image and title */}
 				<div className="cross-reference-result-upper-content-cover">
-					<span className="game-title">Title</span>
-					<img className="game-cover" src={templateCover} alt="game cover" />
+						<img className="game-cover" src={game.main_cover_url || templateCover} alt={game.title} />
+				</div>
+				<div className="cross-reference-result-upper-content-title">
+						<span className="game-title">{game.title}</span>
 				</div>
 
 				{/* info */}
@@ -28,16 +39,16 @@ export function CrossReferenceResultBox() {
 						{/* develper */}
 						<div className="cross-reference-result-upper-content-info-developer">
 							<span>[ DEVELOPER ]</span>
-							<span className="developer-name">john developer</span>
+							<span className="developer-name"> Unknown {/* {game.developer} */}</span>
 						</div>
 
 						{/* genre */}
 						<div className="cross-reference-result-upper-content-info-genre">
 							<span>[ GENRE ]</span>
 							<div className="genres-button">
-								<button className="genres">genre</button>
-								<button className="genres">genre</button>
-								<button className="genres">genre</button>
+								{genreList.map((g) => (
+									<button key={g} className="genres">{g}</button>
+								))}
 							</div>
 						</div>
 
@@ -45,16 +56,18 @@ export function CrossReferenceResultBox() {
 						<div className="cross-reference-result-upper-content-info-platforms">
 							<span>[ PLATFORMS ]</span>
 							<div className="platforms-buttons">
-								<button className="platforms">platform</button>
-								<button className="platforms">platform</button>
-								<button className="platforms">platform</button>
+								{platformList.map((p) => (
+									<button key={p} className="platforms">
+										{p}
+									</button>
+								))}
 							</div>
 						</div>
 
 						{/* synopsis */}
 						<div className="cross-reference-result-upper-content-info-synopsis">
 							<span>[ SYNOPSIS ]</span>
-							<p className="synopsis">this is the synopsis of the game this is the synopsis of the game this is the synopsis of the game this is the synopsis of the game this is the synopsis of the game this is the synopsis of the game this is the synopsis of the game this is the synopsis of the game</p>
+							<p className="synopsis">{game.explanation}</p>
 						</div>
 					</div>
 
@@ -64,23 +77,28 @@ export function CrossReferenceResultBox() {
 						{/* release */}
 						<div className="cross-reference-result-upper-content-info-release">
 							<span>[ RELEASE ]</span>
-							<span className="release-date">release date</span>
+							<span className="release-date">{game.year}</span>
 						</div>
+
+						{/* moby score */}
+						{/* <div className="cross-reference-result-upper-content-moby-score">
+							{game.moby_score > 0 && (
+								<div>
+									<span>[ MOBY SCORE ]</span>
+									<span>{game.moby_score}</span>
+								</div>
+							)}
+						</div> */}
 
 						{/* key feature */}
 						<div className="cross-reference-result-upper-content-info-keyfeature">
 							<span>[ KEY FEATURE ]</span>
 							<ul className="key-features">
-								<li>this is the key feature number 1</li>
-								<li>this is the key feature number 2</li>
-								<li>this is the key feature number 3</li>
-								<li>this is the key feature number 4</li>
-								<li>this is the key feature number 5</li>
+								{game.tags.map((tag, i) => (
+									<li key={i}>{tag}</li>
+								))}
 							</ul>
 						</div>
-
-						{/* <div className="cross-reference-result-upper-content-info-palette">
-						</div> */}
 					</div>
 
 				</div>
@@ -95,12 +113,11 @@ export function CrossReferenceResultBox() {
 				<div className="cross-reference-result-lower-content-similarity">
 					{/* similiar game column */}
 					<span className="similar-game-row-title">[ SIMILAR GAMES ]</span>
+					{/* LOWER BOX - similar games */}
 					<div className="similar-games-container">
-						<span className="similar-game-title">similar game</span>
-						<span className="similar-game-title">similar game</span>
-						<span className="similar-game-title">similar game</span>
-						<span className="similar-game-title">similar game</span>
-						<span className="similar-game-title">similar game</span>
+						{similarGames.map((sg) => (
+							<span key={sg.game_id} className="similar-game-title">{sg.title}</span>
+						))}
 					</div>
 				</div>
 

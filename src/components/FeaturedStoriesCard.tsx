@@ -1,5 +1,6 @@
 //import { Link } from "react-router-dom";
 
+// Props da mettere in un file a parte in futuro se serve
 type FeaturedStoriesCardProps = {
 	story: FeaturedStoriesShowcase;
 }

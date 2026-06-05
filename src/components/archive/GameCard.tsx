@@ -2,6 +2,7 @@ import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 
 // Questo è box dei singoli giochi visibile nella sezione Games del Developer e della Console
 
+// Props da mettere in un file a parte in futuro se serve
 type GameCardProps = {
 	game: GameInfo;
 }
@@ -16,7 +17,6 @@ export type GameInfo = {
 	developer: string;
 	release: string;
 }
-
 
 export function GameCard({ game }: GameCardProps) {
 	return (

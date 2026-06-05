@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { SearchResultProps } from "../search/SearchResultProps";
+import type { SearchResultProps } from "../props/SearchResultProps";
 
 type SearchProps = {
   results: SearchResultProps[];
@@ -8,8 +8,8 @@ type SearchProps = {
 export function SearchResults({ results }: SearchProps) {
   return (
     <div id="search-results-wrapper">
-      {results.map((result) => (
-        <div key={result.title} className="search-result-container">
+      {results.map((result, index) => (
+        <div key={`${result.title}-${index}`} className="search-result-container">
           <div className="search-result-items">
             <div className="search-result-cover">
               <img
@@ -32,6 +32,6 @@ export function SearchResults({ results }: SearchProps) {
           </div>
         </div>
       ))}
-      </div>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 // STATE MANAGER FOR THE MAIN SHOWCASE COMPONENTS IN DASHBOARD
 import { create } from "zustand";
+import type { CrossReferenceProps } from "../components/props/CrossReferenceProps.tsx";
 
 export type ShowcaseScreen =
 	| "archive-search"
@@ -17,7 +18,7 @@ type ShowcaseStore = {
 		step: CrossSearchStep;
 			data: {
 				file?: File | null;
-				result?: unknown;
+				results?: CrossReferenceProps[]; 
 			};
 	};
 

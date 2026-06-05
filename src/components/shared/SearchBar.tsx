@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FilterBox } from "./FilterBox.tsx";
 import { SearchResults } from "./SearchResults.tsx";
 import { StatusLog } from "./StatusLog.tsx";
-import { CrossRefDropInBox } from "../crossreference/CrossRefIDropInBox.tsx";
+import { CrossRefDropInBox } from "../crossreference/CrossReferencePopUp.tsx";
 import filterIcon from "/src/assets/icons/filter-icon.png";
 import crossRefIcon from "/src/assets/icons/cross-reference-empty.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
