@@ -1,28 +1,61 @@
-import {useState } from "react";
+import { useState } from "react";
 import arrowLeft from "../../assets/icons/arrow-left.png";
 import arrowRight from "../../assets/icons/arrow-right.png";
 import noImagetemplate from "/src/assets/template/template-no-image.jpg";
 import saveIcon from "/src/assets/icons/save-icon.png";
 // import saveIconVariant from "/src/assets/icons/save-icon-variant.png"; 
 
-// import { GameCard } from "./GameCard";
+import { GameCard } from "./GameCard";
 import type { GameDetailProps } from "../props/GameDetailProps";
 import type { Cover, Screenshot } from "../props/GameDetailProps";
 
+
 // UTILITIES 
 const filterCovers = (covers: Cover[], keyword: string) =>
-  covers.filter((c) =>
-    c.description.toLowerCase().includes(keyword.toLowerCase())
-  );
+	covers.filter((c) =>
+		(c.description ?? "")
+			.toLowerCase()
+			.includes(keyword.toLowerCase())
+	);
 
 type Props = {
 	game: GameDetailProps;
 };
 
 export function GameDetailOverview({ game }: Props) {
+	
 	const [screenshotIndex, setScreenshotIndex] = useState(0);
 
-	const genreList = Object.values(game.genres).flat();
+	const genreList = Object.values(game.genres ?? {}).flat();
+
+	const similarGames =
+		game.similar_games?.map((g) => ({
+			game_id: g.game_id,
+
+			rating:
+				g.moby_score > 0
+					? g.moby_score.toFixed(1)
+					: "N/A",
+
+			coverImage:
+				g.main_cover_url ||
+				noImagetemplate,
+
+			title: g.title,
+
+			description:
+				g.description_short ??
+				"No description available.",
+
+			genres:
+				Object.values(g.genres ?? {}).flat(),
+
+			developer:
+				g.developers?.join(", ") ||
+				"Unknown",
+
+			release: g.year,
+		})) ?? [];
 
 	// Covers
 	const frontCovers = filterCovers(game.covers, "Front Cover");
@@ -35,17 +68,32 @@ export function GameDetailOverview({ game }: Props) {
 	const media = filterCovers(game.covers, "Media");
 
 	const screenshots: Screenshot[] = game.screenshots ?? [];
-	const currentScreenshot = screenshots[screenshotIndex] ?? null;
+	const hasScreens = screenshots.length > 0;
 
-	const prevScreenshot = () =>
-		setScreenshotIndex((i) => (i > 0 ? i - 1 : screenshots.length - 1));
-	const nextScreenshot = () =>
-		setScreenshotIndex((i) => (i < screenshots.length - 1 ? i + 1 : 0));
+	const currentScreenshot = hasScreens
+		? screenshots[screenshotIndex]
+		: null;
 
+	const prevScreenshot = () => {
+		if (!hasScreens) return;
+		setScreenshotIndex((i) =>
+			i > 0 ? i - 1 : screenshots.length - 1
+		);
+	};
+
+	const nextScreenshot = () => {
+		if (!hasScreens) return;
+		setScreenshotIndex((i) =>
+			i < screenshots.length - 1 ? i + 1 : 0
+		);
+	};
 	// Thumbnails
-	const thumbnailIndices = [0, 1, 2, 3].map(
-		(offset) => (screenshotIndex + offset) % screenshots.length
-	);
+	const thumbnailIndices = hasScreens
+		? [0, 1, 2, 3].map(
+			(offset) =>
+				(screenshotIndex + offset) % screenshots.length
+		)
+		: [];
 
 	return (
 		<div className="game-overview">
@@ -101,7 +149,7 @@ export function GameDetailOverview({ game }: Props) {
 							</span>
 
 							<span className="game-overview__value">
-								{game.developers.join(", ")}
+								{game.developers.length > 0 ? game.developers.join(", ") : "Unknown"}
 							</span>
 						</div>
 
@@ -163,9 +211,10 @@ export function GameDetailOverview({ game }: Props) {
 						</div>
 
 						<div className="game-overview__panel-body">
-							{/* qui va il logo del gioco */}
+							{/* LOGO */}
 							<img
 								className="game-overview__logo"
+								// src={game.covers[1]?.url || noImagetemplate}
 								src={noImagetemplate}
 								alt="Game logo"
 							/>
@@ -186,20 +235,27 @@ export function GameDetailOverview({ game }: Props) {
 						{ label: "Inside Cover Left", items: insideLeft },
 						{ label: "Inside Cover Right", items: insideRight },
 						{ label: "Back Cover", items: backCovers },
-						{ label: "Spine/Sides", items: sides },
 						{ label: "Manual Front", items: manualFront },
 						{ label: "Manual Back", items: manualBack },
 						{ label: "Media", items: media },
-					].map(({ label, items }) => (
-						<div key={label} className="game-overview__cover-card">
-							<span>{label}</span>
-							<img
-								className="game-overview__cover-image"
-								src={items[0]?.url ?? noImagetemplate}
-								alt={label}
-							/>
-						</div>
-					))}
+						{ label: "Sides", items: sides },
+					]
+						.filter(({ items }) => items.length > 0)
+						.map(({ label, items }) => (
+							<div
+								key={label}
+								className={`game-overview__cover-card${label === "Sides" ? " game-overview__cover-card--spine" : ""}`}
+							>
+								{label !== "Sides" && <span>{label}</span>}
+
+								<img
+									className="game-overview__cover-image"
+									src={items[0].url}
+									alt={label}
+								/>
+							</div>
+						))
+					}
 
 				</div>
 			</section>
@@ -227,9 +283,22 @@ export function GameDetailOverview({ game }: Props) {
 										alt={currentScreenshot.description}
 									/>
 								)}
+
+								{/* save icon */}
 								<button className="game-overview__save-button">
-									<img src={saveIcon} alt="save" />
+									<img
+										src={saveIcon}
+										alt="save"
+									/>
 								</button>
+
+								{/* aggiungere variant click e hover */}
+								{/* <button className="game-overview__save-button-hover">
+									<img
+										src={saveIconVariant}
+										alt="save"
+									/>
+								</button> */}
 							</div>
 
 							<div className="game-overview__thumbnails">
@@ -284,12 +353,20 @@ export function GameDetailOverview({ game }: Props) {
 
 			<section className="game-overview__section">
 
-				<h3 className="game-overview__section-title">
+				{/* <h3 className="game-overview__section-title">
 					SIMILAR GAMES
-				</h3>
+				</h3> */}
 
 				<div className="game-overview__similar-games">
-					{/* da aggiungere le game card dinamiche */}
+					
+					{/* non funziona ora */}
+					{similarGames.map((similar) => (
+						<GameCard
+							key={similar.game_id}
+							game={similar}
+						/>
+					))}
+
 				</div>
 
 			</section>

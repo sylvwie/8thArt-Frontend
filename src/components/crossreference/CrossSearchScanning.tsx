@@ -38,30 +38,41 @@ export function CrossSearchScanning() {
 	}, [file, search, setUploadProgress]);
 
 	// PROGRESS BAR SIMULATION
-		useEffect(() => {
-		if (!loading && results.length === 0) return;
+	useEffect(() => {
+	if (!loading && results.length === 0) return;
 
-		let progress = 0;
-		let mounted = true;
+	let mounted = true;
 
-		const interval = setInterval(() => {
-			if (!mounted) return;
+	const duration = 8000; // 8 seconds
+	const maxWhileLoading = 90;
 
-			const cap = loading ? 90 : 100;
-			progress += Math.random() * 12;
-			const clamped = Math.min(progress, cap);
-			setUploadProgress(clamped);
+	const startTime = Date.now();
 
-			if (clamped >= 100) {
-			clearInterval(interval);
-			}
-		}, 120);
+	const animate = () => {
+		if (!mounted) return;
 
-		return () => {
-			mounted = false;
-			clearInterval(interval);
-		};
-	}, [loading, results.length, setUploadProgress]); 
+		const elapsed = Date.now() - startTime;
+
+		const t = Math.min(elapsed / duration, 1);
+
+		// curva morbida e costante
+		const eased = 1 - Math.pow(1 - t, 2);
+
+		const progress = eased * maxWhileLoading;
+
+		setUploadProgress(progress);
+
+		if (loading && t < 1) {
+		requestAnimationFrame(animate);
+		}
+	};
+
+	animate();
+
+	return () => {
+		mounted = false;
+	};
+	}, [loading, results.length, setUploadProgress]);
 
 	// PROGRESS BAR EFFECT
 	useEffect(() => {
@@ -186,7 +197,7 @@ export function CrossSearchScanning() {
 							<img src={crossRefFull} alt="Cross Reference Full" />
 
 							<div id="cross-search-body-text-container">
-								<span id="cross-search-scanning-body-text"> [ ANALYZING PATTERN DATA  ]</span>
+								<span id="cross-search-scanning-body-text"> [ ANALYZING PATTERN DATA ]</span>
 
 								{/* PROGRESS BAR */}
 								<div className="progress-bar">

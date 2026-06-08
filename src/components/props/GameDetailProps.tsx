@@ -13,6 +13,17 @@ export interface Screenshot {
   description: string;
 }
 
+export interface SimilarGame {
+  game_id: number;
+  title: string;
+  moby_score: number;
+  year: string;
+  description_short: string | null;
+  main_cover_url: string;
+  genres: Record<string, string[]>;
+  developers: string[];
+}
+
 export interface GameDetailProps {
   game_id: number;
   title: string;
@@ -30,4 +41,6 @@ export interface GameDetailProps {
   developers: string[];
   covers: Cover[];
   screenshots: Screenshot[];
+
+  similar_games?: SimilarGame[];
 }

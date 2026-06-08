@@ -7,16 +7,15 @@ type GameCardProps = {
 	game: GameInfo;
 }
 
-export type GameInfo = {
-	game_id: number;
-	rating: string;
-	coverImage: string;
-	tags: string;
-	title: string;
-	description: string;
-	genres: string[];
-	developer: string;
-	release: string;
+type GameInfo = {
+  game_id: number;
+  rating: string;
+  coverImage: string;
+  title: string;
+  description: string;
+  genres: string[];
+  developer: string;
+  release: string;
 }
 
 export function GameCard({ game }: GameCardProps) {
@@ -40,8 +39,16 @@ export function GameCard({ game }: GameCardProps) {
 						<span className="gamecard-dev">{game.developer}</span>
 						<span className="gamecard-release">{game.release}</span>
 
-						<button className="gamecard-tags">{game.tags}</button>
-						{/* componente genre / tag */}
+						<div className="gamecard-tags-container">
+							{game.genres.slice(0, 3).map((genre) => (
+								<button
+								key={genre}
+								className="gamecard-tags"
+								>
+								{genre}
+								</button>
+							))}
+						</div>
 					</div>
 
 					<div className="view-game-button">
