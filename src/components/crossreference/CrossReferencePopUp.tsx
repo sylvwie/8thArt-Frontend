@@ -3,7 +3,7 @@ import { useShowcaseStore } from '../../store/useShowcaseStore';
 import crossrefDropInBoxIcon from '/src/assets/icons/cross-reference-empty.png';
 import squares2 from '/src/assets/icons/squares2.png';
 
-export function CrossRefDropInBox(props) {
+export function CrossRefDropInBox(props: { popupEnter: () => void; popupLeave: () => void }) {
 	const goToCrossSearch = useShowcaseStore((s) => s.goToCrossSearch);
 
   return (

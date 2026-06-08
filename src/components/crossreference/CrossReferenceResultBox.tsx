@@ -2,16 +2,16 @@
 import templateCover from "/src/assets/template/template-no-image.jpg";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
-// import { Link } from "react-router-dom";
-// import type { SearchResultProps } from "../props/SearchResultProps.tsx";
+import { Link } from "react-router-dom";
+import type { SearchResultProps } from "../props/SearchResultProps.tsx";
 
 type Props = {
 	game: CrossReferenceProps;
 	similarGames: CrossReferenceProps[];
-	// results: SearchResultProps[];
+	results: SearchResultProps[];
 };
 
-export function CrossReferenceResultBox({ game, similarGames }: Props) { 		// , results
+export function CrossReferenceResultBox({ game, similarGames, results }: Props) { 		
 
 	const genreList = Object.values(game.genres).flat();
 	const platformList = game.platforms; 
@@ -43,7 +43,7 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) { 		// , 
 						{/* develper */}
 						<div className="cross-reference-result-upper-content-info-developer">
 							<span>[ DEVELOPER ]</span>
-							<span className="developer-name"> Unknown {/* {game.developer} */}</span>
+							<span className="developer-name"> {game.developers}</span>
 						</div>
 
 						{/* genre */}
@@ -119,13 +119,13 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) { 		// , 
 					<span className="similar-game-row-title">[ SIMILAR GAMES ]</span>
 					{/* LOWER BOX - similar games */}
 					<div className="similar-games-container">
-						{/* {results.map((results) => (
-						<Link to={`/game-detail/${results.game_id}`}> */}
+						{results.map((results) => (
+						<Link to={`/game-detail/${results.game_id}`}>
 							{similarGames.map((sg) => (
 									<span key={sg.game_id} className="similar-game-title">{sg.title}</span>
 								))}
-						{/* </Link>
-						))} */}
+						</Link>
+						))}
 					</div>
 				</div>
 

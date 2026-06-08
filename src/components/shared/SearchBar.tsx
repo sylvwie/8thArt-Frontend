@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { FilterBox } from "./FilterBox.tsx";
 import { SearchResults } from "./SearchResults.tsx";
 import { StatusLog } from "./StatusLog.tsx";
@@ -50,7 +50,6 @@ export function SearchBar() {
       clearTimeout(closeTimer);
     }
   }
-
 
   const popupLeave = ()=>{
     console.log('leave');

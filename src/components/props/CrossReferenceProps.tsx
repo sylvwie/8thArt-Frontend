@@ -3,6 +3,7 @@ export interface CrossReferenceProps {
   title: string;
   year: string;
   moby_score: number;
+  developers: string;
   esrb_rating: string | null;
   main_cover_url: string;
   platforms: string[];

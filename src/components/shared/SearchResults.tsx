@@ -25,7 +25,7 @@ export function SearchResults({ results }: SearchProps ) {
               </Link>
               </span>
               <p className="search-result-description">
-                {/* {result.description} */}
+                {result.description}
               </p>
             </div>
           </div>
