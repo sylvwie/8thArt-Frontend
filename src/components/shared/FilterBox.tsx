@@ -7,6 +7,12 @@ export function FilterBox() {
 		<div id="filter-box-wrapper">
 			<div id="filter-box-container">
 
+				<div id="active-filters-container">
+					<span id="current_active_filters_count"> Active Filters: 0 </span>
+					<button id="active-filter-reset-all"> RESET </button>
+				</div>
+				<hr /> 
+
 				{/* <div id="filter-box">
 					<img id="filter-params-icon" src={filterIcon} alt="Filter" />
 					<span className="filters-text">FILTER_PARAMS.query</span>
@@ -72,11 +78,7 @@ export function FilterBox() {
 						<span className="filter-params-type-description">[FILTER_BY_PLATFORM_ALL]</span>
 					</div>
 				</div>
-
-				{/* <hr /> */}
-				{/* <div id="active-filters-counter-container">
-					<span id="active-filter-counter">ACTIVE_FILTERS: <span id="current_active_filters_num">NULL</span></span>
-				</div> */}
+				
 
 			</div>
 		</div>

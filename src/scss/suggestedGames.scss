@@ -57,13 +57,20 @@
 
 		.suggested-game-title {
 			margin-left: auto;
-
+			
 			color: var(--white);
-
+			
 			font-size: 9px;
 			font-weight: 400;
-
+			
 			letter-spacing: 0.04em;
+
+			// title text space limit
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 95px;
+			display: inline-block;
 		}
 	}
 
