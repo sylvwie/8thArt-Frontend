@@ -15,7 +15,7 @@ export function FilterBox() {
 
 				<div id="filter-params-box-container">
 					<div className="filter-params-box">
-						<span className="filter-params-type">GENRE_TYPE</span>
+						<span className="filter-params-type">GENRES</span>
 
 						<div className="filter-params-select-wrapper">
 							{/* <select className="filter-params-input">
@@ -35,7 +35,8 @@ export function FilterBox() {
 					</div>
 
 					<div className="filter-params-box">
-						<span className="filter-params-type">ART_STYLE</span>
+						<span className="filter-params-type">YEAR</span>
+						{/* <span className="filter-params-type">ART_STYLE</span> */}
 
 						<div className="filter-params-select-wrapper">
 							{/* <select className="filter-params-input">
@@ -49,11 +50,12 @@ export function FilterBox() {
 							<span className="select-arrow">▼</span>
 						</div>
 
-						<span className="filter-params-type-description">[FILTER_BY_ART_STYLE_ALL]</span>
+						<span className="filter-params-type-description">[FILTER_BY_YEAR_ALL]</span>
+						{/* <span className="filter-params-type-description">[FILTER_BY_ART_STYLE_ALL]</span> */}
 					</div>
 
 					<div className="filter-params-box">
-						<span className="filter-params-type">PLATFORM_TARGET</span>
+						<span className="filter-params-type">PLATFORMS</span>
 
 						<div className="filter-params-select-wrapper">
 							{/* <select className="filter-params-input">

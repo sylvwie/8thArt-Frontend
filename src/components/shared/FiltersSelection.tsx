@@ -8,7 +8,8 @@ export function FiltersSelection({
 			<div className="filters-by-genre-types">
 				<select className="filter-params-input">
 					<option className="single-filter" value="">-</option>
-					<option className="single-filter" value="Action">Action</option>
+					<option className="single-filter" value="genre-filters">the others here</option>
+					{/* <option className="single-filter" value="Action">Action</option>
 					<option className="single-filter" value="Arcade">Arcade</option>
 					<option className="single-filter" value="Platform">Platform</option>
 					<option className="single-filter" value="Arcade">Arcade</option>
@@ -27,7 +28,7 @@ export function FiltersSelection({
 					<option className="single-filter" value="Puzzle Elements">Puzzle Elements</option>
 					<option className="single-filter" value="Sports ">Sports </option>
 					<option className="single-filter" value="Racing/Driving">Racing/Driving</option>
-					<option className="single-filter" value="Vehicle Simulator">Vehicle Simulator</option>
+					<option className="single-filter" value="Vehicle Simulator">Vehicle Simulator</option> */}
 				</select>
 			</div>
 			)}
@@ -36,13 +37,14 @@ export function FiltersSelection({
 			<div className="filters-by-art-styles">
 				<select className="filter-params-input">
 					<option className="single-filter" value="">-</option>
-					<option className="single-filter" value="Anime/Manga">Anime/Manga</option>
+					<option className="single-filter" value="art-styles-filters">the others here</option>
+					{/* <option className="single-filter" value="Anime/Manga">Anime/Manga</option>
 					<option className="single-filter" value="Augmented Reality">Augmented Reality</option>
 					<option className="single-filter" value="Full Motion Video">Full Motion Video</option>
 					<option className="single-filter" value="Augmented Reality">Augmented Reality</option>
 					<option className="single-filter" value="FMV">FMV</option>
 					<option className="single-filter" value="Live Action">Live Action</option>
-					<option className="single-filter" value="Video Backdrop">Video Backdrop</option>
+					<option className="single-filter" value="Video Backdrop">Video Backdrop</option> */}
 				</select>
 			</div>
 			)}
@@ -51,7 +53,8 @@ export function FiltersSelection({
 			<div className="filters-by-platform-targets">
 				<select className="filter-params-input">
 					<option className="single-filter" value="">-</option>
-					<option className="single-filter" value="Windows">Windows</option>
+					<option className="single-filter" value="platform-filters">the others here</option>
+					{/* <option className="single-filter" value="Windows">Windows</option>
 					<option className="single-filter" value="DOS">DOS</option>
 					<option className="single-filter" value="MacOs">MacOs</option>
 					<option className="single-filter" value="Linux">Linux</option>
@@ -78,7 +81,7 @@ export function FiltersSelection({
 					<option className="single-filter" value="Commodore 64">Commodore 64</option>
 					<option className="single-filter" value="Amiga">Amiga</option>
 					<option className="single-filter" value="ZX Spectrum">ZX Spectrum</option>
-					<option className="single-filter" value="Amstrad CPC">Amstrad CPC</option>
+					<option className="single-filter" value="Amstrad CPC">Amstrad CPC</option> */}
 				</select>
 			</div>
 			)}

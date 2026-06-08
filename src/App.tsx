@@ -51,8 +51,8 @@ export default function App() {
 					element: <Profile />
 				},
 				{
-					path: 'game-detail',
-					element: <GameDetail />
+					path: 'game-detail/:gameId',
+  					element: <GameDetail />
 				},
 				{
 					path: 'featured-story',

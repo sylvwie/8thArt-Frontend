@@ -1,11 +1,21 @@
-import { GameDetailOverview } from "../components/archive/GameDetailOverview";
+import { useParams } from "react-router-dom";
+
+import { GameDetailOverview } from "../components/games/GameDetailOverview";
 import { ArchiveSearchBar } from "../components/shared/ArchiveSearchBar";
-import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
+import { useGameDetail } from "../hooks/useGameDetails";
+
+// import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
 import overviewIcon from "/src/assets/icons/overview-icon.png";
 import galleryIcon from "/src/assets/icons/gallery-icon.png";
 import shopIcon from "/src/assets/icons/shop-icon.png";
 
 export function GameDetail() {
+	const { gameId } = useParams<{ gameId: string }>();
+	const { game, loading, error } = useGameDetail(gameId);
+
+  	if (loading) return <p>Loading...</p>;
+	if (error || !game) return <p>Game not found.</p>;
+
 	return (
 		<div id="game-detail">
 			<div className="archive-searchbar-container">
@@ -18,19 +28,19 @@ export function GameDetail() {
 				<div className="game-detail__header">
 					<img
 						className="game-detail__cover"
-						src={gameCoverTemplate}
-						alt="game cover"
+						src={game.main_cover_url}
+            			alt={game.title}
 					/>
 
 					<div className="game-detail__header-info">
 						<div className="game-detail__title">
-							Title
+							{game.title}
 						</div>
 
 						<div className="game-detail__meta">
-							Classification: Genre |
+							Classification: {Object.values(game.genres).flat()[0] ?? "—"} |
 							Status: PRESERVED |
-							Year: 2007
+							Year: {game.year?.slice(0, 4)}
 						</div>
 					</div>
 				</div>
@@ -60,15 +70,7 @@ export function GameDetail() {
 					<div className="game-detail__content">
 
 						<div className="game-detail__overview">
-							<GameDetailOverview />
-						</div>
-
-						<div className="game-detail__gallery">
-							{/* <GameDetailGallery /> */}
-						</div>
-
-						<div className="game-detail__shop">
-							{/* <GameDetailShop /> */}
+							<GameDetailOverview game={game} />
 						</div>
 
 					</div>

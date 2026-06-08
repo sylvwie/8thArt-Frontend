@@ -2,12 +2,16 @@
 import templateCover from "/src/assets/template/template-no-image.jpg";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
+// import { Link } from "react-router-dom";
+// import type { SearchResultProps } from "../props/SearchResultProps.tsx";
 
 type Props = {
 	game: CrossReferenceProps;
 	similarGames: CrossReferenceProps[];
+	// results: SearchResultProps[];
 };
-export function CrossReferenceResultBox({ game, similarGames }: Props) {
+
+export function CrossReferenceResultBox({ game, similarGames }: Props) { 		// , results
 
 	const genreList = Object.values(game.genres).flat();
 	const platformList = game.platforms; 
@@ -64,10 +68,10 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 							</div>
 						</div>
 
-						{/* synopsis */}
-						<div className="cross-reference-result-upper-content-info-synopsis">
-							<span>[ SYNOPSIS ]</span>
-							<p className="synopsis">{game.explanation}</p>
+						{/* explanation */}
+						<div className="cross-reference-result-upper-content-info-explanation">
+							<span>[ EXPLANATION ]</span>
+							<p className="explanation">{game.explanation}</p>
 						</div>
 					</div>
 
@@ -92,7 +96,7 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 
 						{/* key feature */}
 						<div className="cross-reference-result-upper-content-info-keyfeature">
-							<span>[ KEY FEATURE ]</span>
+							<span>[ KEY FEATURES ]</span>
 							<ul className="key-features">
 								{game.tags.map((tag, i) => (
 									<li key={i}>{tag}</li>
@@ -103,7 +107,7 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 
 				</div>
 				<div className="view-game-button">
-					<ViewGameBtn />
+					<ViewGameBtn gameId={game.game_id} />
 				</div>
 			</div>
 
@@ -115,9 +119,13 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					<span className="similar-game-row-title">[ SIMILAR GAMES ]</span>
 					{/* LOWER BOX - similar games */}
 					<div className="similar-games-container">
-						{similarGames.map((sg) => (
-							<span key={sg.game_id} className="similar-game-title">{sg.title}</span>
-						))}
+						{/* {results.map((results) => (
+						<Link to={`/game-detail/${results.game_id}`}> */}
+							{similarGames.map((sg) => (
+									<span key={sg.game_id} className="similar-game-title">{sg.title}</span>
+								))}
+						{/* </Link>
+						))} */}
 					</div>
 				</div>
 
@@ -126,9 +134,7 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 				<div className="cross-reference-result-lower-content-analysis">
 					{/* <span className="analysis-report-title">[ ANALYSIS REPORT ]</span> */}
 					{/* visual composition */}
-
 					{/* technical markers  */}
-
 					{/* identified elements */}
 				</div>
 

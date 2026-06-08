@@ -320,7 +320,6 @@
         #cross-search-body-text-container {
           display: flex;
           width: 100%;
-          gap: 15px;
           flex-direction: column;
           align-items: flex-start;
           justify-content: left;
@@ -329,7 +328,7 @@
 
           #cross-search-scanning-body-text {
             font-family: var(--font-primary);
-            font-size: 12px;
+            font-size: 15px;
             text-align: left;
             color: var(--aquamarine);
             letter-spacing: 0.06em;
@@ -341,7 +340,7 @@
             width: 100%;
             height: 10px;
 
-            margin-top: 16px;
+            margin-top: 12px;
 
             background: var(--orange);
 

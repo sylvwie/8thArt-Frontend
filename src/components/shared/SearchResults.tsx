@@ -5,7 +5,7 @@ type SearchProps = {
   results: SearchResultProps[];
 };
 
-export function SearchResults({ results }: SearchProps) {
+export function SearchResults({ results }: SearchProps ) {
   return (
     <div id="search-results-wrapper">
       {results.map((result, index) => (
@@ -20,12 +20,11 @@ export function SearchResults({ results }: SearchProps) {
             </div>
             <div className="search-result-info">
               <span className="search-result-title">
-                <Link to={`/game-detail`}>
-                  {result.title}
-                </Link>
+               <Link to={`/game-detail/${result.game_id}`}>
+                {result.title}
+              </Link>
               </span>
               <p className="search-result-description">
-                this is where the description of the game belongs, the real description will be added later when the api will be ready, for now let's just pretend this is the game description.
                 {/* {result.description} */}
               </p>
             </div>

@@ -8,6 +8,7 @@ type GameCardProps = {
 }
 
 export type GameInfo = {
+	game_id: number;
 	rating: string;
 	coverImage: string;
 	tags: string;
@@ -44,7 +45,7 @@ export function GameCard({ game }: GameCardProps) {
 					</div>
 
 					<div className="view-game-button">
-						<ViewGameBtn/>
+						<ViewGameBtn gameId={game.game_id} />
 					</div>
 				</div>
 

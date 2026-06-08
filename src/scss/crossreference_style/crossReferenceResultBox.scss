@@ -120,7 +120,7 @@
 		&-developer,
 		&-genre,
 		&-platforms,
-		&-synopsis,
+		&-explanation,
 		&-release,
 		&-keyfeature {
 			display: flex;
@@ -180,7 +180,7 @@
 			}
 		}
 
-		&-synopsis .synopsis {
+		&-explanation .explanation {
 			color: var(--white);
 			font-family: var(--font-primary);
 			font-size: var(--font-small);

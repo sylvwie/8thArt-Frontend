@@ -26,9 +26,9 @@
 @use './search_style/searchResults.scss'; // risultati di ricerca sotto la searchbar 
 
 
-// Archive Components
-@use './archive_style/gameCard.scss';
-@use './archive_style/gameDetail.scss';
+// Archive Games Related Components
+@use './games_style/gameCard.scss';
+@use './games_style/gameDetail.scss';
 
 :root {
 	--font-primary : "JetBrains Mono";
