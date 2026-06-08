@@ -3,11 +3,11 @@ import { useShowcaseStore } from '../../store/useShowcaseStore';
 import crossrefDropInBoxIcon from '/src/assets/icons/cross-reference-empty.png';
 import squares2 from '/src/assets/icons/squares2.png';
 
-export function CrossRefDropInBox() {
+export function CrossRefDropInBox(props) {
 	const goToCrossSearch = useShowcaseStore((s) => s.goToCrossSearch);
 
   return (
-	<div id="crossref-dropin-wrapper">
+	<div onMouseEnter={props.popupEnter} onMouseLeave={props.popupLeave} id="crossref-dropin-wrapper">
 		<div id="crossref-dropin-container">
 			<div id="crossref-dropin-header">
 				<div id="crossref-dropin-title">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FilterBox } from "./FilterBox.tsx";
 import { SearchResults } from "./SearchResults.tsx";
 import { StatusLog } from "./StatusLog.tsx";
@@ -39,9 +39,23 @@ export function SearchBar() {
   const closePopup = () => {
     const timer = window.setTimeout(() => {
       setCrossRefBoxOpen(false);
-    }, 600); // CLOSING DELAY 
+      setCloseTimer(null);
+    }, 1500); // CLOSING DELAY 
     setCloseTimer(timer);
   };
+
+  const popupEnter = ()=>{
+    console.log('enter');
+    if (closeTimer){
+      clearTimeout(closeTimer);
+    }
+  }
+
+
+  const popupLeave = ()=>{
+    console.log('leave');
+    setCrossRefBoxOpen(false);
+  }
 
   return (
     <>
@@ -126,7 +140,7 @@ export function SearchBar() {
       )}
 
       {crossRefBoxOpen && (
-        <CrossRefDropInBox />
+        <CrossRefDropInBox popupEnter={popupEnter} popupLeave={popupLeave} />
       )}
       <StatusLog />
     </>

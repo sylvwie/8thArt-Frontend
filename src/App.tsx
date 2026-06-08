@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter,createHashRouter, Outlet, RouterProvider } from 'react-router-dom'
 import './App.css'
 import { Header } from './components/Header'
 import { Dashboard } from './pages/Dashboard'
@@ -14,7 +14,7 @@ import { GameDetail } from './pages/GameDetail.tsx'
 import { FeaturedStory } from './pages/FeaturedStory.tsx'
 
 export default function App() {
-	const router = createBrowserRouter([
+	const router = createHashRouter([
 		{
 			element: <Layout />,
 			children: [
