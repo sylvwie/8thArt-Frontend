@@ -1,4 +1,4 @@
-import { createBrowserRouter,createHashRouter, Outlet, RouterProvider } from 'react-router-dom'
+import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom' // createBrowserRouter     const router = createBrowserRouter([
 import './App.css'
 import { Header } from './components/Header'
 import { Dashboard } from './pages/Dashboard'
