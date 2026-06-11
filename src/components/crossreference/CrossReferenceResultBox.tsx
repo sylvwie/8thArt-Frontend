@@ -2,15 +2,14 @@
 import templateCover from "/src/assets/template/template-no-image.jpg";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
-import { Link } from "react-router-dom";
+import { GameCard } from "../games/GameCard.tsx";
 
 type Props = {
 	game: CrossReferenceProps;
 	similarGames: CrossReferenceProps[];
 };
 
-export function CrossReferenceResultBox({ game, similarGames }: Props) { 		 
-
+export function CrossReferenceResultBox({ game, similarGames }: Props) {
 	const genreList = Object.values(game.genres).flat();
 	const platformList = game.platforms; 
 
@@ -110,22 +109,30 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 			</div>
 
 			{/* LOWER BOX */}
-			<div className="cross-reference-result-lower-content">
-				{/* similarity - left */}
-				<div className="cross-reference-result-lower-content-similarity">
-					{/* similiar game column */}
-					<span className="similar-game-row-title">[ SIMILAR GAMES ]</span>
-					{/* LOWER BOX - similar games */}
-					<div className="similar-games-container">
-							{similarGames.map((sg) => (
-								<Link key={sg.game_id} to={`/game-detail/${sg.game_id}`}>
-									<span className="similar-game-title">{sg.title}</span>
-								</Link>
-								))}
-					</div>
+			<div className="cross-reference-result-similariar-games-wrapper">
+				{/* similiar games column */}
+				<span className="similar-game-row-title">[ SIMILAR GAMES ]</span>
+				{/* similar games container */}
+				<div className="cross-reference-similar-games-container">
+					{similarGames.map((sg) => (
+						<GameCard
+							key={sg.game_id}
+							game={{
+								game_id: sg.game_id,
+								rating: sg.moby_score > 0 ? `★ ${sg.moby_score}` : "—",
+								coverImage: sg.main_cover_url,
+								title: sg.title,
+								description: sg.explanation,
+								genres: Object.values(sg.genres).flat(),
+								developer: sg.developers ?? "Unknown",
+								release: sg.year,
+								tags: sg.tags,
+							}}
+						/>
+					))}
 				</div>
-
-				{/* ------ IGNORE NOW ----- */}
+			</div>
+			{/* ------ IGNORE NOW ----- */}
 				{/* analysis report - right */}
 				{/* <div className="cross-reference-result-lower-content-analysis"> */}
 					{/* <span className="analysis-report-title">[ ANALYSIS REPORT ]</span> */}
@@ -133,8 +140,6 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					{/* technical markers  */}
 					{/* identified elements */}
 				{/* </div> */}
-
-			</div>
 		</div>
 	)
 }

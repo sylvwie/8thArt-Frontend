@@ -5,7 +5,7 @@ import noImagetemplate from "/src/assets/template/template-no-image.jpg";
 import saveIcon from "/src/assets/icons/save-icon.png";
 // import saveIconVariant from "/src/assets/icons/save-icon-variant.png"; 
 
-import { GameCard } from "./GameCard";
+// import { GameCard } from "./GameCard";
 import type { GameDetailProps } from "../props/GameDetailProps";
 import type { Cover, Screenshot } from "../props/GameDetailProps";
 
@@ -28,34 +28,34 @@ export function GameDetailOverview({ game }: Props) {
 
 	const genreList = Object.values(game.genres ?? {}).flat();
 
-	const similarGames =
-		game.similar_games?.map((g) => ({
-			game_id: g.game_id,
+	// const similarGames =
+	// 	game.similar_games?.map((g) => ({
+	// 		game_id: g.game_id,
 
-			rating:
-				g.moby_score > 0
-					? g.moby_score.toFixed(1)
-					: "N/A",
+	// 		rating:
+	// 			g.moby_score > 0
+	// 				? g.moby_score.toFixed(1)
+	// 				: "N/A",
 
-			coverImage:
-				g.main_cover_url ||
-				noImagetemplate,
+	// 		coverImage:
+	// 			g.main_cover_url ||
+	// 			noImagetemplate,
 
-			title: g.title,
+	// 		title: g.title,
 
-			description:
-				g.description_short ??
-				"No description available.",
+	// 		description:
+	// 			g.description_short ??
+	// 			"No description available.",
 
-			genres:
-				Object.values(g.genres ?? {}).flat(),
+	// 		genres:
+	// 			Object.values(g.genres ?? {}).flat(),
 
-			developer:
-				g.developers?.join(", ") ||
-				"Unknown",
+	// 		developer:
+	// 			g.developers?.join(", ") ||
+	// 			"Unknown",
 
-			release: g.year,
-		})) ?? [];
+	// 		release: g.year,
+	// 	})) ?? [];
 
 	// Covers
 	const frontCovers = filterCovers(game.covers, "Front Cover");
@@ -351,15 +351,13 @@ export function GameDetailOverview({ game }: Props) {
 
 			{/* SIMILAR GAMES */}
 
-			<section className="game-overview__section">
+			{/* <section className="game-overview__section">
 
-				{/* <h3 className="game-overview__section-title">
+				<h3 className="game-overview__section-title">
 					SIMILAR GAMES
-				</h3> */}
-
+				</h3>
 				<div className="game-overview__similar-games">
 					
-					{/* non funziona ora */}
 					{similarGames.map((similar) => (
 						<GameCard
 							key={similar.game_id}
@@ -368,8 +366,8 @@ export function GameDetailOverview({ game }: Props) {
 					))}
 
 				</div>
-
-			</section>
+				
+			</section> */}
 
 		</div>
 	);

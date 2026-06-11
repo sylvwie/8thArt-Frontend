@@ -164,8 +164,8 @@
   border: 1px solid var(--blue);
   border-radius: 999px;
 
-  background: var(--blue);
-  color: var(--black);
+  background: var(--black);
+  color: var(--blue);
 
   font-family: var(--font-primary);
   font-size: 11px;
@@ -176,6 +176,8 @@
 
   &:hover {
     opacity: 0.85;
+    background: var(--blue);
+    color: var(--black);
   }
 }
 
