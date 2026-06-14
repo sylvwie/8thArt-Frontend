@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 
 // Questo è box dei singoli giochi visibile nei dettagli di gioco, sezione games di developer e platforms
@@ -22,12 +21,12 @@ export function GameCard({ game }: GameCardProps) {
 	return (
 		<div className="gamecard-wrapper">
 			<div className="gamecard-container">
-				<Link to={`/game/${game.game_id}`} className="gamecard-link"> 
 
 				<div id="gamecard-cover-container">
 					<button className="gamecard-rating">{game.rating}</button>
 					<img className="gamecard-cover" src={game.coverImage} alt="game cover" />
 				</div>
+
 
 				<div id="gamecard-info-container">
 					<div id="gamecard-info-overview">
@@ -56,7 +55,6 @@ export function GameCard({ game }: GameCardProps) {
 						<ViewGameBtn gameId={game.game_id} />
 					</div>
 				</div>
-				</Link>
 			</div>
 		</div>
 	)
