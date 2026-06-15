@@ -16,10 +16,11 @@ type ShowcaseStore = {
 	view: {
 		screen: ShowcaseScreen;
 		step: CrossSearchStep;
-			data: {
-				file?: File | null;
-				results?: CrossReferenceProps[]; 
-			};
+		data: {
+			file?: File | null;
+			previewUrl?: string | null;
+			results?: CrossReferenceProps[];
+		};
 	};
 
 	ui: {
@@ -58,14 +59,21 @@ export const useShowcaseStore = create<ShowcaseStore>((set) => ({
 		}),
 
 	resetUpload: () =>
-		set((state) => ({
-			uploadProgress: 0,
-			view: {
-				...state.view,
-				step: "uploading",
-				data: {},
-			},
-		})),
+		set((state) => {
+
+			if (state.view.data.previewUrl) {
+				URL.revokeObjectURL(state.view.data.previewUrl);
+			}
+
+			return {
+				uploadProgress: 0,
+				view: {
+					...state.view,
+					step: "uploading",
+					data: {},
+				},
+			};
+		}),
 
 	goToArchive: () =>
 		set({

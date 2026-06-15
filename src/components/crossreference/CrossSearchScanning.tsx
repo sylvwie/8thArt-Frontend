@@ -1,5 +1,5 @@
 import { useShowcaseStore } from "../../store/useShowcaseStore";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useCrossReferenceSearch } from "../../hooks/useCrossReferenceSearch";
 
 import closeIcon from "/src/assets/icons/close-icon.svg";
@@ -22,12 +22,11 @@ export function CrossSearchScanning() {
 
 	const { search, results, loading } = useCrossReferenceSearch();
 	const searchStarted = useRef(false);
-
+	
 	// MEDIA PREVIEW
-	const previewUrl = useMemo(() => {
-		if (!file || !file.type.startsWith("image/")) return null;
-		return URL.createObjectURL(file);
-	}, [file]);
+	const previewUrl = useShowcaseStore(
+  		(s) => s.view.data.previewUrl
+	);
 
 	// LAUNCH SEARCH ON TIME
 	useEffect(() => {

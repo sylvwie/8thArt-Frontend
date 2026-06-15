@@ -3,6 +3,7 @@ import templateCover from "/src/assets/template/template-no-image.jpg";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
 import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
 import { GameCard } from "../games/GameCard.tsx";
+import { useShowcaseStore } from "../../store/useShowcaseStore.tsx";
 
 type Props = {
 	game: CrossReferenceProps;
@@ -12,6 +13,11 @@ type Props = {
 export function CrossReferenceResultBox({ game, similarGames }: Props) {
 	const genreList = Object.values(game.genres).flat();
 	const platformList = game.platforms; 
+
+	const previewUrl = useShowcaseStore(
+  		(s) => s.view.data.previewUrl
+	);
+	console.log("previewUrl", previewUrl);
 
 	return (
 		<div id="cross-reference-result-container">
@@ -25,10 +31,28 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					<span id="reference-result"> REFERENCE RESULT</span>
 				</div>
 
-				{/* image and title */}
+
+				{/* image cover and input */}
 				<div className="cross-reference-result-upper-content-cover">
-						<img className="game-cover" src={game.main_cover_url || templateCover} alt={game.title} />
+					<img
+						className="game-cover"
+						src={game.main_cover_url || templateCover}
+						alt={game.title}
+					/>
+
+					{previewUrl && (
+						<div
+						className="cross-search-input-image"
+						style={{ backgroundImage: `url(${previewUrl})` }}
+						>
+							<div className="cross-search-input-image-title">
+								<span> [ INPUT IMAGE ] </span>
+							</div>
+						</div>
+					)}
 				</div>
+
+				{/* title */}
 				<div className="cross-reference-result-upper-content-title">
 						<span className="game-title">{game.title}</span>
 				</div>
@@ -81,16 +105,6 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 							<span className="release-date">{game.year}</span>
 						</div>
 
-						{/* moby score */}
-						{/* <div className="cross-reference-result-upper-content-moby-score">
-							{game.moby_score > 0 && (
-								<div>
-									<span>[ MOBY SCORE ]</span>
-									<span>{game.moby_score}</span>
-								</div>
-							)}
-						</div> */}
-
 						{/* key feature */}
 						<div className="cross-reference-result-upper-content-info-keyfeature">
 							<span>[ KEY FEATURES ]</span>
@@ -111,7 +125,7 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 			{/* LOWER BOX */}
 			<div className="cross-reference-result-similariar-games-wrapper">
 				{/* similiar games column */}
-				<span className="similar-game-row-title">[ SIMILAR GAMES ]</span>
+				<span className="similar-game-row-title">[ OTHER MATCHES ]</span>
 				{/* similar games container */}
 				<div className="cross-reference-similar-games-container">
 					{similarGames.map((sg) => (
@@ -132,14 +146,6 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					))}
 				</div>
 			</div>
-			{/* ------ IGNORE NOW ----- */}
-				{/* analysis report - right */}
-				{/* <div className="cross-reference-result-lower-content-analysis"> */}
-					{/* <span className="analysis-report-title">[ ANALYSIS REPORT ]</span> */}
-					{/* visual composition */}
-					{/* technical markers  */}
-					{/* identified elements */}
-				{/* </div> */}
 		</div>
 	)
 }

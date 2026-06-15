@@ -20,10 +20,11 @@ export function CrossSearchBox() {
 	const handleFileDrop = (file: File) => {
 		console.log("Uploaded file:", file);
 
-		setData({
-			file,
-		});
-
+	const previewUrl = URL.createObjectURL(file);
+	setData({
+		file,
+		previewUrl,
+	});
 		setStep("scanning");
 	};
 

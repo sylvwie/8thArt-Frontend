@@ -3,7 +3,7 @@ export function FeaturedStory() {
 		<>
 			<div className="featured-story-wrapper">
 				<h1>Featured Story</h1>
-				<p>This is a single featured story page of the featured stories.</p>
+				<p>This is an example of the featured story page.</p>
 			</div>
 		</>
 	)
