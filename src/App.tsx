@@ -5,13 +5,13 @@ import { Dashboard } from './pages/Dashboard'
 import { Login } from './pages/Login'
 import { Shop } from './pages/Shop'
 import { Archive } from './pages/Archive'
-import { About } from './pages/About'
 import { Profile } from './pages/Profile'
 import { Footer } from './components/Footer.tsx'
 import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
 import { Register } from './pages/Register.tsx'
 import { GameDetail } from './pages/GameDetail.tsx'
 import { FeaturedStory } from './pages/FeaturedStory.tsx'
+import { Cross } from './pages/Cross.tsx'
 
 export default function App() {
 	const router = createHashRouter([
@@ -43,8 +43,8 @@ export default function App() {
 					element: <Archive />
 				},
 				{
-					path: 'about',
-					element: <About />
+					path: 'cross',
+					element: <Cross />
 				},
 				{
 					path: 'profile',

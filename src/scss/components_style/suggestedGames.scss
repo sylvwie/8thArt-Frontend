@@ -1,7 +1,15 @@
 // Suggested Games Wrapper
+
+.suggested-game-link{
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
 .suggested-game-box {
 	display: flex;
 	flex-direction: column;
+	//position: relative;
 
 	width: 258px;
 	aspect-ratio: 258 / 201;

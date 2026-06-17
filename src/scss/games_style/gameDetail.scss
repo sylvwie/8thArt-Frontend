@@ -429,7 +429,7 @@
   // ─── SCREENSHOTS ──────────────────────────────────────────
 
   &__screenshots {
-    min-width: 1460px;
+    max-width: 1460px;
     margin: 0 auto;
 
     position: relative;
@@ -474,6 +474,20 @@
     gap: 16px;
 
     width: 100%;
+
+    #screenshoots-number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: -20px;
+      color: var(--white);
+      opacity: 0.6;
+      font-family: var(--font-primary);
+      font-weight: var(--font-weight);
+      font-size: 15px;
+    }
   }
 
   &__arrow {
@@ -538,7 +552,7 @@
 
     padding: 6px;
 
-    border: 1px solid rgba(192, 192, 192, 0.489);
+    border: 1px solid var(--orange);
     border-radius: 4px;
 
     background: transparent;
@@ -548,7 +562,7 @@
     transition: border-color var(--timing) var(--easing);
 
     &:hover {
-      border-color: var(--white);
+      border-color: var(--hover-grey);
       // variant bottone in hover e cliccato
     }
 
@@ -559,6 +573,7 @@
     }
   }
 
+  // THUMBNAILS GRID
   &__thumbnails {
     width: 100%;
     max-width: 980px;
@@ -567,14 +582,12 @@
     grid-template-columns: repeat(4, 1fr);
 
     gap: 8px;
-
-    background: var(--black);
   }
 
   &__thumbnail {
     width: 100%;
     height: 140px;
-
+    flex-shrink: 0;
     display: block;
 
     object-fit: cover;
@@ -590,33 +603,33 @@
     transition: border-color var(--timing) var(--easing);
 
     &:hover {
-      border-color: var(--white);
+      border-color: var(--hover-grey);
     }
   }
 
   // ─── ARTBOOK ──────────────────────────────────────────────
 
-  &__artbook-grid {
-    max-width: 1300px;
-    align-self: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 16px;
-  }
+  // &__artbook-grid {
+  //   max-width: 1300px;
+  //   align-self: center;
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  //   gap: 16px;
+  // }
 
 
-  &__artbook-image {
-    width: 100%;
-    aspect-ratio: 5 / 6;
-    object-fit: cover;
-    border: 1px solid var(--blue);
-    border-radius: 4px;
-    transition: border-color var(--timing) var(--easing);
+  // &__artbook-image {
+  //   width: 100%;
+  //   aspect-ratio: 5 / 6;
+  //   object-fit: cover;
+  //   border: 1px solid var(--blue);
+  //   border-radius: 4px;
+  //   transition: border-color var(--timing) var(--easing);
 
-    &:hover {
-      border-color: var(--white);
-    }
-  }
+  //   &:hover {
+  //     border-color: var(--white);
+  //   }
+  // }
 
   // ─── SIMILAR GAMES ────────────────────────────────────────
 

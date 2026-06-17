@@ -4,7 +4,6 @@ import { GameDetailOverview } from "../components/games/GameDetailOverview";
 import { ArchiveSearchBar } from "../components/shared/ArchiveSearchBar";
 import { useGameDetail } from "../hooks/useGameDetails";
 
-// import gameCoverTemplate from "/src/assets/template/game-cover-template.png"; // temporaneo
 import overviewIcon from "/src/assets/icons/overview-icon.png";
 import galleryIcon from "/src/assets/icons/gallery-icon.png";
 import shopIcon from "/src/assets/icons/shop-icon.png";

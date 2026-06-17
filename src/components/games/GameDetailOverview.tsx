@@ -5,7 +5,6 @@ import noImagetemplate from "/src/assets/template/template-no-image.jpg";
 import saveIcon from "/src/assets/icons/save-icon.png";
 // import saveIconVariant from "/src/assets/icons/save-icon-variant.png"; 
 
-// import { GameCard } from "./GameCard";
 import type { GameDetailProps } from "../props/GameDetailProps";
 import type { Cover, Screenshot } from "../props/GameDetailProps";
 
@@ -24,39 +23,8 @@ type Props = {
 
 export function GameDetailOverview({ game }: Props) {
 	
-	const [screenshotIndex, setScreenshotIndex] = useState(0);
-
 	const genreList = Object.values(game.genres ?? {}).flat();
-
-	// const similarGames =
-	// 	game.similar_games?.map((g) => ({
-	// 		game_id: g.game_id,
-
-	// 		rating:
-	// 			g.moby_score > 0
-	// 				? g.moby_score.toFixed(1)
-	// 				: "N/A",
-
-	// 		coverImage:
-	// 			g.main_cover_url ||
-	// 			noImagetemplate,
-
-	// 		title: g.title,
-
-	// 		description:
-	// 			g.description_short ??
-	// 			"No description available.",
-
-	// 		genres:
-	// 			Object.values(g.genres ?? {}).flat(),
-
-	// 		developer:
-	// 			g.developers?.join(", ") ||
-	// 			"Unknown",
-
-	// 		release: g.year,
-	// 	})) ?? [];
-
+	
 	// Covers
 	const frontCovers = filterCovers(game.covers, "Front Cover");
 	const backCovers = filterCovers(game.covers, "Back Cover");
@@ -66,6 +34,9 @@ export function GameDetailOverview({ game }: Props) {
 	const manualFront = filterCovers(game.covers, "Manual Front");
 	const manualBack = filterCovers(game.covers, "Manual Back");
 	const media = filterCovers(game.covers, "Media");
+	
+	// Screenshots
+	const [screenshotIndex, setScreenshotIndex] = useState(0);
 
 	const screenshots: Screenshot[] = game.screenshots ?? [];
 	const hasScreens = screenshots.length > 0;
@@ -87,6 +58,7 @@ export function GameDetailOverview({ game }: Props) {
 			i < screenshots.length - 1 ? i + 1 : 0
 		);
 	};
+
 	// Thumbnails
 	const thumbnailIndices = hasScreens
 		? [0, 1, 2, 3].map(
@@ -189,11 +161,11 @@ export function GameDetailOverview({ game }: Props) {
 
 						<div className="game-overview__panel-body">
 
-							<img
+							{/* <img
 								className="game-overview__esrb-image"
 								src={noImagetemplate}
 								alt="ESRB rating"
-							/>
+							/> */}
 
 							<ul className="game-overview__esrb-list">
 								{game.esrb_rating
@@ -207,15 +179,14 @@ export function GameDetailOverview({ game }: Props) {
 
 					<div className="game-overview__panel">
 						<div className="game-overview__panel-header">
-							LOGO
+							GAME COVER
 						</div>
 
 						<div className="game-overview__panel-body">
 							{/* LOGO */}
 							<img
 								className="game-overview__logo"
-								// src={game.covers[1]?.url || noImagetemplate}
-								src={noImagetemplate}
+								src={frontCovers?.[0]?.url || noImagetemplate}
 								alt="Game logo"
 							/>
 						</div>
@@ -292,7 +263,7 @@ export function GameDetailOverview({ game }: Props) {
 									/>
 								</button>
 
-								{/* aggiungere variant click e hover */}
+								{/* add variant click and hover */}
 								{/* <button className="game-overview__save-button-hover">
 									<img
 										src={saveIconVariant}
@@ -316,6 +287,12 @@ export function GameDetailOverview({ game }: Props) {
 									) : null;
 								})}
 							</div>
+
+							{/* screen number n/TOTAL */}
+							<div id="screenshoots-number">
+								{screenshotIndex + 1} / {screenshots.length}
+							</div>
+							
 						</div>
 
 						<img
@@ -325,8 +302,8 @@ export function GameDetailOverview({ game }: Props) {
 							onClick={nextScreenshot}
 							style={{ cursor: "pointer" }}
 						/>
-
 					</div>
+
 				</section>
 			)}
 
@@ -347,26 +324,6 @@ export function GameDetailOverview({ game }: Props) {
 					<img className="game-overview__artbook-image" src={noImagetemplate} alt="Art Book 6" />
 				</div>
 
-			</section> */}
-
-			{/* SIMILAR GAMES */}
-
-			{/* <section className="game-overview__section">
-
-				<h3 className="game-overview__section-title">
-					SIMILAR GAMES
-				</h3>
-				<div className="game-overview__similar-games">
-					
-					{similarGames.map((similar) => (
-						<GameCard
-							key={similar.game_id}
-							game={similar}
-						/>
-					))}
-
-				</div>
-				
 			</section> */}
 
 		</div>

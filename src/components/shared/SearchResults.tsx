@@ -10,6 +10,7 @@ export function SearchResults({ results }: SearchProps ) {
     <div id="search-results-wrapper">
       {results.map((result, index) => (
         <div key={`${result.title}-${index}`} className="search-result-container">
+          <Link to={`/game-detail/${result.game_id}`}>
           <div className="search-result-items">
             <div className="search-result-cover">
               <img
@@ -20,15 +21,14 @@ export function SearchResults({ results }: SearchProps ) {
             </div>
             <div className="search-result-info">
               <span className="search-result-title">
-               <Link to={`/game-detail/${result.game_id}`}>
                 {result.title}
-              </Link>
               </span>
               <p className="search-result-description">
                 {result.description}
               </p>
             </div>
           </div>
+          </Link>
         </div>
       ))}
     </div>

@@ -45,14 +45,14 @@ export function SearchBar() {
   };
 
   const popupEnter = ()=>{
-    console.log('enter');
+    //console.log('enter');
     if (closeTimer){
       clearTimeout(closeTimer);
     }
   }
 
   const popupLeave = ()=>{
-    console.log('leave');
+    //console.log('leave');
     setCrossRefBoxOpen(false);
   }
 

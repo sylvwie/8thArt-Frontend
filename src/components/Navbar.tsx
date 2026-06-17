@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import aboutIcon from "/src/assets/icons/about.png";
-import aboutIconHover from "/src/assets/icons/about-variant.png";
+import crossIcon from "/src/assets/icons/cross-icon.png";
+import crossIconHover from "/src/assets/icons/cross-icon-hover.png";
 
 import archiveIcon from "/src/assets/icons/archive.png";
 import archiveIconHover from "/src/assets/icons/archive-variant.png";
@@ -12,13 +12,13 @@ import shopIconHover from "/src/assets/icons/shop-variant.png";
 export function Navbar() {
 	return (
 		<nav id="main-nav">
-			<Link className="nav-btn" to="/about">
+			<Link className="nav-btn" to="/cross">
 				<div className="nav-icon">
-					<img className="icon-default" src={aboutIcon} alt="About" />
-					<img className="icon-hover" src={aboutIconHover} alt="About" />
+					<img className="icon-default" src={crossIcon} alt="About" />
+					<img className="icon-hover" src={crossIconHover} alt="About" />
 				</div>
 
-				<span>About</span>
+				<span>Cross</span>
 			</Link>
 
 			<Link className="nav-btn" to="/archive">

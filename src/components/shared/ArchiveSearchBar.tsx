@@ -36,7 +36,7 @@ export function ArchiveSearchBar() {
           <input
             id="search-bar-input"
             type="text"
-            placeholder="search..."
+            placeholder="search for games, platforms, genres, developers..."
             aria-label="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}

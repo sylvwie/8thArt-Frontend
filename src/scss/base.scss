@@ -2,19 +2,19 @@
 @use './pages_style/login.scss';
 @use './pages_style/register.scss';
 @use './pages_style/dashboard.scss';
-@use './pages_style/about.scss';
 @use './pages_style/archive.scss';
 
 // Components
-@use './buttons.scss';
-@use './header.scss';
-@use './footer.scss';
-@use './suggestedGames.scss';
-@use './profileBox.scss';
-@use './featuredStoriesCard.scss';
-@use './thankYouPopUp.scss';
-@use './archiveSearch.scss';
-@use './filterBox.scss';
+@use './components_style/buttons.scss';
+@use './components_style/header.scss';
+@use './components_style/footer.scss';
+@use './components_style/suggestedGames.scss';
+@use './components_style/profileBox.scss';
+@use './components_style/featuredStoriesCard.scss';
+@use './components_style/thankYouPopUp.scss';
+@use './components_style/archiveSearch.scss';
+@use './components_style/filterBox.scss';
+@use './components_style/about.scss';
 
 // Cross Reference
 @use './crossreference_style/crossSearchBoxes.scss'; // cross search upload + scanning + result
@@ -37,6 +37,8 @@
 	--orange :  #FF6B35; 
 	--white: #F7F7FF;
 	--black :  #0B0F1B;
+    --hover-grey: rgba(255, 255, 255, 0.5);
+    --dark-grey: rgba(66, 66, 66, 0.5);
 
 	--border-radius : 14px;
 	--font-medium : 16px;

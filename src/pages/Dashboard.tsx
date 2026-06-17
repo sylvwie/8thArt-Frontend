@@ -1,4 +1,5 @@
 import { useShowcaseStore } from "../store/useShowcaseStore";
+
 import cardBg1 from "/src/assets/template/card-bg-1.jpg";
 import cardBg2 from "/src/assets/template/card-bg-2.jpg";
 import cardBg3 from "/src/assets/template/card-bg-3.jpg";
@@ -11,6 +12,7 @@ import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components
 import { SuggestedGames } from "../components/SuggestedGames";
 
 import { ArchiveSearch } from "../components/ArchiveSearch";
+import { About } from "../components/About";
 import { CrossSearchBox } from "../components/crossreference/CrossSearchUpload";
 import { CrossSearchScanning } from "../components/crossreference/CrossSearchScanning";
 import { CrossSearchResult } from "../components/crossreference/CrossSearchResult";
@@ -59,10 +61,14 @@ export function Dashboard() {
 			</div>
 
 			<hr />
+			<div id="homepage-about-section">
+				<About />
+			</div>
+			<hr />
 
 			<div id="homepage-content-section">
 				<div className="featuredstoriescard-title-text-container">
-					<span id="featuredstoriescard-title-text">&gt;_FEATURED STORIES</span>
+					<span id="featuredstoriescard-title-text">FEATURED STORIES</span>
 					<span id="featuredstoriescard-title-desc">Curated narratives exploring gaming's most compelling worlds</span>
 				</div>
 

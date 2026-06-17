@@ -330,10 +330,9 @@
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background: rgba(255, 255, 255, 0.5);
+			background: var(--hover-grey);
 			border-radius: 999px;
 		}
-
 
 		// .similar-games-container {
 		// 	display: flex;

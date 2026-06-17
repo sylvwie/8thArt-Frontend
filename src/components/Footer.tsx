@@ -25,8 +25,8 @@ export function Footer() {
 					<div id="navigate-columns">
 						<div className="footer-nav-group">
 							<span className="footer-title-text">Navigate</span>
+							<span className="footer-navigation-text">Cross</span>
 							<span className="footer-navigation-text">Archive</span>
-							<span className="footer-navigation-text">About</span>
 							<span className="footer-navigation-text">Shop</span>
 						</div>
 						<div className="footer-nav-group">

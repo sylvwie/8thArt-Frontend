@@ -12,7 +12,7 @@ export function CrossRefDropInBox(props: { popupEnter: () => void; popupLeave: (
 			<div id="crossref-dropin-header">
 				<div id="crossref-dropin-title">
 					<img src={squares2} alt="squares2 icon" className="squares2" />
-					CROSS_REFERENCE.exe
+					CROSS REFERENCE
 				</div>
 			</div>
 			<div id="crossref-dropin-body">
