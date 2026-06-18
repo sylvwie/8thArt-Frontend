@@ -40,7 +40,6 @@
 	}
 }
 
-
 // CONTENT
 #homepage-content-section {
   display: flex;
@@ -53,6 +52,66 @@
   margin-bottom: 10vh;
 }
 
+// ABOUT
+#about-dashboard-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 3.5rem 21px;
+  padding: 30px 30px;
+  background: var(--black);
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  #motto {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--white);
+    max-width: 70%;
+  }
+
+  a {
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  button {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--black);
+    background: var(--aquamarine);
+    border: 1px solid var(--aquamarine);
+    padding: 16px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 
+      background var(--timing) var(--easing), 
+      color var(--timing) var(--easing), 
+      border-color var(--timing) var(--easing),
+      transform 0.2s ease;
+
+    &:hover {
+      background: transparent;
+      color: var(--aquamarine);
+      border-color: var(--aquamarine);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// FEATURED STORIES
 .featuredstoriescard-title-text-container {
 	display: flex;
 	flex-direction: column;

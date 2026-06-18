@@ -10,12 +10,11 @@ import cardBg7 from "/src/assets/template/card-bg-7.jpg";
 
 import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components/FeaturedStoriesCard";
 import { SuggestedGames } from "../components/SuggestedGames";
-
 import { ArchiveSearch } from "../components/ArchiveSearch";
-import { About } from "../components/About";
 import { CrossSearchBox } from "../components/crossreference/CrossSearchUpload";
 import { CrossSearchScanning } from "../components/crossreference/CrossSearchScanning";
 import { CrossSearchResult } from "../components/crossreference/CrossSearchResult";
+import { Link } from "react-router-dom";
 
 export function Dashboard() {
 
@@ -61,12 +60,17 @@ export function Dashboard() {
 			</div>
 
 			<hr />
-			<div id="homepage-about-section">
-				<About />
+			
+			{/* ABOUT US */}
+			<div id="about-dashboard-wrapper">
+				<span id="motto"> The 8th Art's archive dedicated to preserving the visual soul of video games </span>
+				<Link to="/about">
+					<button> ABOUT US </button>
+				</Link>
 			</div>
-			<hr />
 
 			<div id="homepage-content-section">
+				{/* FEATURED STORIES */}
 				<div className="featuredstoriescard-title-text-container">
 					<span id="featuredstoriescard-title-text">FEATURED STORIES</span>
 					<span id="featuredstoriescard-title-desc">Curated narratives exploring gaming's most compelling worlds</span>

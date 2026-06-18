@@ -1,58 +1,195 @@
 #about-wrapper {
-	display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+  gap: 4rem;
+  
+  width: 100%;
+  max-width: 1400px;
+  margin: 5vh auto; 
+  padding: 0 3rem;  
+  box-sizing: border-box;
+
+  // ─── MAIN COLUMNS ───────────────────────────────────
+  
+  .about-container-left,
+  .about-container-right {
+    display: flex;
     flex-direction: column;
-	justify-content: center;
+    gap: 24px;
+    background: var(--black);
+    border: 1px solid var(--blue);
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    
+    .about-title {
+      font-family: var(--font-primary);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--aquamarine);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+
+      &::before {
+        color: var(--aquamarine);
+      }
+    }
+  }
+
+  // ─── LEFT ───────────────────────────
+  
+  #about {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .about-subtitle {
+      font-family: var(--font-primary);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px dashed rgba(var(--blue), 0.4); 
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
+
+  // ─── RIGHT ──────────────────────────
+  
+  #contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    #emails {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 10px;
+
+      h4 {
+        font-family: var(--font-primary);
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--white);
+        margin: 0;
+        
+        a {
+          color: var(--aquamarine);
+          text-decoration: none;
+          font-weight: 500;
+          margin-left: 6px;
+          transition: color var(--timing) var(--easing), border-bottom var(--timing) var(--easing);
+          border-bottom: 1px solid transparent;
+
+          &:hover {
+            color: var(--white);
+            border-bottom: 1px solid var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  // ─── GLOBAL TEXTS ────────────────────────────
+  
+  p {
+    font-family: var(--font-primary);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--white);
+    opacity: 0.9;
+    margin: 0;
+    text-align: left;
+	letter-spacing: 0.02em;
+  }
+}
+
+
+
+// ─── IMG ────────────────────────────
+
+#team-8th-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  
+  width: 100%;
+  max-width: 1400px;
+  margin: 4rem auto; 
+  padding: 0 3rem;  
+  box-sizing: border-box;
+
+  button {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--orange);
+    background: transparent;
+    
+    border: 1px dashed var(--orange);
+    padding: 16px 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    transition: 
+      background var(--timing) var(--easing), 
+      color var(--timing) var(--easing), 
+      border-style var(--timing) var(--easing);
+
+    &:hover {
+      background: var(--orange);
+      color: var(--black);
+      border-style: solid;
+    }
+  }
+
+  #secret-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    padding: 0 21px;
-    margin: 15vh 0;
-	gap: 1rem;
-	
-	#about-title{
-		font-family: var(--font-primary);
-		font-size: 20px;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-		color: var(--aquamarine);
-		margin: 0;
-		padding: 0;
-	}
+    max-width: 600px; 
+    cursor: pointer;
 
-	#about-container {
-		font-family: var(--font-primary);
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 2rem;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(var(--blue), 0.2); 
+    }
 
-		#about-container--left-column {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
+    .close-hint {
+      font-family: var(--font-primary);
+      font-size: 12px;
+      color: var(--white);
+      opacity: 0.4;
+      text-transform: uppercase;
+    }
+  }
+}
 
-		#about-container--right-column {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
 
-		span {
-			font-family: var(--font-primary);
-			font-size: 16px;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			color: var(--orange);
-		}
-		
-		p {
-			font-family: var(--font-primary);
-			font-size: 15px;
-			text-align: start;
-			font-style: normal;
-			line-height: normal;
-			color: var(--white);
-			//text-indent: 1rem;
-		}
-	}
+
+// ─── RESPONSIVE ─────────────────────────────────────────────
+@media (max-width: 968px) {
+  #about-wrapper {
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+    #team-8th-art {
+    padding: 0 1.5rem;
+    margin: 2rem auto;
+  }
 }

@@ -1,6 +1,7 @@
 import { Logo } from './shared/Logo.tsx'
 import { SearchBar } from './shared/SearchBar.tsx';
 import DecryptedText from './motion/DecryptedText.tsx';
+import { CrossRefDropInBox } from './crossreference/CrossReferencePopUp.tsx';
 
 export function ArchiveSearch() {
       return (
@@ -100,10 +101,12 @@ export function ArchiveSearch() {
                               </span>
                         </div>
                         <SearchBar />
-                  </div>
+
+                        <CrossRefDropInBox />
+                  </div> 
             </div>
       )
 
 }
 
-// RICORDO!!!! di inserire il nome dell'utente al posto di user, se è loggato, altrimenti lasciare user.
+// RICORDO IN FASE AVANZATA --> di inserire il nome dell'utente al posto di user, se è loggato, altrimenti lasciare 'user'.

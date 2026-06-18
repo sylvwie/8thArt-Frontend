@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LogoIcon from "/src/assets/logos/logo.svg";
 import IedLogo from "/src/assets/logos/ied-logo.svg";
 import FivezerofiveGamesLogo from "/src/assets/logos/505-games-logo.svg";
@@ -25,15 +26,44 @@ export function Footer() {
 					<div id="navigate-columns">
 						<div className="footer-nav-group">
 							<span className="footer-title-text">Navigate</span>
-							<span className="footer-navigation-text">Cross</span>
-							<span className="footer-navigation-text">Archive</span>
-							<span className="footer-navigation-text">Shop</span>
+							<Link to="/cross">
+								<span className="footer-navigation-text">
+									Cross
+								</span>
+							</Link>
+							<Link to="/archive">
+								<span className="footer-navigation-text">
+									Archive
+								</span>
+							</Link>
+							<Link to="/shop">
+								<span className="footer-navigation-text">
+									Shop
+								</span>
+							</Link>
+							<Link to="/about">
+								<span className="footer-navigation-text">
+									About
+								</span>
+							</Link>
 						</div>
 						<div className="footer-nav-group">
 							<span className="footer-title-text">Archive</span>
-							<span className="footer-navigation-text">Latest Games</span>
-							<span className="footer-navigation-text">Stories</span>
-							<span className="footer-navigation-text">Top Games</span>
+							<Link to="/archive">
+								<span className="footer-navigation-text">
+									Genres
+								</span>
+							</Link>
+							<Link to="/archive">
+								<span className="footer-navigation-text">
+									Platforms
+								</span>
+							</Link>
+							<Link to="/archive">
+								<span className="footer-navigation-text">
+									Developers
+								</span>
+							</Link>
 						</div>
 					</div>
 				</div>

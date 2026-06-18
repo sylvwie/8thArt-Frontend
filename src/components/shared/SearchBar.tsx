@@ -1,13 +1,15 @@
+import { useShowcaseStore } from "../../store/useShowcaseStore.tsx";
 import { useState } from "react";
+import { useGameSearch } from "../../hooks/useGameSearch.tsx";
+
 import { FilterBox } from "./FilterBox.tsx";
 import { SearchResults } from "./SearchResults.tsx";
 import { StatusLog } from "./StatusLog.tsx";
-import { CrossRefDropInBox } from "../crossreference/CrossReferencePopUp.tsx";
+// import { CrossRefDropInBox } from "../crossreference/CrossReferencePopUp.tsx";
+
 import filterIcon from "/src/assets/icons/filter-icon.png";
 import crossRefIcon from "/src/assets/icons/cross-reference-empty.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
-import { useGameSearch } from "../../hooks/useGameSearch.tsx";
-import { useShowcaseStore } from "../../store/useShowcaseStore.tsx";
 
 export function SearchBar() {
   const [filterOpen, setFilterOpen] = useState(false);
@@ -23,38 +25,38 @@ export function SearchBar() {
 
   const handleSearch = () => { search(query); };
 
-  // CROSS REF POPUP
-  const [crossRefBoxOpen, setCrossRefBoxOpen] = useState(false);
+  // // CROSS REF POPUP HOVER
+  // const [crossRefBoxOpen, setCrossRefBoxOpen] = useState(false);
 
-  // POPUP TIMER
-  const [closeTimer, setCloseTimer] = useState<number | null>(null);
+  // // POPUP TIMER
+  // const [closeTimer, setCloseTimer] = useState<number | null>(null);
 
-  const openPopup = () => {
-    if (closeTimer) {
-      clearTimeout(closeTimer);
-    }
-    setCrossRefBoxOpen(true);
-  }; 
+  // const openPopup = () => {
+  //   if (closeTimer) {
+  //     clearTimeout(closeTimer);
+  //   }
+  //   setCrossRefBoxOpen(true);
+  // }; 
 
-  const closePopup = () => {
-    const timer = window.setTimeout(() => {
-      setCrossRefBoxOpen(false);
-      setCloseTimer(null);
-    }, 1500); // CLOSING DELAY 
-    setCloseTimer(timer);
-  };
+  // const closePopup = () => {
+  //   const timer = window.setTimeout(() => {
+  //     setCrossRefBoxOpen(false);
+  //     setCloseTimer(null);
+  //   }, 1500); // CLOSING DELAY 
+  //   setCloseTimer(timer);
+  // };
 
-  const popupEnter = ()=>{
-    //console.log('enter');
-    if (closeTimer){
-      clearTimeout(closeTimer);
-    }
-  }
+  // const popupEnter = ()=>{
+  //   //console.log('enter');
+  //   if (closeTimer){
+  //     clearTimeout(closeTimer);
+  //   }
+  // }
 
-  const popupLeave = ()=>{
-    //console.log('leave');
-    setCrossRefBoxOpen(false);
-  }
+  // const popupLeave = ()=>{
+  //   //console.log('leave');
+  //   setCrossRefBoxOpen(false);
+  // }
 
   return (
     <>
@@ -92,9 +94,10 @@ export function SearchBar() {
             {/* CROSS REFERENCE */}
             <div
               className="cross-ref-popup"
-              onMouseEnter={openPopup}
-              onMouseLeave={closePopup}
-            >
+              // onMouseEnter={openPopup}
+              // onMouseLeave={closePopup}
+            > 
+
               <button
                 className="search-icon"
                 aria-label="Cross reference"
@@ -138,9 +141,11 @@ export function SearchBar() {
         <SearchResults results={results} />
       )}
 
-      {crossRefBoxOpen && (
+      {/* CROSS REFERENCE POPUP HOVER */}
+      {/* {crossRefBoxOpen && (
         <CrossRefDropInBox popupEnter={popupEnter} popupLeave={popupLeave} />
-      )}
+      )} */}
+
       <StatusLog />
     </>
   );
