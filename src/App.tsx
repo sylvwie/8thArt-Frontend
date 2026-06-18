@@ -12,7 +12,7 @@ import { Register } from './pages/Register.tsx'
 import { GameDetail } from './pages/GameDetail.tsx'
 import { FeaturedStory } from './pages/FeaturedStory.tsx'
 import { Cross } from './pages/Cross.tsx'
-import { About } from './components/About.tsx'
+import { About } from './pages/About.tsx'
 
 export default function App() {
 	const router = createHashRouter([
@@ -40,16 +40,16 @@ export default function App() {
 					element: <Shop />
 				},
 				{
-					path: 'about',
-					element: <About />
-				},
-				{
 					path: 'archive',
 					element: <Archive />
 				},
 				{
 					path: 'cross',
 					element: <Cross />
+				},
+				{
+					path: 'about',
+					element: <About />
 				},
 				{
 					path: 'profile',

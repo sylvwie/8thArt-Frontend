@@ -3,6 +3,7 @@
 @use './pages_style/register.scss';
 @use './pages_style/dashboard.scss';
 @use './pages_style/archive.scss';
+@use './pages_style/about.scss';
 
 // Components
 @use './components_style/buttons.scss';
@@ -14,7 +15,6 @@
 @use './components_style/thankYouPopUp.scss';
 @use './components_style/archiveSearch.scss';
 @use './components_style/filterBox.scss';
-@use './components_style/about.scss';
 
 // Cross Reference
 @use './crossreference_style/crossSearchBoxes.scss'; // cross search upload + scanning + result
