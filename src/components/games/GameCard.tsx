@@ -5,7 +5,7 @@ type GameCardProps = {
 	game: GameInfo;
 }
 
-type GameInfo = {
+export type GameInfo = {
   game_id: number;
   rating: string;
   coverImage: string;

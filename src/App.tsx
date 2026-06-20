@@ -15,6 +15,7 @@ import { Cross } from './pages/CrossPlayground.tsx'
 import { About } from './pages/About.tsx'
 import { PlatformPage } from './components/archive_pages/PlatformPage.tsx'
 import { GenrePage } from './components/archive_pages/GenrePage.tsx'
+import { DeveloperPage } from './components/archive_pages/DeveloperPage.tsx'
 
 export default function App() {
 	const router = createHashRouter([
@@ -72,6 +73,10 @@ export default function App() {
 				{
 					path: 'platform/:platformName',
 					element: <PlatformPage />
+				},
+				{
+					path: 'developer/:developerName',
+					element: <DeveloperPage />
 				},
 			]
 		},

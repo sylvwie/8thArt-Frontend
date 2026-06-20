@@ -104,12 +104,39 @@
 					.select-arrow {
 						position: absolute;
 						right: 10px;
-						top: 50%;
-						transform: translateY(-50%); 
+						top: 12px;
 						font-size: 8px;
 						color: var(--blue);
 						pointer-events: none;
-						line-height: 1; 
+						line-height: 1;
+					}
+
+					.active-filter-chips {
+						display: flex;
+						flex-wrap: wrap;
+						gap: 6px;
+						margin-top: 8px;
+
+						.active-filter-chip {
+							display: flex;
+							align-items: center;
+							gap: 4px;
+							border: 1px solid var(--aquamarine);
+							border-radius: 4px;
+							padding: 4px 8px;
+							font-family: inherit;
+							font-size: 10px;
+							line-height: 1;
+							color: var(--aquamarine);
+							background: transparent;
+							cursor: pointer;
+
+							&:hover {
+								border-color: var(--blue);
+								color: var(--blue);
+								transition: border-color 0.1s ease, color 0.1s ease;
+							}
+						}
 					}
 				}
 

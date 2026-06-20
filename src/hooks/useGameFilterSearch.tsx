@@ -1,7 +1,7 @@
 // src/hooks/useGameFilterSearch.tsx
 import { useState, useCallback } from "react";
 import type { Game, GameSearchResponse, GameSearchParams } from "../components/props/ArchiveProps.tsx";
-import { normalizeGameSearchResult } from "../components/utilis/normalizeGameSearchResult.tsx";
+import { normalizeGameSearchResult } from "../components/utils/normalizeGameSearchResult.tsx";
 
 const SEARCH_URL = "https://cqft3ppix5lafhomkq83xeeb.204.168.159.152.sslip.io/api/games/games/search/";
 

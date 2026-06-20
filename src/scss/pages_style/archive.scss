@@ -249,3 +249,73 @@
 		}
 	}
 }
+
+// ─── PLATFORM - GENRE - DEVELOPER ─────────────────────────────────────
+// In case i can't find them in the future, i'll leave this comment: PlatformPage.scss GenrePage.scss DeveloperPage.scss 
+
+.platform-page-container,
+.genre-page-container,
+.developer-page-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 1660px; 
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.05em;
+
+    .platform-header,
+    .genre-header,
+    .developer-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--blue);
+
+        .platform-name,
+        .genre-name,
+        .developer-name {
+            font-family: var(--font-primary);
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--aquamarine);
+            text-transform: uppercase;
+            
+        }
+    
+        .platform-loading,
+        .genre-loading,
+        .developer-loading,
+        .platform-error,
+        .genre-error,
+        .developer-error,
+        .platform-games-count,
+        .genre-games-count,
+        .developer-games-count {
+            font-family: var(--font-primary);
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--white);
+            opacity: 0.7;
+        }
+    }
+
+    .platform-games-list,
+    .genre-games-list,
+    .developer-games-list {
+        display: grid;
+        grid-template-columns: repeat(2, 766px); 
+        gap: 24px;
+        width: 100%;
+        justify-content: center; 
+    }
+}

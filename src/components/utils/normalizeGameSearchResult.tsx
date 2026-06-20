@@ -1,5 +1,5 @@
 
-import type { Game, GameSearchResult } from "../../components/props/ArchiveProps.tsx";
+import type { Game, GameSearchResult } from "../props/ArchiveProps.tsx";
 
 function safeParseArray(value: string): string[] {
   try {

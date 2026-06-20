@@ -3,14 +3,13 @@ import { useState, useCallback } from "react";
 import { useFilters } from "./useFilters.tsx";
 import type { Game, GameSearchResponse } from "../components/props/ArchiveProps.tsx";
 import type { FiltersState, FilterOptions } from "../components/props/FilterProps.tsx";
-import { normalizeGameSearchResult } from "../components/utilis/normalizeGameSearchResult.tsx";
+import { normalizeGameSearchResult } from "../components/utils/normalizeGameSearchResult.tsx";
 
 const SEARCH_URL = "https://cqft3ppix5lafhomkq83xeeb.204.168.159.152.sslip.io/api/games/games/search/";
 
 export function useFilterSearch() {
   const { filters: rawFilters, loading: optionsLoading, error: optionsError } = useFilters();
 
-  // FilterOptions per la UI (flat string[], come da FilterProps.tsx)
   const filterOptions: FilterOptions = {
     genres: rawFilters?.genres?.["Genre"] ?? [],
     platforms: rawFilters?.platforms ?? [],
@@ -43,15 +42,17 @@ export function useFilterSearch() {
     setFilters({ genres: [], platforms: [], years: [] });
   };
 
-  // AND tra categorie, OR dentro la stessa categoria, via combinazioni + merge/dedupe
-  const search = useCallback(async () => {
+  // q + filtri combinati. I filtri arrivano come argomento (non da closure sullo
+  // state interno), così search resta stabile e non si re-innesca quando l'utente
+  // clicca un filtro: scatta solo quando viene effettivamente chiamata.
+  const search = useCallback(async (q: string, activeFilters: FiltersState) => {
     setLoading(true);
     setError(null);
 
     try {
-      const genreList = filters.genres.length ? filters.genres : [undefined];
-      const platformList = filters.platforms.length ? filters.platforms : [undefined];
-      const yearList = filters.years.length ? filters.years : [undefined];
+      const genreList = activeFilters.genres.length ? activeFilters.genres : [undefined];
+      const platformList = activeFilters.platforms.length ? activeFilters.platforms : [undefined];
+      const yearList = activeFilters.years.length ? activeFilters.years : [undefined];
 
       const combinations: { genre_value?: string; platform?: string; year?: string }[] = [];
       for (const genre_value of genreList) {
@@ -65,6 +66,7 @@ export function useFilterSearch() {
       const batches = await Promise.all(
         combinations.map(async ({ genre_value, platform, year }) => {
           const params = new URLSearchParams({ limit: "200" });
+          if (q) params.set("q", q);
           if (genre_value) {
             params.set("genre_category", "Genre");
             params.set("genre_value", genre_value);
@@ -93,7 +95,7 @@ export function useFilterSearch() {
     } finally {
       setLoading(false);
     }
-  }, [filters]);
+  }, []); // stabile a vita
 
   return {
     results,
