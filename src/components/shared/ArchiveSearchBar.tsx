@@ -3,18 +3,25 @@ import { useState } from "react";
 import filterIcon from "/src/assets/icons/filter-icon.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
 import { SearchResults } from "./SearchResults.tsx";
-import { useGameSearch } from "../../hooks/useGameSearch.tsx";
+import { useFilterSearch } from "../../hooks/useFilterSearch.tsx";
 
 export function ArchiveSearchBar() {
   const [filterOpen, setFilterOpen] = useState(false);
   const [query, setQuery] = useState("");
 
-  // Hook di ricerca
-  const { results, search, loading } = useGameSearch();
+  const {
+    results,
+    loading,
+    filters,
+    filterOptions,
+    toggleFilter,
+    resetFilters,
+    search,
+  } = useFilterSearch();
 
   // Handler centrale della ricerca
   const handleSearch = () => {
-    search(query);
+    search(query, filters);
   };
 
   return (
@@ -62,7 +69,14 @@ export function ArchiveSearchBar() {
       {/* loading */}
       {loading && <div className="search-loading">Loading...</div>}
 
-      {filterOpen && <FilterBox />}
+      {filterOpen && (
+        <FilterBox
+          filterOptions={filterOptions}
+          filters={filters}
+          toggleFilter={toggleFilter}
+          resetFilters={resetFilters}
+        />
+      )}
       {results.length > 0 && <SearchResults results={results} />}
     </>
   );
