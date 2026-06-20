@@ -1,6 +1,7 @@
 import { useShowcaseStore } from "../../store/useShowcaseStore.tsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGameSearch } from "../../hooks/useGameSearch.tsx";
+import { useDebounce } from "../../hooks/useDebounce.tsx";
 
 import { FilterBox } from "./FilterBox.tsx";
 import { SearchResults } from "./SearchResults.tsx";
@@ -16,6 +17,9 @@ export function SearchBar() {
 
   const [query, setQuery] = useState("");
 
+  // DEBOUNCE
+  const debouncedQuery = useDebounce(query, 300);
+
   const goToCrossSearch = useShowcaseStore(
     (s) => s.goToCrossSearch
   );
@@ -24,6 +28,13 @@ export function SearchBar() {
   const { results, search, loading } = useGameSearch();
 
   const handleSearch = () => { search(query); };
+
+  // AUTO-SEARCH ON DEBOUNCED QUERY CHANGE
+  useEffect(() => {
+    if (debouncedQuery) {
+      search(debouncedQuery);
+    }
+  }, [debouncedQuery, search]);
 
   // // CROSS REF POPUP HOVER
   // const [crossRefBoxOpen, setCrossRefBoxOpen] = useState(false);

@@ -27,15 +27,15 @@ export function About() {
 				<span className="about-title">CONTACTS</span>
 				<div id="contacts">
 					<p>
-						We're three italian IED Milan students from Visual Arts, Mathieu, Silvia and Martina, who share a passion for video games and their artistic value. We are committed to creating a platform that not only showcases the visual artistry of games but also educates the public about their cultural significance.
+						We're three italian students from the Visual Arts school of the European Institute of Design in Milan, Mathieu, Silvia and Martina, who share a passion for video games and their artistic value. We are committed to creating a platform that not only showcases the visual artistry of games but also educates the public about their cultural significance.
 						For inquiries, collaborations, or just to say hello, please reach out to us at our email address.
 					</p>
 					<br></br>
 					<div id="emails">
 						<span> <strong>Contact us:</strong> </span>
-						<h4> Mathieu: <a href="mailto:m.trevisan@ied.edu">m.trevisan@ied.edu</a> </h4>
-						<h4> Silvia: <a href="mailto:s.penati@ied.edu">s.penati@ied.edu</a> </h4>
-						<h4> Martina: <a href="mailto:m.marzullo@ied.edu">m.marzullo@ied.edu</a> </h4>
+						<h4> Mathieu: <a href="mailto:trevisanmathieu@gmail.com">trevisanmathieu@gmail.com</a> </h4>
+						<h4> Silvia: <a href="mailto:silviapen04@gmail.com">silviapen04@gmail.com</a> </h4>
+						<h4> Martina: <a href="mailto:martmarzullo1@icloud.com">martmarzullo1@icloud.com</a> </h4>
 					</div>
 				</div>
 			</div>

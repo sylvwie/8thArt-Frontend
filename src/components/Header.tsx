@@ -6,7 +6,9 @@ import { NotLoggedInProfileBox } from "./NotLoggedInProfile";
 
 import ProfileIcon from "/src/assets/icons/profile-icon.png";
 import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.png";
+
 export function Header() {
+	
 	const [profileBoxOpen, setProfileBoxOpen] = useState(false);
 
 	return (
@@ -22,8 +24,10 @@ export function Header() {
 					id="profile-btn-wrapper"
 					onMouseEnter={() => setProfileBoxOpen(true)}
 					onMouseLeave={() => setProfileBoxOpen(false)}
-				>
-					<Link id="profile-btn-container" to="/profile">
+				>	
+					{/* !!!!! Link to profile page is disabled for now !!!!! */}
+					{/* <Link id="profile-btn-container" to="/profile"> */}
+					<div id="profile-btn-container">
 						<div className="profile-icon">
 							<img
 								className="icon-default"
@@ -39,7 +43,8 @@ export function Header() {
 						</div>
 
 						<span>Profile</span>
-					</Link>
+					</div>
+					{/* </Link> */}
 
 					{profileBoxOpen && (
 						<div className="profile-dropdown">

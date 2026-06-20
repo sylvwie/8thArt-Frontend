@@ -46,6 +46,7 @@
   flex-direction: column;
 
   width: 100%;
+  //max-width: 1400px;
 
   margin-top: 24px;
   padding: 0 21px;
@@ -58,8 +59,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1400px;
   margin: 3.5rem 21px;
   padding: 30px 30px;
   background: var(--black);

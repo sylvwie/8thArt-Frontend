@@ -8,7 +8,6 @@ import saveIcon from "/src/assets/icons/save-icon.png";
 import type { GameDetailProps } from "../props/GameDetailProps";
 import type { Cover, Screenshot } from "../props/GameDetailProps";
 
-
 // UTILITIES 
 const filterCovers = (covers: Cover[], keyword: string) =>
 	covers.filter((c) =>

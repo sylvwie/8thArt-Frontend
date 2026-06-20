@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export function useGameSearch() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const search = async (query: string) => {
+  const search = useCallback(async (query: string) => {
     if (!query.trim()) {
       setResults([]);
       return;
@@ -22,7 +22,7 @@ export function useGameSearch() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   return {
     results,
