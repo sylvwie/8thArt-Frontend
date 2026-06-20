@@ -1,0 +1,275 @@
+#cross-playground {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 2rem 3rem;
+	gap: 48px;
+	box-sizing: border-box;
+
+	.cross-top-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		text-align: center;
+		width: 100%;
+
+		.cross-logo {
+			width: auto;
+			height: 300px;
+			object-fit: contain;
+		}
+
+		.cross-tagline {
+			font-family: var(--font-primary);
+			font-size: 16px;
+			color: var(--white);
+			letter-spacing: 0.05em;
+			opacity: 0.9;
+			margin: 0;
+		}
+	}
+
+	// ─── UPLOAD ZONE ──────────────────────────────────────────
+	.cross-upload-section {
+		width: 100%;
+		max-width: 980px;
+	}
+
+	.cross-upload-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		width: 100%;
+		padding: 60px 40px;
+		border: 1px solid var(--blue);
+		border-radius: 12px;
+		box-sizing: border-box;
+		position: relative; 
+    	overflow: hidden;
+		background: var(--black);
+
+		.cross-upload-icon,
+		.cross-upload-text,
+		.cross-upload-btn {
+		position: relative;
+		z-index: 2;
+		}
+
+		.cross-upload-icon {
+			width: 40px;
+			height: 40px;
+			object-fit: contain;
+		}
+
+		.cross-upload-text {
+			font-family: var(--font-primary);
+			font-size: 16px;
+			color: var(--white);
+			font-weight: 400;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+		}
+
+		.cross-upload-btn {
+			font-family: var(--font-primary);
+			font-size: 13px;
+			font-weight: 500;
+			letter-spacing: 0.05em;
+			color: var(--white);
+			background: var(--blue);
+			border: 1px solid var(--blue);
+			padding: 12px 32px;
+			border-radius: 999px;
+			cursor: pointer;
+			transition: background var(--timing) var(--easing), color var(--timing) var(--easing);
+
+			&:hover {
+				background: transparent;
+				color: var(--blue);
+			}
+
+		}
+		.cross-upload-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0.8;
+			pointer-events: none;
+			z-index: 1; 
+		}
+
+		.cross-reference-empty {
+			position: absolute;
+			height: 426px;
+			aspect-ratio: 1/1;
+			top: 18%;
+			left: 75%;
+			object-fit: contain;
+			opacity: 0.8;
+			pointer-events: none;
+			z-index: 1; 
+		}
+	}
+}
+
+// ─── UPLOAD SAMPLES ──────────────────────────────────────
+
+.cross-playground-upload {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0rem 3rem;
+	gap: 48px;
+	box-sizing: border-box;
+
+	.cross-samples-section {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		width: 100%;
+		max-width: 980px;
+	}
+
+	.cross-sample-row-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		width: 100%;
+	}
+
+	.cross-sample-row-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 0 4px;
+
+		.cross-sample-section-title {
+			font-family: var(--font-primary);
+			font-size: 16px;
+			font-weight: 500;
+			color: var(--aquamarine);
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		.cross-sample-status-text {
+			font-family: var(--font-primary);
+			font-size: 11px;
+			color: var(--aquamarine);
+			letter-spacing: 0.05em;
+			opacity: 0.8;
+		}
+	}
+
+	.cross-sample-card-container {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		width: 100%;
+		padding: 24px;
+		background: var(--black);
+		border: 1px solid var(--blue);
+		border-radius: 8px;
+		box-sizing: border-box;
+	}
+
+	.cross-sample-card-grid {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		width: 100%;
+
+		.cross-sample-media-box {
+			flex: 1;
+			height: 140px;
+			background: rgba(0, 0, 0, 0.4);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 4px;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.cross-sample-arrow-exchange {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 32px;
+			flex-shrink: 0;
+
+			img {
+				width: 20px;
+				height: 20px;
+				object-fit: contain;
+			}
+		}
+	}
+
+	.cross-sample-card-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		width: 100%;
+		margin-top: 4px;
+
+		.cross-sample-info-texts {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		.cross-sample-title {
+			font-family: var(--font-primary);
+			font-size: 14px;
+			font-weight: var(--font-weight);
+			color: var(--white);
+		}
+
+		.cross-sample-mapping {
+			font-family: var(--font-primary);
+			font-size: 11px;
+			color: var(--white);
+			opacity: 0.4;
+			text-transform: uppercase;
+			letter-spacing: 0.02em;
+		}
+
+		.cross-sample-load-btn {
+			font-family: var(--font-primary);
+			font-size: 12px;
+			font-weight: 500;
+			letter-spacing: 0.05em;
+			color: var(--white);
+			background: var(--blue);
+			border: 1px solid var(--blue);
+			padding: 10px 24px;
+			border-radius: 6px;
+			cursor: pointer;
+			flex-shrink: 0;
+			transition: background var(--timing) var(--easing), color var(--timing) var(--easing);
+
+			&:hover {
+				background: transparent;
+				color: var(--blue);
+			}
+		}
+	}
+}

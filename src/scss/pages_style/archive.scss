@@ -120,15 +120,15 @@
 		align-items: center;
 		padding: 30px;
 		width: 100%;
-
 		gap: 12px;
 	}
 
 	.archive-dot {
-		width: 10px;
-		height: 10px;
+		width: 36px;
+		height: 8px;
+		flex-shrink: 0;
 
-		border-radius: 50%;
+		border-radius: 20px;
 		border: 1px solid var(--blue);
 
 		background: transparent;
@@ -158,72 +158,84 @@
 	}
 
 	.archive-platforms-list {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-		gap: 16px;
-		width: 100%;
-	}
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(200px, 1fr);
+        gap: 16px;
+        width: 100%;
+        
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 15px; 
+        scroll-behavior: smooth;
 
-	// platform list
-	.archive-platforms-list-box {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 16px 20px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--hover-grey) transparent;
 
-		background: var(--black);
-		border: 1px solid var(--blue);
-		border-radius: 4px;
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
 
-		cursor: pointer;
-		position: relative;
-		overflow-x: auto;
-		overflow-y: hidden;
-		padding-bottom: 15px;
-		scroll-behavior: smooth;
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
 
-		&::-webkit-scrollbar {
-			height: 5px;
-		}
+        &::-webkit-scrollbar-thumb {
+            background: var(--hover-grey);
+            border-radius: 999px;
+            
+            &:hover {
+                background: var(--blue);
+            }
+        }
+    }
 
-		&::-webkit-scrollbar-track {
-			background: transparent;
-		}
+    .archive-platforms-list-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+		text-align: center;
+		line-height: 1.2;
+        padding: 16px 20px;
+        height: 100%; 
+        box-sizing: border-box;
 
-		&::-webkit-scrollbar-thumb {
-			background: var(--hover-grey);
-			border-radius: 999px;
-		}
+        background: var(--black);
+        border: 1px solid var(--blue);
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
 
-		transition:
-			background var(--timing) var(--easing),
-			border-color var(--timing) var(--easing),
-			transform 0.2s ease;
+        transition:
+            background var(--timing) var(--easing),
+            border-color var(--timing) var(--easing),
+            transform 0.2s ease;
 
-		span {
-			font-family: var(--font-primary);
-			font-size: var(--font-small);
-			font-weight: 500;
-			color: var(--white);
-			text-transform: uppercase;
-			letter-spacing: 0.05em;
-			z-index: 2;
-			transition: color var(--timing) var(--easing);
-		}
+        span {
+            font-family: var(--font-primary);
+            font-size: var(--font-small);
+            font-weight: 500;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            z-index: 2;
+            transition: color var(--timing) var(--easing);
+        }
 
-		&:hover {
-			border-color: var(--aquamarine);
-			background: var(--blue);
-			transform: translateY(-3px);
+        &:hover {
+            border-color: var(--aquamarine);
+            background: var(--blue);
+            transform: translateY(-3px);
 
-			span {
-				color: var(--white);
-			}
-		}
+            span {
+                color: var(--white);
+            }
+        }
 
-		&:active {
-			transform: translateY(-1px);
-		}
+        &:active {
+            transform: translateY(-1px);
+        }
 	}
 
 	// ─── STORIES SECTION ─────────────────────────────────────
@@ -231,5 +243,9 @@
 		width: 100%;
 		margin-top: 20px;
 		margin-bottom: 20px;
+
+		.archive-section-title {
+			line-height: 1.5;
+		}
 	}
 }

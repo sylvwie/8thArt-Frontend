@@ -11,8 +11,10 @@ import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
 import { Register } from './pages/Register.tsx'
 import { GameDetail } from './pages/GameDetail.tsx'
 import { FeaturedStory } from './pages/FeaturedStory.tsx'
-import { Cross } from './pages/Cross.tsx'
+import { Cross } from './pages/CrossPlayground.tsx'
 import { About } from './pages/About.tsx'
+import { PlatformPage } from './components/archive_pages/PlatformPage.tsx'
+import { GenrePage } from './components/archive_pages/GenrePage.tsx'
 
 export default function App() {
 	const router = createHashRouter([
@@ -62,6 +64,14 @@ export default function App() {
 				{
 					path: 'featured-story',
 					element: <FeaturedStory />
+				},
+				{
+					path: '/genre/:genreCategory/:genreValue',
+					element: <GenrePage />
+				},
+				{
+					path: 'platform/:platformName',
+					element: <PlatformPage />
 				},
 			]
 		},

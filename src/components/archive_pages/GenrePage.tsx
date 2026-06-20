@@ -1,34 +1,33 @@
-// import { GameCard } from "../games/GameCard";
-// import type { GameDetailProps } from "../props/GameDetailProps";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useGameFilterSearch } from "../../hooks/useGameFilterSearch.tsx";
 
-// type GenreGameCardsProps = {
-// 	games: GameDetailProps[];
-// }
+export function GenrePage() {
+  const { genreCategory, genreValue } = useParams<{ genreCategory: string; genreValue: string }>();
+  const { games, count, loading, error, search } = useGameFilterSearch();
 
-// export function GenrePage({ games }: GenreGameCardsProps) {
-// 	return <>
+  useEffect(() => {
+    if (genreCategory && genreValue) {
+      search({ genre_category: genreCategory, genre_value: genreValue });
+    }
+  }, [genreCategory, genreValue, search]);
 
-// 		<div id="genre-page">
-// 			<span>Genre's name clicked here</span>
-// 			<div className="genre-gamecards-list">
-// 				{games.map((sg) => (
-// 						<GameCard
-// 							key={sg.game_id}
-// 							game={{
-// 								game_id: sg.game_id,
-// 								rating: sg.moby_score > 0 ? `★ ${sg.moby_score}` : "—",
-// 								coverImage: sg.main_cover_url,
-// 								title: sg.title,
-// 								description: sg.description_short ?? sg.description ?? "No description available.",
-// 								genres: Object.values(sg.genres).flat(),
-// 								developer: sg.developers ?? "Unknown",
-// 								release: sg.year,
-// 								tags: sg.tags,
-// 							}}
-// 						/>
-// 					))}
-// 			</div>
-// 		</div>
-// 	</>
+  return (
+    <>
+      <span>{genreValue}</span>
 
-// }
+      {loading && <div className="genre-loading">Loading...</div>}
+      {error && <div className="genre-error">{error}</div>}
+
+      <div className="genre-games-count">{count} giochi trovati</div>
+
+      <div className="genre-games-list">
+        {games.map((game) => (
+          <div key={game.game_id} className="genre-game-box">
+            <span>{game.title}</span>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}

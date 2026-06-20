@@ -1,51 +1,35 @@
-import { useEffect, useState } from "react";
-import type { GameDetailProps } from "../components/props/GameDetailProps";
-import type { FiltersState, FilterOptions } from "../components/props/FilterProps";
+// src/hooks/useFilterSearch.tsx
+import { useState, useCallback } from "react";
+import { useFilters } from "./useFilters.tsx";
+import type { Game, GameSearchResponse } from "../components/props/ArchiveProps.tsx";
+import type { FiltersState, FilterOptions } from "../components/props/FilterProps.tsx";
+import { normalizeGameSearchResult } from "../components/utilis/normalizeGameSearchResult.tsx";
 
-const BASE_URL =
-  "https://cqft3ppix5lafhomkq83xeeb.204.168.159.152.sslip.io/api";
+const SEARCH_URL = "https://cqft3ppix5lafhomkq83xeeb.204.168.159.152.sslip.io/api/games/games/search/";
 
 export function useFilterSearch() {
-  const [results, setResults] = useState<GameDetailProps[]>([]);
-  const [loading, setLoading] = useState(false);
+  const { filters: rawFilters, loading: optionsLoading, error: optionsError } = useFilters();
 
-	const [filters, setFilters] = useState<FiltersState>({
-		genres: [],
-		platforms: [],
-		years: [],
-	});
+  // FilterOptions per la UI (flat string[], come da FilterProps.tsx)
+  const filterOptions: FilterOptions = {
+    genres: rawFilters?.genres?.["Genre"] ?? [],
+    platforms: rawFilters?.platforms ?? [],
+    years: rawFilters?.years ?? [],
+  };
 
-  const [filterOptions, setFilterOptions] = useState<FilterOptions>({
+  const [filters, setFilters] = useState<FiltersState>({
     genres: [],
     platforms: [],
     years: [],
   });
 
-  // LOAD FILTER OPTIONS
-  useEffect(() => {
-    const fetchFilters = async () => {
-      try {
-        const res = await fetch(`${BASE_URL}/games/filters/`);
-        const data = await res.json();
+  const [results, setResults] = useState<Game[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-        setFilterOptions({
-          genres: data.genres ?? [],
-          platforms: data.platforms ?? [],
-          years: data.years ?? [],
-        });
-      } catch (err) {
-        console.error("Filter fetch error", err);
-      }
-    };
-
-    fetchFilters();
-  }, []);
-
-  // TOGGLE FILTER
   const toggleFilter = (type: keyof FiltersState, value: string) => {
     setFilters((prev) => {
       const exists = prev[type].includes(value);
-
       return {
         ...prev,
         [type]: exists
@@ -55,39 +39,72 @@ export function useFilterSearch() {
     });
   };
 
-  // SEARCH
-  const search = async () => {
+  const resetFilters = () => {
+    setFilters({ genres: [], platforms: [], years: [] });
+  };
+
+  // AND tra categorie, OR dentro la stessa categoria, via combinazioni + merge/dedupe
+  const search = useCallback(async () => {
     setLoading(true);
+    setError(null);
 
     try {
-      const params = new URLSearchParams();
+      const genreList = filters.genres.length ? filters.genres : [undefined];
+      const platformList = filters.platforms.length ? filters.platforms : [undefined];
+      const yearList = filters.years.length ? filters.years : [undefined];
 
-      if (filters.genres.length)
-        params.append("genres", filters.genres.join(","));
+      const combinations: { genre_value?: string; platform?: string; year?: string }[] = [];
+      for (const genre_value of genreList) {
+        for (const platform of platformList) {
+          for (const year of yearList) {
+            combinations.push({ genre_value, platform, year });
+          }
+        }
+      }
 
-      if (filters.platforms.length)
-        params.append("platforms", filters.platforms.join(","));
+      const batches = await Promise.all(
+        combinations.map(async ({ genre_value, platform, year }) => {
+          const params = new URLSearchParams({ limit: "200" });
+          if (genre_value) {
+            params.set("genre_category", "Genre");
+            params.set("genre_value", genre_value);
+          }
+          if (platform) params.set("platform", platform);
+          if (year) params.set("year", year);
 
-      if (filters.years.length)
-        params.append("years", filters.years.join(","));
+          const response = await fetch(`${SEARCH_URL}?${params.toString()}`);
+          if (!response.ok) throw new Error(`Errore ${response.status}`);
+          const json: GameSearchResponse = await response.json();
+          return json.results;
+        })
+      );
 
-      const res = await fetch(`${BASE_URL}/games/?${params.toString()}`);
-      const data = await res.json();
+      const merged = new Map<number, Game>();
+      for (const batch of batches) {
+        for (const raw of batch) {
+          const game = normalizeGameSearchResult(raw);
+          merged.set(game.game_id, game);
+        }
+      }
 
-      setResults(Array.isArray(data) ? data : data.results ?? []);
+      setResults(Array.from(merged.values()));
     } catch (err) {
-      console.error(err);
+      setError(err instanceof Error ? err.message : "Errore sconosciuto");
     } finally {
       setLoading(false);
     }
-  };
+  }, [filters]);
 
   return {
     results,
     loading,
+    error,
     filters,
     filterOptions,
+    optionsLoading,
+    optionsError,
     toggleFilter,
+    resetFilters,
     search,
   };
 }

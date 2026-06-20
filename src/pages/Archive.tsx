@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { usePlatforms } from "../hooks/usePlatforms.tsx";
+import { useFilters } from "../hooks/useFilters.tsx";
 
 import { ArchiveSearchBar } from "../components/shared/ArchiveSearchBar.tsx";
 import { FeaturedStoriesCard, type FeaturedStoriesShowcase } from "../components/FeaturedStoriesCard";
@@ -22,21 +25,8 @@ export function Archive() {
 	];
 
 	// GENRES
-	{/* da sostituire con i generi reali */}
-	const genres = [
-		"Action",
-		"Adventure",
-		"JRPG",
-		"Puzzle",
-		"Shooter",
-		"Platform",
-		"Survival",
-		"Horror",
-		"Strategy",
-		"Racing",
-		"Fighting",
-		"Sports",
-	];
+	const { filters, loading: filtersLoading, error: filtersError } = useFilters();
+	const genres = filters?.genres?.["Genre"] ?? [];
 
 	const VISIBLE_ITEMS = 5;
 
@@ -63,26 +53,8 @@ export function Archive() {
 	);
 
 	// PLATFORMS
-	{/* da sostituire con le piattaforme reali */}
-	const platforms = [
-		"PSP",
-		"PS2",
-		"PS3",
-		"PS4",
-		"PS5",
-		"PC",
-		"XBOX 360",
-		"NINTENDO DS",
-		"NINTENDO 3DS",
-		"NINTENDO 64",
-		"WII",
-		"WII U",
-		"SWITCH",
-		"SWITCH 2",
-		"DREAMCAST",
-		"COMMODORE 64",
-		"GAMECUBE",
-	];
+	const navigate = useNavigate();
+	const { platforms, loading: platformsLoading, error: platformsError } = usePlatforms();
 
 	return <>
 
@@ -98,42 +70,32 @@ export function Archive() {
 
 			{/* GENRES SECTION */}
 			<section className="archive-genre-section">
+				{filtersLoading && <div className="archive-genre-loading">Loading...</div>}
+				{filtersError && <div className="archive-genre-error">{filtersError}</div>}
+
+				{genres.length > 0 && (
 				<div className="archive-genre-carousel">
+					{/* arrow left */}
+					<img className="arrow-left" src={arrowLeft} alt="left" onClick={prevGenre} style={{ cursor: "pointer" }} />
 
-						{/* arrow left */}
-						<img
-							className="arrow-left"
-							src={arrowLeft}
-							alt="left"
-							onClick={prevGenre}
-							style={{ cursor: "pointer" }}
-						/>
-
-						<div className="archive-genre-list">
-							{/* inserire map con tutti i generi in ordine alfabetico, visualizzabili 5 alla volta nel carosello, premendo la freccia si va a visualizzare i 5 successivi, l'immagine sarà la copertina del primo gioco del genere */}
-							{visibleGenres.map((genre) => (
-								<div
-									key={genre}
-									className="archive-genre-list-box"
-								>
-									<span>{genre}</span>
-									<img
-										src={genreImageTemplate}
-										alt={genre}
-									/>
-								</div>
-							))}
+					<div className="archive-genre-list">
+					{visibleGenres.map((genre) => (
+						<div
+						key={genre}
+						className="archive-genre-list-box"
+						onClick={() => navigate(`/genre/Genre/${encodeURIComponent(genre)}`)}
+						style={{ cursor: "pointer" }}
+						>
+						<span>{genre}</span>
+						<img src={genreImageTemplate} alt={genre} />
 						</div>
-
-						{/* arrow right */}
-						<img
-							className="arrow-right"
-							src={arrowRight}
-							alt="right"
-							onClick={nextGenre}
-							style={{ cursor: "pointer" }}
-						/>
+					))}
 					</div>
+
+					{/* arrow right */}
+					<img className="arrow-right" src={arrowRight} alt="right" onClick={nextGenre} style={{ cursor: "pointer" }} />
+				</div>
+				)}
 
 					{/* Carousel Indicators */}
 					<div className="archive-carousel-dots">
@@ -159,14 +121,23 @@ export function Archive() {
 					<div className="archive-section-title">
 						<span> PLATFORMS </span>
 					</div>
-				{/* inserire map reale */}
-				<div className="archive-platforms-list">
-					{platforms.map((platform) => (
-						<div key={platform} className="archive-platforms-list-box">
-							<span>{platform}</span>
-						</div>
-					))}
-				</div>
+
+					{platformsLoading && <div className="platforms-loading">Loading...</div>}
+					{platformsError && <div className="platforms-error">{platformsError}</div>}
+
+				{/* platforms list */}
+					<div className="archive-platforms-list">
+						{platforms.map((platform) => (
+							<div
+								key={platform}
+								className="archive-platforms-list-box"
+								onClick={() => navigate(`/platform/${encodeURIComponent(platform)}`)}
+								style={{ cursor: "pointer" }}
+							>
+								<span>{platform}</span>
+							</div>
+						))}
+					</div>
 				</div>
 				
 			</section>	
