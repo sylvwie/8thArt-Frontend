@@ -369,11 +369,22 @@
     }
   }
 
-  &__logo {
+
+  &__logo-container {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 180px;
+    overflow: hidden;
+    
+    &__logo {
+      object-fit: contain;
+      display: block;
+    }
   }
+
 
   // ─── COVERS GRID ──────────────────────────────────────────
 

@@ -13,6 +13,42 @@ import genreImageTemplate from "/src/assets/template/genre-image-template.png";
 
 export function Archive() {
 
+	// Cover ASCII 
+	const genreCoverModules = import.meta.glob<{ default: string }>(
+		"/src/assets/genres-cover/*_ascii_gray.png",
+		{ eager: true }
+	);
+
+	const genreCoverImages: Record<string, string> = {};
+	for (const path in genreCoverModules) {
+		const match = path.match(/([^/]+)_ascii_gray\.png$/);
+		if (match) {
+			genreCoverImages[match[1]] = genreCoverModules[path].default;
+		}
+	}
+
+	const GENRE_TO_IMAGE_KEY: Record<string, string> = {
+		"Action": "action",
+		"Add-on": "addon",
+		"Adventure": "adventure",
+		"Compilation": "compilation",
+		"Educational": "educational",
+		"Gambling": "gambling",
+		"Idle": "idle",
+		"Puzzle": "puzzle",
+		"Racing / Driving": "racing",
+		"Role-playing (RPG)": "rpg",
+		"Simulation": "simulation",
+		"Special edition": "special_edition",
+		"Sports": "sports",
+		"Strategy / tactics": "strategy",
+};
+
+	function getGenreCover(genre: string): string {
+		const imageKey = GENRE_TO_IMAGE_KEY[genre];
+		return (imageKey && genreCoverImages[imageKey]) || genreImageTemplate;
+	}
+
 	// FEATURED STORIES
 	const cardList: FeaturedStoriesShowcase[] = [
 		{ tag: "Y2K", articleTitle: "Y2K Aesthetic: The Retro Future of Gaming", gameCoverImage: "/src/assets/template/card-bg-1.jpg"},
@@ -87,7 +123,7 @@ export function Archive() {
 						style={{ cursor: "pointer" }}
 						>
 						<span>{genre}</span>
-						<img src={genreImageTemplate} alt={genre} />
+						<img src={getGenreCover(genre)} alt={genre} />
 						</div>
 					))}
 					</div>

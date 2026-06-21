@@ -25,7 +25,9 @@ export function GameDetail() {
 
 	return (
 		<div id="game-detail">
-			<ArchiveSearchBar />
+			<div className="archive-searchbar-container">
+				<ArchiveSearchBar />
+			</div>
 
 			<div className="game-detail__container">
 

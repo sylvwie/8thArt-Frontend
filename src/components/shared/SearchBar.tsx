@@ -23,7 +23,7 @@ export function SearchBar() {
 
   const goToCrossSearch = useShowcaseStore((s) => s.goToCrossSearch);
 
-  // SEARCH + FILTRI 
+  // SEARCH + FILTERS 
   const {
     results,
     loading,
@@ -34,7 +34,7 @@ export function SearchBar() {
     search,
   } = useFilterSearch();
 
-  // CONFERMA
+  // CONFIRM
   const handleSearch = () => { search(query, filters); };
 
   // LIVE WHILE TYPING

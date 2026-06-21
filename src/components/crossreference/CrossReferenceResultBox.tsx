@@ -1,9 +1,12 @@
 // Box di risultato inserito nel container CrossSearchResult
+import { useNavigate } from "react-router-dom";
+
 import templateCover from "/src/assets/template/template-no-image.jpg";
 import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
-import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
 import { GameCard } from "../games/GameCard.tsx";
 import { useShowcaseStore } from "../../store/useShowcaseStore.tsx";
+
+import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
 
 type Props = {
 	game: CrossReferenceProps;
@@ -11,8 +14,12 @@ type Props = {
 };
 
 export function CrossReferenceResultBox({ game, similarGames }: Props) {
-	const genreList = Object.values(game.genres).flat();
-	const platformList = game.platforms; 
+	const navigate = useNavigate();
+
+	const genreList = Object.entries(game.genres).flatMap(
+		([category, values]) => values.map((value) => ({ category, value }))
+	);
+	const platformList = game.platforms;
 
 	const previewUrl = useShowcaseStore(
   		(s) => s.view.data.previewUrl
@@ -61,18 +68,29 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 				<div className="cross-reference-result-upper-content-info">
 
 					<div className="cross-reference-result-upper-content-info-left-column">
-						{/* develper */}
+						{/* developer */}
 						<div className="cross-reference-result-upper-content-info-developer">
 							<span>[ DEVELOPER ]</span>
-							<span className="developer-name"> {game.developers}</span>
+							<button
+								className="developer-name"
+								onClick={() => navigate(`/developer/${encodeURIComponent(game.developers)}`)}
+							>
+								{game.developers}
+							</button>
 						</div>
 
 						{/* genre */}
 						<div className="cross-reference-result-upper-content-info-genre">
 							<span>[ GENRE ]</span>
 							<div className="genres-button">
-								{genreList.map((g) => (
-									<button key={g} className="genres">{g}</button>
+								{genreList.map(({ category, value }) => (
+									<button
+										key={`${category}-${value}`}
+										className="genres"
+										onClick={() => navigate(`/genre/${encodeURIComponent(category)}/${encodeURIComponent(value)}`)}
+									>
+										{value}
+									</button>
 								))}
 							</div>
 						</div>
@@ -82,7 +100,11 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 							<span>[ PLATFORMS ]</span>
 							<div className="platforms-buttons">
 								{platformList.map((p) => (
-									<button key={p} className="platforms">
+									<button
+										key={p}
+										className="platforms"
+										onClick={() => navigate(`/platform/${encodeURIComponent(p)}`)}
+									>
 										{p}
 									</button>
 								))}
@@ -137,8 +159,11 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 								coverImage: sg.main_cover_url,
 								title: sg.title,
 								description: sg.explanation,
-								genres: Object.values(sg.genres).flat(),
-								developer: sg.developers ?? "Unknown",
+								genres: Object.entries(sg.genres).flatMap(([category, values]) =>
+									values.map((value) => ({ category, value }))
+								),
+								developer: sg.developers,
+								developerList: [sg.developers],
 								release: sg.year,
 								tags: sg.tags,
 							}}

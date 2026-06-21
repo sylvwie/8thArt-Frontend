@@ -154,7 +154,7 @@
 }
 
 .gamecard-genre,
-.gamecard-dev,
+.gamecard-developer,
 .gamecard-release {
   color: var(--white);
   font-family: var(--font-primary);
@@ -169,11 +169,41 @@
   }
 }
 
+.gamecard-developer-link {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--aquamarine); 
+		text-decoration: underline;
+	}
+}
+
+.gamecard-genre-link {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--aquamarine); 
+		text-decoration: underline;
+	}
+}
+
 .gamecard-genre::before {
   content: "GENRE:";
 }
 
-.gamecard-dev::before {
+.gamecard-developer::before {
   content: "DEVELOPER:";
 }
 

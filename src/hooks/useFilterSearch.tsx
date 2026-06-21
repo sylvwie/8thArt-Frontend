@@ -42,9 +42,7 @@ export function useFilterSearch() {
     setFilters({ genres: [], platforms: [], years: [] });
   };
 
-  // q + filtri combinati. I filtri arrivano come argomento (non da closure sullo
-  // state interno), così search resta stabile e non si re-innesca quando l'utente
-  // clicca un filtro: scatta solo quando viene effettivamente chiamata.
+  // q (search) + multi params filters
   const search = useCallback(async (q: string, activeFilters: FiltersState) => {
     setLoading(true);
     setError(null);
@@ -95,7 +93,7 @@ export function useFilterSearch() {
     } finally {
       setLoading(false);
     }
-  }, []); // stabile a vita
+  }, []); 
 
   return {
     results,

@@ -10,8 +10,9 @@ export function normalizeToGameInfo(game: Game): GameInfo {
     coverImage: game.main_cover_url ?? gameCoverTemplate,
     title: game.title,
     description: game.description ?? "",
-    genres: game.genres["Genre"] ?? [],
+    genres: (game.genres["Genre"] ?? []).map((value) => ({ category: "Genre", value })),
     developer: game.developers.length ? game.developers.join(", ") : "Unknown",
+    developerList: game.developers,
     release: game.year ?? "TBA",
   };
 }

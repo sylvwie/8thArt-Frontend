@@ -1,6 +1,6 @@
 // generic archive props (platforms / genres / developers)
 
-// --- risposta liste paginate (platforms, developers, publishers) ---
+// --- lists (platforms, developers, publishers) ---
 export interface PaginatedListResponse<T> {
   count: number;
   page: number;
@@ -8,7 +8,7 @@ export interface PaginatedListResponse<T> {
   results: T[];
 }
 
-// --- parametri ricerca giochi filtrata ---
+// --- search params games filtered ---
 export interface GameSearchParams {
   q?: string;
   platform?: string;
@@ -20,7 +20,7 @@ export interface GameSearchParams {
   esrb_rating?: string;
 }
 
-// --- risposta lista giochi (search, e in generale /games/) ---
+// --- game list (search and /games/) ---
 export interface GameGenres {
   [category: string]: string[];
 }
@@ -45,18 +45,18 @@ export interface GameListResponse {
   results: Game[];
 }
 
-// --- risposta GREZZA di /games/games/search/ (campi nested come stringhe JSON) ---
+// --- raw /games/games/search/ ---
 export interface GameSearchResult {
   game_id: number;
   title: string;
   year: string | null;
   moby_score: number | null;
   esrb_rating: string | null;
-  developers: string; // JSON-encoded array, va parsato
+  developers: string; // JSON-encoded array
   description: string | null;
   main_cover_url: string | null;
-  platforms: string;  // JSON-encoded array, va parsato
-  genres: string;      // JSON-encoded object, va parsato
+  platforms: string;  // JSON-encoded array
+  genres: string;     // JSON-encoded object
 }
 
 export interface GameSearchResponse {

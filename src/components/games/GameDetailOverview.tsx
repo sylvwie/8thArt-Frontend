@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import arrowLeft from "../../assets/icons/arrow-left.png";
 import arrowRight from "../../assets/icons/arrow-right.png";
 import noImagetemplate from "/src/assets/template/template-no-image.jpg";
@@ -21,8 +23,11 @@ type Props = {
 };
 
 export function GameDetailOverview({ game }: Props) {
-	
-	const genreList = Object.values(game.genres ?? {}).flat();
+	const navigate = useNavigate();
+
+	const genreList = Object.entries(game.genres ?? {}).flatMap(
+		([category, values]) => values.map((value) => ({ category, value }))
+	);
 	
 	// Covers
 	const frontCovers = filterCovers(game.covers, "Front Cover");
@@ -96,8 +101,14 @@ export function GameDetailOverview({ game }: Props) {
 							</span>
 
 							<div className="game-overview__tags">
-								{genreList.map((g) => (
-									<button key={g} className="game-overview__tag">{g}</button>
+								{genreList.map(({ category, value }) => (
+									<button
+										key={`${category}-${value}`}
+										className="game-overview__tag"
+										onClick={() => navigate(`/genre/${encodeURIComponent(category)}/${encodeURIComponent(value)}`)}
+									>
+										{value}
+									</button>
 								))}
 							</div>
 						</div>
@@ -109,7 +120,13 @@ export function GameDetailOverview({ game }: Props) {
 
 							<div className="game-overview__tags">
 								{game.platforms.map((p) => (
-									<button key={p} className="game-overview__tag">{p}</button>
+									<button
+										key={p}
+										className="game-overview__tag"
+										onClick={() => navigate(`/platform/${encodeURIComponent(p)}`)}
+									>
+										{p}
+									</button>
 								))}
 							</div>
 						</div>
@@ -119,9 +136,21 @@ export function GameDetailOverview({ game }: Props) {
 								[ DEVELOPER ]
 							</span>
 
-							<span className="game-overview__value">
-								{game.developers.length > 0 ? game.developers.join(", ") : "Unknown"}
-							</span>
+							{game.developers.length > 0 ? (
+								<div className="game-overview__tags">
+									{game.developers.map((dev) => (
+										<button
+											key={dev}
+											className="game-overview__tag"
+											onClick={() => navigate(`/developer/${encodeURIComponent(dev)}`)}
+										>
+											{dev}
+										</button>
+									))}
+								</div>
+							) : (
+								<span className="game-overview__value">Unknown</span>
+							)}
 						</div>
 
 						<div className="game-overview__block">
@@ -178,16 +207,18 @@ export function GameDetailOverview({ game }: Props) {
 
 					<div className="game-overview__panel">
 						<div className="game-overview__panel-header">
-							GAME COVER
+							LOGO
 						</div>
 
 						<div className="game-overview__panel-body">
-							{/* LOGO */}
-							<img
-								className="game-overview__logo"
-								src={frontCovers?.[0]?.url || noImagetemplate}
-								alt="Game logo"
-							/>
+							<div className="game-overview__logo-container">
+								{/* LOGO */}
+								<img
+									className="game-overview__logo"
+									src={frontCovers?.[0]?.url || noImagetemplate}
+									alt="Game logo"
+								/>
+							</div>
 						</div>
 					</div>
 
