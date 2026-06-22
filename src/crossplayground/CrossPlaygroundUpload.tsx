@@ -14,8 +14,7 @@ import crossRefEmpty from "/src/assets/icons/cross-reference-empty.png";
 export function CrossPlaygroundUpload() {
   const setStep = useCrossPlaygroundStore((s) => s.setStep);
   const setData = useCrossPlaygroundStore((s) => s.setData);
-  const resetUpload = useCrossPlaygroundStore((s) => s.resetUpload);
-
+  
   // File Drop Handler
   const handleFileDrop = (file: File) => {
     console.log("Uploaded file:", file);
@@ -71,9 +70,6 @@ export function CrossPlaygroundUpload() {
 
           <div className="cross-upload-header">
             <span id="cross-upload-header-text">[ ANALYSIS HUB ]</span>
-            <button id="cross-upload-reset-button" onClick={resetUpload}>
-              RESET
-            </button>
           </div>
 
           <div className="cross-upload-box">

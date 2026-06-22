@@ -185,19 +185,42 @@
 
 
 
-// RESPONSIVE
-@media (max-width: 1280px) {
-	#main-showcase {
-		gap: 24px;
-	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// RESPONSIVE
+// DESKTOP 1280
+@media (max-width: 1280px) {
+    #main-showcase {
+        gap: 24px;
+	}
+    
 	.showcase-suggested-games {
-		.suggested-game-box {
-			width: 220px;
+        .suggested-game-box {
+            width: 220px;
 		}
 	}
 }
 
+// DESKTOP 1024
 @media (max-width: 1024px) {
     #main-showcase {
         flex-direction: column;
@@ -237,11 +260,7 @@
 }
 
 
-
-
-
-
-// MOBILE
+// MOBILE 430
 @media (max-width: 430px) {
 
     .showcase-center,
@@ -842,6 +861,7 @@
     }
 }
 
+// MOBILE 360
 @media (max-width: 360px) {
     #about-dashboard-wrapper {
         padding: 12px;

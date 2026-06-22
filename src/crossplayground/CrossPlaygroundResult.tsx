@@ -37,13 +37,15 @@ export function CrossPlaygroundResultBox({ game, similarGames }: Props) {
           <div className="cross-search-container">
             <img id="special-background" src={specialBgAscii} alt="Special Background" />
 
-            <div className="cross-search-header">
-              <span id="cross-search-header-text"></span>
-              <div id="cross-search-header-buttons">
+			<div className="cross-search-header">
+				<span id="cross-search-header-text"></span> 
+				<div id="cross-search-header-buttons">
 				{/* RESET BTN */}
-                <button id="cross-search-reset-button" onClick={resetUpload}>RESET</button>
-              </div>
-            </div>
+				<button id="cross-search-reset-button" onClick={resetUpload}>RESET</button>
+				<button id="cross-search-close-button">
+                </button>
+				</div>
+			</div>
 
 			{/* RESULT */}
 				<div id="cross-reference-result-container">

@@ -452,8 +452,9 @@
   }
 }
 
-// Responsive
+// RESPONSIVE
 
+// DESKTOP 1024
 @media (max-width: 1024px) {
   #login-wrapper {
     #login-page-container {
@@ -488,7 +489,8 @@
   }
 }
 
-@media (max-width: 480px) {
+// MOBILE 430
+@media (max-width: 430px) {
   #login-wrapper {
     #login-page-container {
       padding: 24px 16px;

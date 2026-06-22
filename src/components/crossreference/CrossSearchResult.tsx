@@ -62,18 +62,18 @@ export function CrossSearchResult() {
             <img id="special-background" src={specialBgAscii} alt="Special Background" />
 
             <div className="cross-search-header">
-              <span id="cross-search-header-text"></span>
+              <span id="cross-search-header-text"></span> 
               <div id="cross-search-header-buttons">
-				{/* RESET BTN */}
+                {/* RESET BTN */}
                 <button id="cross-search-reset-button" onClick={resetUpload}>RESET</button>
-				{/* CLOSE BTN */}
+                {/* CLOSE BTN */}
                 <button id="cross-search-close-button" onClick={goToArchive}>
                   <img src={closeIcon} alt="Close" />
                 </button>
               </div>
             </div>
 
-			{/* RESULT */}
+            {/* RESULT */}
             {primaryMatch && (
               <CrossReferenceResultBox
                 game={primaryMatch}
@@ -93,7 +93,7 @@ export function CrossSearchResult() {
 
 //import { MediaPreview } from "../upload/MediaPreview";
 
-{/* UPLOADED FILE PREVIEW */}
-	{/* {file && (
+{/* UPLOADED FILE PREVIEW */ }
+{/* {file && (
 		<MediaPreview file={file} />
 )} */}
