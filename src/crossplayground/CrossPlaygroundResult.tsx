@@ -1,7 +1,7 @@
 
 // Box di risultato inserito nel container CrossPlaygroundResult
 import { useNavigate } from "react-router-dom";
-import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundstore.tsx";
+import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundStore";
 import { ViewGameBtn } from "../components/shared/ViewGameBtn.tsx";
 import { GameCard } from "../components/games/GameCard.tsx";
 

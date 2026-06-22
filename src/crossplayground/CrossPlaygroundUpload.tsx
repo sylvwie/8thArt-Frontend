@@ -1,6 +1,5 @@
-import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundstore.tsx";
+import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundStore";
 import { DropZone } from "../components/upload/DropZone";
-
 import crossArrow from "../assets/icons/cross-arrow.png";
 import uploadIcon from "../assets/icons/drop-icon.png";
 import input1 from "../assets/cross-samples/01-image.jpg";

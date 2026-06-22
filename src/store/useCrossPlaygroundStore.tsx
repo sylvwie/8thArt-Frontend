@@ -40,7 +40,6 @@ export const useCrossPlaygroundStore = create<CrossPlaygroundStore>((set) => ({
 
   resetUpload: () =>
     set((state) => {
-      // REVOCA il previewUrl precedente per evitare memory leak
       if (state.view.data.previewUrl) {
         URL.revokeObjectURL(state.view.data.previewUrl);
       }
