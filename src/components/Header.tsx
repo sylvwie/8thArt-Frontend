@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { NotLoggedInProfileBox } from "./NotLoggedInProfile";
 
+import Logoo from "/src/assets/logos/logo.svg";
+
 import ProfileIcon from "/src/assets/icons/profile-icon.png";
 import ProfileIconVariant from "/src/assets/icons/profile-icon-variant.png";
 
@@ -15,7 +17,8 @@ export function Header() {
 		<>
 			<header>
 				<Link id="header-logo" to="/">
-					&gt;_8thart v1.0.0
+					<span>_8thart v1.0.0</span>
+					<img id="header-logo-img" src={Logoo} alt="Logo" />
 				</Link>
 
 				<Navbar />
@@ -25,9 +28,11 @@ export function Header() {
 					onMouseEnter={() => setProfileBoxOpen(true)}
 					onMouseLeave={() => setProfileBoxOpen(false)}
 				>	
-					{/* !!!!! Link to profile page is disabled for now !!!!! */}
+					{/* Link is disabled. Remember to delete div "profile-btn-container" before enabling Link again*/}
+
 					{/* <Link id="profile-btn-container" to="/profile"> */}
 					<div id="profile-btn-container">
+
 						<div className="profile-icon">
 							<img
 								className="icon-default"
@@ -43,6 +48,7 @@ export function Header() {
 						</div>
 
 						<span>Profile</span>
+						
 					</div>
 					{/* </Link> */}
 

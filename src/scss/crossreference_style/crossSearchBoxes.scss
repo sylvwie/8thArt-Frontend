@@ -224,7 +224,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 25px;
+        gap: 28px;
         padding: 60px 40px;
         background-color: var(--black);
         border: 1px solid var(--blue);
@@ -255,17 +255,35 @@
             border-color: transparent;
           }
 
-          span:last-child {
-            font-family: var(--font-primary);
-            font-size: 12px;
-            color: var(--white);
-            letter-spacing: 0.04em;
-            opacity: 0.75;
-          }
-
           span:last-child:hover {
             opacity: 0.9;
             cursor: pointer;
+          }
+
+          .drop-zone-text {
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            background: rgba(255, 107, 53, 0.20);
+            ;
+            color: var(--orange);
+            border: 1px solid var(--orange);
+            border-radius: 999px;
+
+            margin-top: 8px;
+            padding: 12px 32px;
+
+            cursor: pointer;
+            transition: background var(--timing) var(--easing), color var(--timing) var(--easing);
+
+
+            &:hover {
+              color: var(--white);
+              background: var(--orange);
+              border: 1px solid var(--orange);
+            }
+
           }
         }
       }
@@ -303,19 +321,19 @@
           position: relative;
           z-index: 3;
         }
-        
+
         // Background Overlay 
-          &::before {
-            content: "";
-  
-            position: absolute;
-            inset: 0;
-  
-            background: var(--orange);
-            opacity: 0.05;
-  
-            z-index: 1;
-          }
+        &::before {
+          content: "";
+
+          position: absolute;
+          inset: 0;
+
+          background: var(--orange);
+          opacity: 0.05;
+
+          z-index: 1;
+        }
 
         #cross-search-body-text-container {
           display: flex;
@@ -364,7 +382,7 @@
 
           .progress-bar-fill {
             height: 100%;
-            width: 0%; 
+            width: 0%;
 
             background: var(--aquamarine);
 

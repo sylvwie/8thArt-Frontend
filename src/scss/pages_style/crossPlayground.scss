@@ -19,7 +19,7 @@
 
 		.cross-logo {
 			width: auto;
-			height: 300px;
+			height: 182px;
 			object-fit: contain;
 		}
 
@@ -27,6 +27,7 @@
 			font-family: var(--font-primary);
 			font-size: 16px;
 			color: var(--white);
+			font-weight: var(--font-weight);
 			letter-spacing: 0.05em;
 			opacity: 0.9;
 			margin: 0;
@@ -39,62 +40,60 @@
 		max-width: 980px;
 	}
 
-	.cross-upload-box {
+	.cross-upload-box-container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 24px;
+		gap: 26px;
 		width: 100%;
-		padding: 60px 40px;
+		padding: 40px 40px;
 		border: 1px solid var(--blue);
 		border-radius: 12px;
 		box-sizing: border-box;
-		position: relative; 
-    	overflow: hidden;
-		background: var(--black);
-
-		.cross-upload-icon,
-		.cross-upload-text,
-		.cross-upload-btn {
 		position: relative;
-		z-index: 2;
-		}
+		overflow: hidden;
+		background-color: transparent;
 
-		.cross-upload-icon {
-			width: 40px;
-			height: 40px;
-			object-fit: contain;
-		}
+		// Header
+		.cross-upload-header {
+			display: flex;
+			max-width: 1179px;
+			align-items: center;
+			justify-content: space-between;
+			background: transparent;
+			width: 100%;
 
-		.cross-upload-text {
-			font-family: var(--font-primary);
-			font-size: 16px;
-			color: var(--white);
-			font-weight: 400;
-			text-transform: uppercase;
-			letter-spacing: 0.08em;
-		}
-
-		.cross-upload-btn {
-			font-family: var(--font-primary);
-			font-size: 13px;
-			font-weight: 500;
-			letter-spacing: 0.05em;
-			color: var(--white);
-			background: var(--blue);
-			border: 1px solid var(--blue);
-			padding: 12px 32px;
-			border-radius: 999px;
-			cursor: pointer;
-			transition: background var(--timing) var(--easing), color var(--timing) var(--easing);
-
-			&:hover {
-				background: transparent;
-				color: var(--blue);
+			#cross-upload-header-text {
+				color: var(--testi-important, #13C4A3);
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 16px;
+				letter-spacing: 0.6px;
 			}
 
+			#cross-upload-reset-button {
+				font-family: var(--font-primary);
+				display: flex;
+				align-items: center;
+				padding: 3px 9px;
+				font-size: 12px;
+				background: transparent;
+				border-radius: 14px;
+				border: 1px solid var(--aquamarine);
+				color: var(--aquamarine);
+				cursor: pointer;
+				transition: color 0.15s, border-color 0.15s;
+
+				&:hover {
+					color: var(--white);
+					border: 1px solid var(--white);
+					opacity: 0.85;
+				}
+			}
 		}
+
 		.cross-upload-bg {
 			position: absolute;
 			top: 0;
@@ -102,21 +101,84 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-			opacity: 0.8;
+			opacity: 0.5;
 			pointer-events: none;
-			z-index: 1; 
+			z-index: -1;
 		}
 
-		.cross-reference-empty {
-			position: absolute;
-			height: 426px;
-			aspect-ratio: 1/1;
-			top: 18%;
-			left: 75%;
-			object-fit: contain;
-			opacity: 0.8;
-			pointer-events: none;
-			z-index: 1; 
+		.cross-upload-box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 26px;
+			width: 100%;
+			padding: 60px 40px;
+			border: 1px solid var(--blue);
+			border-radius: 12px;
+			box-sizing: border-box;
+			position: relative;
+			overflow: hidden;
+			background-color: var(--black);
+
+			.cross-upload-icon,
+			.cross-upload-text,
+			.cross-upload-btn {
+				position: relative;
+				z-index: 2;
+			}
+
+			.cross-upload-icon {
+				width: 60px;
+				height: 60px;
+				object-fit: contain;
+			}
+
+			.cross-upload-text {
+				font-family: var(--font-primary);
+				font-size: 16px;
+				font-weight: var(--font-weight);
+				color: var(--aquamarine);
+				letter-spacing: 0.06em;
+			}
+
+			.drop-zone-text {
+				font-family: var(--font-primary);
+				font-size: 15px;
+				font-weight: 500;
+				letter-spacing: 0.05em;
+				color: var(--orange);
+				border: 1px solid var(--orange);
+				border-radius: 999px;
+				background: rgba(255, 107, 53, 0.20);
+				;
+
+				margin-top: 8px;
+				padding: 12px 32px;
+
+				cursor: pointer;
+				transition: background var(--timing) var(--easing), color var(--timing) var(--easing);
+
+
+				&:hover {
+					color: var(--white);
+					background: var(--orange);
+					border: 1px solid var(--orange);
+				}
+
+			}
+
+			.cross-reference-empty {
+				position: absolute;
+				height: 426px;
+				aspect-ratio: 1/1;
+				top: 18%;
+				left: 75%;
+				object-fit: contain;
+				opacity: 0.8;
+				pointer-events: none;
+				z-index: 1;
+			}
 		}
 	}
 }
@@ -167,10 +229,10 @@
 
 		.cross-sample-status-text {
 			font-family: var(--font-primary);
-			font-size: 11px;
+			font-size: 12px;
 			color: var(--aquamarine);
 			letter-spacing: 0.05em;
-			opacity: 0.8;
+			opacity: 0.9;
 		}
 	}
 
@@ -240,14 +302,14 @@
 			font-family: var(--font-primary);
 			font-size: 14px;
 			font-weight: var(--font-weight);
-			color: var(--white);
+			color: var(--orange);
 		}
 
 		.cross-sample-mapping {
 			font-family: var(--font-primary);
 			font-size: 11px;
 			color: var(--white);
-			opacity: 0.4;
+			opacity: 0.8;
 			text-transform: uppercase;
 			letter-spacing: 0.02em;
 		}
@@ -257,9 +319,9 @@
 			font-size: 12px;
 			font-weight: 500;
 			letter-spacing: 0.05em;
-			color: var(--white);
-			background: var(--blue);
-			border: 1px solid var(--blue);
+			color: var(--orange);
+			background: transparent;
+			border: 1px solid var(--orange);
 			padding: 10px 24px;
 			border-radius: 6px;
 			cursor: pointer;
@@ -267,8 +329,9 @@
 			transition: background var(--timing) var(--easing), color var(--timing) var(--easing);
 
 			&:hover {
-				background: transparent;
-				color: var(--blue);
+				background: var(--orange);
+				color: var(--white);
+				border: 1px solid var(--orange);
 			}
 		}
 	}

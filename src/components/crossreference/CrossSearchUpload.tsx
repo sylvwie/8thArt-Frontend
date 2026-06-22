@@ -92,7 +92,7 @@ export function CrossSearchBox() {
 
 							<div id="cross-search-body-text-container">
 								<span id="cross-search-box-body-text">
-									[ DROP IMAGE ALPHA-PATTERN ]
+									[ DROP AN IMAGE TO GET A GAME ]
 								</span>
 								
 								<DropZone onFileDrop={handleFileDrop} />

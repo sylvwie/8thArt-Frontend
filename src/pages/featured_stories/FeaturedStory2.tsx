@@ -1,4 +1,4 @@
-export function FeaturedStory() {
+export function FeaturedStory2() {
 	return (
 		<>
 			<div className="featured-story-wrapper">

@@ -10,12 +10,13 @@ import { Footer } from './components/Footer.tsx'
 import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
 import { Register } from './pages/Register.tsx'
 import { GameDetail } from './pages/GameDetail.tsx'
-import { FeaturedStory } from './pages/FeaturedStory.tsx'
 import { Cross } from './pages/CrossPlayground.tsx'
 import { About } from './pages/About.tsx'
 import { PlatformPage } from './components/archive_pages/PlatformPage.tsx'
 import { GenrePage } from './components/archive_pages/GenrePage.tsx'
 import { DeveloperPage } from './components/archive_pages/DeveloperPage.tsx'
+import { FeaturedStory1 } from './pages/featured_stories/FeaturedStory1.tsx'
+import { FeaturedStory2 } from './pages/featured_stories/FeaturedStory2.tsx'
 
 export default function App() {
 	const router = createHashRouter([
@@ -63,10 +64,6 @@ export default function App() {
   					element: <GameDetail />
 				},
 				{
-					path: 'featured-story',
-					element: <FeaturedStory />
-				},
-				{
 					path: '/genre/:genreCategory/:genreValue',
 					element: <GenrePage />
 				},
@@ -77,6 +74,14 @@ export default function App() {
 				{
 					path: 'developer/:developerName',
 					element: <DeveloperPage />
+				},
+				{
+					path: 'featured-story-1',
+					element: <FeaturedStory1 />
+				},
+				{
+					path: 'featured-story-2',
+					element: <FeaturedStory2 />
 				},
 			]
 		},

@@ -266,3 +266,109 @@
     object-fit: contain;
   }
 }
+
+
+
+
+
+// RESPONSIVE
+@media (max-width: 430px) {
+    .gamecard-wrapper {
+        width: 100%;
+        max-width: 390px;
+        height: auto;
+        flex: 0 0 auto;
+        border-radius: 12px;
+        margin: 0 auto;
+
+        .gamecard-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 180px 1fr;
+        }
+    }
+
+    #gamecard-cover-container {
+        border-right: none;
+        border-bottom: 1px solid var(--blue);
+    }
+
+    .gamecard-rating {
+        top: 8px;
+        left: 8px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    #gamecard-info-container {
+        padding: 14px;
+        gap: 14px;
+    }
+
+    #gamecard-info-overview {
+        gap: 6px;
+    }
+
+    .gamecard-title {
+        font-size: 18px;
+    }
+
+    .gamecard-description {
+        font-size: 12px;
+        line-height: 1.3;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    #game-info-specifics {
+        gap: 4px;
+    }
+
+    .gamecard-genre,
+    .gamecard-developer,
+    .gamecard-release {
+        font-size: 12px;
+    }
+
+    .gamecard-tags-container {
+        gap: 6px;
+        margin-top: 4px;
+    }
+
+    .gamecard-tags {
+        padding: 3px 10px;
+        font-size: 11px;
+    }
+
+    .view-game-button {
+        #gamecard-view-game-btn {
+            width: 100%;
+            height: 38px;
+            font-size: 13px;
+            border-radius: 8px;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .gamecard-wrapper {
+        max-width: 320px;
+        
+        .gamecard-container {
+            grid-template-rows: 150px 1fr;
+        }
+    }
+
+    #gamecard-info-container {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .gamecard-title {
+        font-size: 16px;
+    }
+
+    .gamecard-description {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+}

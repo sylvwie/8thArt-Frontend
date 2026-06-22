@@ -34,7 +34,7 @@ export function DropZone({ onFileDrop }: DropZoneProps) {
           }
         }}
       >
-        <span>Click or Drop your file here</span>
+        <button className="drop-zone-text">CHOOSE FILE</button>
       </div>
 
       <input

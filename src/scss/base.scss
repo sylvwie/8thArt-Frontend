@@ -4,7 +4,11 @@
 @use './pages_style/dashboard.scss';
 @use './pages_style/archive.scss';
 @use './pages_style/about.scss';
-@use './pages_style/cross-playground.scss';
+@use './pages_style/crossPlayground.scss';
+
+// Featured stories
+@use './pages_style/featured_stories_style/featuredStory1.scss';
+@use './pages_style/featured_stories_style/featuredStory2.scss';
 
 // Components
 @use './components_style/buttons.scss';

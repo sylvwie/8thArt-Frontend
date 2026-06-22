@@ -20,16 +20,25 @@ header {
 	box-sizing: border-box;
 }
 
+
 #header-logo {
 	justify-self: start;
-
+	
 	color: var(--orange);
-
+	
 	text-decoration: none;
-
+	
 	font-family: var(--font-primary);
-
+	
 	font-size: 1rem;
+
+	span {
+		display: inline;
+	}
+
+	#header-logo-img {
+		display: none;
+	}
 }
 
 #main-nav {
@@ -140,6 +149,14 @@ header {
 }
 
 
+
+
+
+
+
+
+
+// RESPONSIVE
 // MOBILE 844
 @media (max-width: 844px) {
 	header {
@@ -204,4 +221,83 @@ header {
 		width: 16px;
 		height: 16px;
 	}
+}
+
+
+
+// MOBILE
+@media (max-width: 430px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #header-logo {
+        display: flex;
+        align-items: center;
+        border: none;
+        padding: 0;
+
+		span {
+			display: none;
+		}
+
+		#header-logo-img {
+			display: inline;
+			height: 24px; 
+			width: auto;
+			object-fit: contain;
+		}
+    }
+
+    #main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        flex: 1; 
+    }
+
+    #profile-btn-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .nav-btn,
+    #profile-btn-container {
+        padding: 6px 10px;
+        min-width: auto;
+        gap: 0;
+
+        span {
+            display: none;
+        }
+    }
+
+    .nav-icon,
+    .profile-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        padding: 10px 12px;
+    }
+
+    #main-nav {
+        gap: 4px; 
+    }
+
+    #header-logo {
+        img {
+            height: 20px;
+        }
+    }
 }

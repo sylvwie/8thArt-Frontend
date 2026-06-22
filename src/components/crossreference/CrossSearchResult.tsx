@@ -7,12 +7,15 @@ import DecryptedText from "../motion/DecryptedText";
 import { Logo } from "../shared/Logo";
 import { StatusLog } from "../shared/StatusLog";
 import { CrossReferenceResultBox } from "./CrossReferenceResultBox";
+import type { CrossReferenceProps } from "../props/CrossReferenceProps";
+
+const EMPTY_RESULTS: CrossReferenceProps[] = [];
 
 export function CrossSearchResult() {
 
   const resetUpload = useShowcaseStore((s) => s.resetUpload);
   const goToArchive = useShowcaseStore((s) => s.goToArchive);
-  const results = useShowcaseStore((s) => s.view.data.results ?? []);
+  const results = useShowcaseStore((s) => s.view.data.results ?? EMPTY_RESULTS);
 
   const primaryMatch = results[0] ?? null;
   const similarGames = results.slice(1);
