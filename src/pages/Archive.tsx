@@ -11,6 +11,14 @@ import arrowLeft from "/src/assets/icons/arrow-left.svg";
 import arrowRight from "/src/assets/icons/arrow-right.svg";
 import genreImageTemplate from "/src/assets/template/genre-image-template.png";
 
+import cardBg1 from "/src/assets/template/card-bg-1.jpg";
+import cardBg2 from "/src/assets/template/card-bg-2.jpg";
+import cardBg3 from "/src/assets/template/card-bg-3.jpg";
+import cardBg4 from "/src/assets/template/card-bg-4.jpg";
+import cardBg5 from "/src/assets/template/card-bg-5.jpg";
+import cardBg6 from "/src/assets/template/card-bg-6.jpg";
+import cardBg7 from "/src/assets/template/card-bg-7.jpg";
+
 export function Archive() {
 
 	// Cover ASCII 
@@ -51,13 +59,13 @@ export function Archive() {
 
 	// FEATURED STORIES
 	const cardList: FeaturedStoriesShowcase[] = [
-		{ tag: "Y2K", articleTitle: "Y2K Aesthetic: The Retro Future of Gaming", gameCoverImage: "/src/assets/template/card-bg-1.jpg"},
-		{ tag: "Posters", articleTitle: "Videogame's Posters: Ads from All Over the World", gameCoverImage: "/src/assets/template/card-bg-2.jpg" },
-		{ tag: "Cyberpunk", articleTitle: "Cyberpunk: Exploring Dystopian Futures", gameCoverImage: "/src/assets/template/card-bg-3.jpg" },
-		{ tag: "Souls-like", articleTitle: "Souls-like: the Challenging Combat", gameCoverImage: "/src/assets/template/card-bg-4.jpg" },
-		{ tag: "Metroidvania", articleTitle: "Metroidvania: The Origins of a Genre", gameCoverImage: "/src/assets/template/card-bg-5.jpg" },
-		{ tag: "Survival Horror", articleTitle: "Survival Horror: The Art of Fear and Suspense", gameCoverImage: "/src/assets/template/card-bg-6.jpg" },
-		{ tag: "Pokèmon", articleTitle: "Pokèmon: The Evolution of the Iconic Franchise", gameCoverImage: "/src/assets/template/card-bg-7.jpg" },
+		{ tag: "Y2K", articleTitle: "Y2K Aesthetic: The Retro Future of Gaming", gameCoverImage: cardBg1 },
+		{ tag: "Posters", articleTitle: "Videogame's Posters: Ads from All Over the World", gameCoverImage: cardBg2 },
+		{ tag: "Cyberpunk", articleTitle: "Cyberpunk: Exploring Dystopian Futures", gameCoverImage: cardBg3 },
+		{ tag: "Souls-like", articleTitle: "Souls-like: the Challenging Combat", gameCoverImage: cardBg4 },
+		{ tag: "Metroidvania", articleTitle: "Metroidvania: The Origins of a Genre", gameCoverImage: cardBg5 },
+		{ tag: "Survival Horror", articleTitle: "Survival Horror: The Art of Fear and Suspense", gameCoverImage: cardBg6 },
+		{ tag: "Pokèmon", articleTitle: "Pokèmon: The Evolution of the Iconic Franchise", gameCoverImage: cardBg7 },
 	];
 
 	// GENRES

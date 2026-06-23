@@ -1,13 +1,19 @@
 import { FilterBox } from "./FilterBox.tsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import filterIcon from "/src/assets/icons/filter-icon.png";
 import searchIcon from "/src/assets/icons/search-icon.svg";
 import { SearchResults } from "./SearchResults.tsx";
 import { useFilterSearch } from "../../hooks/useFilterSearch.tsx";
+import { useDebounce } from "../../hooks/useDebounce.tsx";
+
+const EMPTY_FILTERS = { genres: [], platforms: [], years: [] };
 
 export function ArchiveSearchBar() {
   const [filterOpen, setFilterOpen] = useState(false);
   const [query, setQuery] = useState("");
+  
+  // DEBOUNCE
+  const debouncedQuery = useDebounce(query, 300);
 
   const {
     results,
@@ -23,6 +29,14 @@ export function ArchiveSearchBar() {
   const handleSearch = () => {
     search(query, filters);
   };
+
+  // LIVE WHILE TYPING
+    useEffect(() => {
+      if (debouncedQuery) {
+        search(debouncedQuery, EMPTY_FILTERS);
+      }
+    }, [debouncedQuery, search]);
+  
 
   return (
     <>
