@@ -15,8 +15,8 @@ import { About } from './pages/About.tsx'
 import { PlatformPage } from './components/archive_pages/PlatformPage.tsx'
 import { GenrePage } from './components/archive_pages/GenrePage.tsx'
 import { DeveloperPage } from './components/archive_pages/DeveloperPage.tsx'
-import { FeaturedStory1 } from './pages/featured_stories/FeaturedStory1.tsx'
-import { FeaturedStory2 } from './pages/featured_stories/FeaturedStory2.tsx'
+import FeaturedStory1 from './pages/featured_stories/FeaturedStory1.tsx'
+import FeaturedStory2 from './pages/featured_stories/FeaturedStory2.tsx'
 
 export default function App() {
 	const router = createHashRouter([
