@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import heroImage from "/src/assets/stories/story1/story1-banner.png";
 import icon from "/src/assets/stories/story1/story1-icon.webp";
 import trackIcon from "/src/assets/icons/track-icon.png";
@@ -40,6 +41,7 @@ import character3 from "/src/assets/stories/story1/pg/story1-pg3.jpg";
 import character4 from "/src/assets/stories/story1/pg/story1-pg4.png";	
 
 export default function FeaturedStory1() {
+	const navigate = useNavigate();
 
 	const storyGameScreens = [
 		screen1,
@@ -75,13 +77,13 @@ export default function FeaturedStory1() {
 	];
 
 	return (
-		<div className="featured-story-page">
-
+		<div className="featured-story-page-1">
+			
 			<div>
 
 			<section className="featured-story-hero">
 
-				<button className="featured-story-back">
+				<button className="featured-story-back" onClick={() => navigate(-1)}>
 					<img src={backArrow} alt="Back" />
 					[BACK]
 				</button>

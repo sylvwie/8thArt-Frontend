@@ -1,0 +1,568 @@
+// COMMONS - FEATURED STORIES PAGES
+
+%featured-story-page-shared {
+    width: 100%;
+    max-width: 1850px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    /* HERO */
+    .featured-story-hero {
+        position: relative;
+        width: 100%;
+        height: 420px;
+        overflow: hidden;
+        border: 1px solid var(--blue);
+        border-radius: 0px;
+    }
+
+    .featured-story-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0px;
+    }
+
+    .featured-story-back {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 10;
+        display: flex;
+        width: 99px;
+        height: 34px;
+        padding: 8px 12px 8px 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        border-radius: 8px;
+        border: 1px solid var(--blue);
+        background: var(--black);
+        color: var(--aquamarine);
+        font-family: var(--font-primary);
+        font-size: 12px;
+        cursor: pointer;
+
+        img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+        }
+    }
+
+    .featured-story-hero-overlay {
+        position: absolute;
+        bottom: 24px;
+        left: 24px;
+
+        h1 {
+            margin: 0;
+            color: var(--orange);
+            font-family: var(--font-primary);
+            font-size: 34px;
+            font-weight: 400;
+        }
+    }
+
+    /* CARD */
+    .featured-story-card {
+        display: flex;
+        padding: 15px 0 15px 23px;
+        align-items: center;
+        gap: 11px;
+        border: 1px solid var(--blue);
+        background: var(--black);
+    }
+
+    .featured-story-card-image {
+        width: 56px;
+        height: 56px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .featured-story-card-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .featured-story-card-title {
+        color: var(--aquamarine);
+        font-family: var(--font-primary);
+        font-size: 16px;
+    }
+
+    .featured-story-card-subtitle {
+        color: var(--white);
+        font-family: var(--font-primary);
+        font-size: 13px;
+    }
+
+    /* SECTION HEADERS */
+    .featured-story-section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 16px;
+
+        h2 {
+            margin: 0;
+            color: var(--aquamarine);
+            font-family: var(--font-primary);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+        }
+
+        p {
+            margin: 0;
+            color: var(--white);
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+    }
+
+    /* OVERVIEW */
+    .featured-story-overview {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-flow: dense;
+        gap: 16px;
+        width: 100%;
+        align-items: start;
+
+        .overview-card--overview-container {
+            grid-column: span 3;
+            width: 100%;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 18px;
+            border: 1px solid var(--blue);
+            border-radius: var(--border-radius);
+            background: var(--black);
+            box-sizing: border-box;
+        }
+
+        .overview-card--palette {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .overview-card--palette-box {
+            display: flex;
+            width: 110px;
+            height: 35px;
+            padding: 8px 10px;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            border: 1px solid var(--blue);
+            border-radius: 6px;
+            background: var(--black);
+            color: var(--white);
+            font-family: var(--font-primary);
+            font-size: 16px;
+
+            img {
+                width: 15px;
+                height: 15px;
+                object-fit: cover;
+            }
+        }
+
+        .overview-card--synopsis,
+        .overview-card--style-column {
+            h3, span {
+                margin: 0 0 10px 0;
+                color: var(--aquamarine);
+                font-family: var(--font-primary);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 18px;
+            }
+
+            p, li {
+                color: var(--white);
+                font-family: var(--font-primary);
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
+
+        .overview-card--style-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+        }
+
+        .overview-card--style-column-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 18px;
+
+            .overview-card--style-column ul {
+                margin: 0;
+            }
+        }
+    }
+
+    /* SCREENS-CARD */
+    .screens-card {
+        grid-column: span 1;
+        height: 419px;
+        border-radius: 14px;
+        border: 1px solid var(--blue);
+        overflow: hidden;
+        background: var(--black);
+        width: 100%;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+// ==========================================================================
+// FEATURED STORY 1
+// ==========================================================================
+
+.featured-story-page-1 {
+    @extend %featured-story-page-shared;
+
+    .screens-card {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(9),
+        &:nth-child(10),
+        &:nth-child(13),
+        &:nth-child(14) {
+            grid-column: span 2;
+        }
+    }
+
+    /* SOUNDTRACK */
+    .soundtrack-row {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar { height: 6px; }
+        &::-webkit-scrollbar-thumb { background: var(--blue); }
+    }
+
+    .soundtrack-card {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 240px;
+        width: 240px;
+        height: 270px;
+        border: 1px solid var(--blue);
+        background: var(--black);
+        box-sizing: border-box;
+    }
+
+    .soundtrack-title-container {
+        display: flex;
+        width: 100%;
+        height: 44px;
+        padding: 8px 12px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--blue);
+        box-sizing: border-box;
+        flex-shrink: 0;
+
+        span {
+            color: var(--orange);
+            font-family: var(--font-primary);
+            font-size: 12px;
+        }
+
+        img { width: 14px; height: 14px; }
+    }
+
+    .soundtrack-image-container {
+        width: 100%;
+        height: calc(100% - 44px);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .soundtrack-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* CHARACTERS */
+    .characters-row {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar { height: 6px; }
+        &::-webkit-scrollbar-thumb { background: var(--blue); }
+    }
+
+    .character-card {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 340px;
+        width: 340px;
+        height: 330px;
+        border: 1px solid var(--blue);
+        background: var(--black);
+        box-sizing: border-box;
+    }
+
+    .story-category-box-title-container {
+        display: flex;
+        width: 100%;
+        height: 44px;
+        padding: 8px 12px;
+        align-items: center;
+        border-bottom: 1px solid var(--blue);
+        box-sizing: border-box;
+        flex-shrink: 0;
+
+        span {
+            color: var(--orange);
+            font-family: var(--font-primary);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+    }
+
+    .character-image-container {
+        width: 100%;
+        height: calc(100% - 44px);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .character-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+// ==========================================================================
+// FEATURED STORY 2 
+// ==========================================================================
+
+.featured-story-page-2 {
+    @extend %featured-story-page-shared;
+
+    .screens-card {
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(10),
+        &:nth-child(11),
+        &:nth-child(14),
+        &:nth-child(15) {
+            grid-column: span 2;
+        }
+    }
+
+    /* PLATFORMS POSTERS */
+    .gamecube-posters,
+    .xbox-posters,
+    .ps2-posters {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        .posters-title {      
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+
+            h3 {
+                margin: 0;
+                color: var(--orange);
+                font-family: var(--font-primary);
+                font-size: 20px;
+                font-weight: 400;
+            }
+    
+            span {
+                color: var(--white);
+                font-family: var(--font-primary);
+                font-size: 14px;
+            }
+        }
+    }
+
+    /* PLATFORM CAROUSEL */
+    .game-overview__section-story2 {
+        width: 100%;
+    }
+
+    .game-overview__screenshots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .game-overview__screenshots-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .game-overview__screenshot-large-box {
+        position: relative;
+        max-width: 500px;
+        height: 650px;
+        border: 1px solid var(--blue);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        background: var(--black);
+    }
+
+    .game-overview__screenshot-large {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .game-overview__arrow {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        user-select: none;
+        cursor: pointer; 
+        align-self: flex-start; 
+        margin-top: calc((650px / 2) - (30px / 2)); 
+    }
+
+    .game-overview__save-button {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20%;
+        border: 1px solid var(--blue);
+        background: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+    }
+
+    .game-overview__thumbnails {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .game-overview__thumbnail {
+        width: 80px;
+        height: 100px;
+        border: 1px solid var(--blue);
+        border-radius: 6px;
+        object-fit: cover;
+        background: var(--black);
+    }
+
+    #screenshoots-number {
+        color: var(--aquamarine);
+        font-family: var(--font-primary);
+        font-size: 14px;
+    }
+}
+
+// ==========================================================================
+// RESPONSIVE 
+
+// DESKTOP 1200 
+@media (max-width: 1200px) {
+    .featured-story-overview {
+        grid-template-columns: repeat(3, 1fr);
+
+        .overview-card--overview-container {
+            grid-column: span 2;
+        }
+    }
+}
+
+// MOBILE 768
+@media (max-width: 768px) {
+    .featured-story-overview {
+        grid-template-columns: repeat(2, 1fr);
+
+        .overview-card--overview-container {
+            grid-column: span 2;
+        }
+    }
+
+    .featured-story-page-2 {
+        .game-overview__screenshots { gap: 12px; }
+        .game-overview__screenshot-large-box { height: 350px; }
+    }
+}
+
+// MOBILE 480
+@media (max-width: 480px) {
+    .featured-story-overview {
+        grid-template-columns: 1fr;
+
+        .overview-card--overview-container {
+            grid-column: span 1;
+            min-height: auto;
+        }
+    }
+
+    .featured-story-page-2 {
+        .game-overview__screenshot-large-box { height: 280px; }
+        .game-overview__thumbnail { width: 60px; height: 80px; }
+    }
+}

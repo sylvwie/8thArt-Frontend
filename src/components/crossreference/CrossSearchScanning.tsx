@@ -4,8 +4,8 @@ import { useCrossReferenceSearch } from "../../hooks/useCrossReferenceSearch";
 
 import closeIcon from "/src/assets/icons/close-icon.svg";
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
-import crossRefFull from "/src/assets/icons/cross-reference-full.png";
-// import crossRefFull from "/src/assets/icons/cross-icon.gif";
+//import crossRefFull from "/src/assets/icons/cross-reference-full.png";
+import crossRefFull from "/src/assets/icons/cross-icon.gif";
 
 import DecryptedText from "../motion/DecryptedText";
 import { Logo } from "../shared/Logo";

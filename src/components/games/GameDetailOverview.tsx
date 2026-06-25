@@ -272,7 +272,6 @@ export function GameDetailOverview({ game }: Props) {
 							src={arrowLeft}
 							alt="previous"
 							onClick={prevScreenshot}
-							style={{ cursor: "pointer" }}
 						/>
 
 						<div className="game-overview__screenshots-content">

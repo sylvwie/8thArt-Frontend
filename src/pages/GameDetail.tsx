@@ -53,7 +53,7 @@ export function GameDetail() {
 				{/* BODY */}
 				<div className="game-detail__body">
 
-					{/* TABS (UNICO SISTEMA) */}
+					{/* TABS SYSTEM */}
 					<div className="game-detail__tabs">
 						<button
 							className={`game-detail__tab ${activeTab === "overview" ? "game-detail__tab--active" : ""}`}

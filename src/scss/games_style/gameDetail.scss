@@ -149,12 +149,6 @@
     font-size: var(--font-medium);
     font-weight: var(--font-weight);
     color: var(--aquamarine);
-
-    &::before {
-      content: '>_';
-      margin-right: 4px;
-      color: var(--aquamarine);
-    }
   }
 
   // ─── MAIN GRID ────────────────────────────────────────────

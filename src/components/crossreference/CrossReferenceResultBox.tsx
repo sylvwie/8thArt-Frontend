@@ -22,7 +22,7 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 	const platformList = game.platforms;
 
 	const previewUrl = useShowcaseStore(
-  		(s) => s.view.data.previewUrl
+		(s) => s.view.data.previewUrl
 	);
 	console.log("previewUrl", previewUrl);
 
@@ -49,8 +49,8 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 
 					{previewUrl && (
 						<div
-						className="cross-search-input-image"
-						style={{ backgroundImage: `url(${previewUrl})` }}
+							className="cross-search-input-image"
+							style={{ backgroundImage: `url(${previewUrl})` }}
 						>
 							<div className="cross-search-input-image-title">
 								<span> [ INPUT IMAGE ] </span>
@@ -59,9 +59,15 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					)}
 				</div>
 
+				{/* explanation */}
+				<div className="cross-reference-result-upper-content-info-explanation">
+					<span>[ EXPLANATION ]</span>
+					<p className="explanation">{game.explanation}</p>
+				</div>
+
 				{/* title */}
 				<div className="cross-reference-result-upper-content-title">
-						<span className="game-title">{game.title}</span>
+					<span className="game-title">{game.title}</span>
 				</div>
 
 				{/* info */}
@@ -109,12 +115,6 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 									</button>
 								))}
 							</div>
-						</div>
-
-						{/* explanation */}
-						<div className="cross-reference-result-upper-content-info-explanation">
-							<span>[ EXPLANATION ]</span>
-							<p className="explanation">{game.explanation}</p>
 						</div>
 					</div>
 

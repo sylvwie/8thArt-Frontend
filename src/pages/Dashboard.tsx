@@ -77,9 +77,12 @@ export function Dashboard() {
 				</div>
 
 				<div className="featured-stories-row">
-					{cardList.map((card, index) => (
+					{cardList.map((story, index) => (
 						<div className="featuredstoriescard-frame" key={index}>
-							<FeaturedStoriesCard story={card} />
+							<FeaturedStoriesCard
+								story={story}
+								index={index}
+							/>
 						</div>
 					))}
 				</div>
