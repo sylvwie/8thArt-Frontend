@@ -197,7 +197,7 @@ export function Archive() {
 				<div className="featured-stories-row">
 					{cardList.map((card, index) => (
 						<div className="featuredstoriescard-frame" key={index}>
-							<FeaturedStoriesCard story={card} />
+							<FeaturedStoriesCard story={card} index={index} />
 						</div>
 					))}
 				</div>
