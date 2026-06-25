@@ -222,6 +222,18 @@
 
 // DESKTOP 1024
 @media (max-width: 1024px) {
+
+    .showcase-side,
+    .suggested-game-box,
+    .archive-search-logs,
+    #crossref-dropin-container,
+    .status-logs,
+    .status-log-wrapper,
+    .status-log-container,
+    #status-log {
+        display: none !important;
+    }
+
     #main-showcase {
         flex-direction: column;
         align-items: center;
@@ -231,6 +243,14 @@
         width: 100%;
         display: flex;
         justify-content: center;
+
+         .logo {
+            height: 160px !important;
+            width: auto !important;
+            object-fit: contain;
+            border: none !important;
+            margin: 30px 0px !important;
+        }
     }
 
     .showcase-side {
@@ -260,39 +280,61 @@
 }
 
 
-// MOBILE 430
-@media (max-width: 430px) {
 
-    .showcase-center,
-    .archive-search-wrapper {
-        .archive-search-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            padding: 0 8px;
-            gap: 12px;
-			font-family: var(--font-primary);
+
+// MOBILE 430
+@media (max-width: 480px) {
+
+    .showcase-center{
+        max-width: 300px;
+        .archive-search-wrapper {   
+            .archive-search-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 0 8px;
+                gap: 12px;
+                font-family: var(--font-primary);
+
+            }
+        }
+
+        .logo {
+            height: 90px !important;
+            width: auto !important;
+            max-width: 140px !important;
+            object-fit: contain;
+            border: none !important;
+            margin-bottom: 10px;
+            margin-top: 10px !important;
         }
     }
-
-    .logo {
-        height: 30px !important;
-        width: auto !important;
-        max-width: 140px !important;
-        object-fit: contain;
-        border: none !important;
-        margin-bottom: 4px;
-    }
+    
 
     .archive-search-wrapper {
         .search-bar-container, 
         .search-bar-wrapper,
         input {
             width: 100% !important;
-            max-width: 100% !important;
-            height: 36px !important;
-            font-size: 13px !important;
+            height: 30px !important;
+            font-size: 12px !important;
+            border-radius: 12px !important;
+        }
+
+       .filter-icon img {
+            max-width: 22px !important;
+            max-height: 22px !important;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+       }
+
+       .search-bar-icons {
+            gap: 4px !important;
+            img {
+            max-width: 15px !important;
+            max-height: 15px !important;
+            }
         }
     }
 
@@ -311,6 +353,7 @@
         width: 100% !important;
         padding: 0 4px !important;
         margin-top: 12px !important;
+        border-radius: 12px !important;
 
         #filter-box-container {
             padding: 10px !important;
@@ -319,7 +362,7 @@
 
         #active-filters-container {
             font-size: 11px !important;
-            
+            border-radius: 12px !important;
             #active-filter-reset-all {
                 padding: 4px 8px !important;
                 font-size: 10px !important;
@@ -363,24 +406,26 @@
         display: flex;
         flex-direction: column;
         gap: 10px !important;
-        padding: 0 4px !important;
-        margin-top: 16px !important;
+        padding: 0px 4px !important;
 
         .search-result-container {
             width: 100% !important;
+            height: 100% !important;
+            margin-top: 0px !important;
+            padding: 12px 14px !important;
         }
 
         .search-result-items {
             display: flex !important;
             flex-direction: row !important;
             gap: 10px !important;
-            padding: 8px !important;
-            height: auto !important;
+            padding: 0px !important;
+            height: 100px !important;
         }
 
         .search-result-cover {
-            width: 50px !important;
-            height: 75px !important;
+            width: 80px !important;
+            height: 100px !important;
             flex-shrink: 0 !important;
 
             .search-result-content {
@@ -405,9 +450,11 @@
                 font-size: 10px !important;
                 line-height: 1.3 !important;
                 display: -webkit-box;
-                -line-clamp: 3;
                 -webkit-box-orient: vertical;
+                line-clamp: 4;
+                -webkit-line-clamp: 4;
                 overflow: hidden;
+                padding-bottom: 0px !important;
             }
         }
     }
