@@ -372,7 +372,7 @@
     width: 100%;
     height: 180px;
     overflow: hidden;
-    
+
     &__logo {
       object-fit: contain;
       display: block;
@@ -576,7 +576,6 @@
 
     &:hover {
       border-color: var(--hover-grey);
-      // variant bottone in hover e cliccato
     }
 
     img {
@@ -703,6 +702,396 @@
       border-radius: 8px;
       border: 1px solid var(--blue);
       transition: border-color var(--timing) var(--easing);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// RESPONSIVE 
+
+// DESKTOP 1400
+@media (max-width: 1400px) {
+
+  #game-detail {
+    padding: 2rem;
+  }
+
+  .game-detail__header {
+    height: 420px;
+  }
+
+  .game-overview {
+
+    &__main {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    &__left {
+      width: 100% !important;
+      min-width: 0;
+    }
+
+    &__right {
+
+      .game-overview__panel:nth-child(1),
+      .game-overview__panel:nth-child(2) {
+        margin-left: 0;
+      }
+    }
+
+    &__panel {
+      width: 100%;
+    }
+
+    &__screenshots {
+      max-width: 100%;
+      grid-template-columns: 32px minmax(0, 1fr) 32px;
+    }
+
+    &__cover-card {
+      width: 100%;
+      min-width: 0;
+    }
+
+    &__cover-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+  }
+
+}
+
+// DESKTOP MOBILE 1000
+
+@media (max-width: 1000px) {
+
+  #game-detail {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .game-detail__header {
+    height: 300px;
+  }
+
+  .game-detail__title {
+    font-size: 16px;
+  }
+
+  .game-detail__meta {
+    font-size: 12px;
+  }
+
+  .game-overview {
+    gap: 40px;
+
+    &__main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    &__left {
+      width: 100%;
+      min-width: 0;
+    }
+
+    &__right {
+      flex-direction: column;
+
+      .game-overview__panel:nth-child(1),
+      .game-overview__panel:nth-child(2) {
+        margin-left: 0;
+      }
+    }
+
+    &__panel {
+      width: 100%;
+    }
+
+    &__blocks {
+      padding: 16px;
+      gap: 16px;
+    }
+
+    &__label {
+      font-size: 13px;
+    }
+
+    &__value,
+    &__description {
+      font-size: 12px;
+    }
+
+    &__tag {
+      font-size: 12px;
+      padding: 3px 10px;
+    }
+
+    // screenshots
+    &__screenshots {
+      max-width: 100%;
+      padding: 24px 12px;
+      grid-template-columns: 28px minmax(0, 1fr) 28px;
+      column-gap: 12px;
+    }
+
+    &__arrow {
+      width: 28px;
+      height: 28px;
+    }
+
+    &__thumbnail {
+      height: 100px;
+    }
+
+    // covers
+
+    &__covers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+    
+    &__cover-card {
+      width: 100%;
+      min-width: 0;
+      height: 420px;
+    }
+
+    &__cover-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+// MOBILE 600
+@media (max-width: 600px) {
+
+  #game-detail {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .game-detail__header {
+    height: 220px;
+    border-radius: 8px;
+  }
+
+  .game-detail__header-info {
+    padding: 10px 14px;
+    gap: 5px;
+  }
+
+  .game-detail__title {
+    font-size: 14px;
+  }
+
+  .game-detail__meta {
+    font-size: 11px;
+  }
+
+  .game-detail__tabs {
+    gap: 6px;
+  }
+
+  .game-detail__tab {
+    padding: 6px 12px;
+    font-size: 12px;
+
+    img {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  .game-overview {
+    gap: 28px;
+
+    &__section-title {
+      font-size: 14px;
+    }
+
+    &__main {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &__left {
+      width: 100%;
+    }
+
+    &__blocks {
+      padding: 14px;
+      gap: 14px;
+    }
+
+    &__label {
+      font-size: 13px;
+    }
+
+    &__value,
+    &__description {
+      font-size: 12px;
+    }
+
+    &__right {
+      flex-direction: column;
+
+      .game-overview__panel:nth-child(1),
+      .game-overview__panel:nth-child(2) {
+        margin-left: 0;
+      }
+    }
+
+    &__panel {
+      width: 100%;
+    }
+
+    &__screenshots {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 12px;
+      max-width: 100%;
+    }
+
+    &__screenshots-content {
+      order: 1;
+      width: 100%;
+    }
+
+    &__arrow {
+      width: 24px;
+      height: 24px;
+      order: 2;
+    }
+
+    &__arrow--left,
+    &__arrow--right {
+      order: 2;
+    }
+
+    &__screenshot-large-box {
+      border-radius: 4px;
+    }
+
+    &__thumbnails {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 100%;
+    }
+
+    &__thumbnail {
+      height: 65px;
+    }
+
+    &__covers-grid {
+      gap: 10px;
+    }
+
+    &__cover-card {
+      height: 230px;
+    }
+
+    &__similar-games {
+      gap: 1rem;
+    }
+  }
+}
+
+// MOBILE 360
+
+@media (max-width: 360px) {
+
+  #game-detail {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .game-detail__header {
+    height: 180px;
+    border-radius: 6px;
+  }
+
+  .game-detail__title {
+    font-size: 13px;
+  }
+
+  .game-detail__meta {
+    font-size: 10px;
+  }
+
+  .game-detail__tab {
+    padding: 5px 10px;
+    font-size: 11px;
+
+    img {
+      display: none;
+    }
+  }
+
+  .game-overview {
+    gap: 20px;
+
+    &__section-title {
+      font-size: 13px;
+    }
+
+    &__blocks {
+      padding: 10px;
+      gap: 10px;
+    }
+
+    &__label {
+      font-size: 12px;
+    }
+
+    &__value,
+    &__description {
+      font-size: 11px;
+    }
+
+    &__tag {
+      font-size: 11px;
+      padding: 3px 8px;
+    }
+
+    &__thumbnails {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__thumbnail {
+      height: 55px;
+    }
+
+    &__cover-card {
+      height: 190px;
+    }
+
+    &__esrb-image {
+      width: 55px;
+    }
+
+    &__esrb-list li {
+      font-size: 11px;
     }
   }
 }

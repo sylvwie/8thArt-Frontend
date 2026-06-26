@@ -283,12 +283,22 @@
 
 // RESPONSIVE
 
+// DESKTOP 1300
+@media (max-width: 1300px) {
+    .gamecard-wrapper {
+        display: flex;
+        height: 140px;
+        flex: 0 0 auto;
+        border-radius: 16px;
+        margin: 0 auto;
+    }
+}
+
 // MOBILE 600
 @media (max-width: 600px) {
     .gamecard-wrapper {
         width: 100%;
-        max-width: 390px;
-        height: auto;
+        height: 140px;
         flex: 0 0 auto;
         border-radius: 12px;
         margin: 0 auto;
@@ -298,24 +308,13 @@
 // MOBILE 360
 @media (max-width: 360px) {
     .gamecard-wrapper {
-        max-width: 320px;
-        
+        display: flex;
+        height: 130px;
+        flex: 0 0 auto;
+        border-radius: 16px;
+        margin: 0 auto;
         .gamecard-container {
-            grid-template-rows: 150px 1fr;
+          grid-template-rows: 150px 1fr;
         }
-    }
-
-    #gamecard-info-container {
-        padding: 12px;
-        gap: 10px;
-    }
-
-    .gamecard-title {
-        font-size: 16px;
-    }
-
-    .gamecard-description {
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
     }
 }

@@ -79,19 +79,20 @@ export function CrossPlaygroundResultBox({ game, similarGames }: Props) {
 									)}
 								</div>
 
+								{/* title */}
+								<div className="cross-reference-result-upper-content-title">
+									<span className="game-title">{game.title}</span>
+								</div>
+
 								{/* explanation */}
 								<div className="cross-reference-result-upper-content-info-explanation">
 									<span>[ EXPLANATION ]</span>
 									<p className="explanation">{game.explanation}</p>
 								</div>
 
-								{/* title */}
-								<div className="cross-reference-result-upper-content-title">
-									<span className="game-title">{game.title}</span>
-								</div>
-
 								{/* info */}
 								<div className="cross-reference-result-upper-content-info">
+
 
 									<div className="cross-reference-result-upper-content-info-left-column">
 										{/* developer */}

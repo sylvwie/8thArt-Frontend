@@ -327,15 +327,98 @@
 
 // RESPONSIVE
 
-// MOBILE 430
-@media (max-width: 430px) {
+// DESKTOP MOBILE 1000
+@media (max-width: 1000px) {
+    .archive-page-searchbar-wrapper {
+        padding: 0 2rem;
+        gap: 20px;
+        
+        img {
+            width: 220px;
+            height: 220px;
+        }
+        
+        .archive-searchbar-container {
+            width: 80% !important;
+            margin: 0 auto !important;
+        }
+    }
+
+    .archive-wrapper {
+        padding: 2rem 2rem;
+        gap: 25px;
+
+        .archive-genre-carousel {
+            gap: 16px;
+
+            .archive-genre-list {
+                gap: 16px;
+            }
+
+            .archive-genre-list-box {
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .archive-carousel-dots {
+            padding: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .archive-platforms-list {
+            grid-auto-columns: minmax(160px, 1fr);
+            gap: 12px;
+        }
+
+        .archive-platforms-list-box {
+            padding: 12px 16px;
+            span {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .platform-page-container,
+    .genre-page-container,
+    .developer-page-container {
+        padding: 2rem 2rem;
+        gap: 24px;
+
+        .platform-header,
+        .genre-header,
+        .developer-header {
+            .platform-name,
+            .genre-name,
+            .developer-name {
+                font-size: 22px;
+            }
+        }
+
+        .platform-games-list,
+        .genre-games-list,
+        .developer-games-list {
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
+        }
+    }
+}
+
+// MOBILE 900
+@media (max-width: 900px) {
     .archive-page-searchbar-wrapper {
         padding: 0 1rem;
-        gap: 20px;
+        gap: 15px;
 
         img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .archive-searchbar-container {
+            width: 100% !important;
         }
     }
 
@@ -347,71 +430,230 @@
             padding-bottom: 10px;
 
             span {
-                font-size: 18px;
+                font-size: 16px;
             }
 
             p {
-                font-size: 14px;
+                font-size: 12px;
+            }
+        }
+
+        .archive-genre-section {
+            .archive-section-title {
+                span {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                }
             }
         }
 
         .archive-genre-carousel {
-            gap: 12px;
+            gap: 10px;
+
+            .arrow-left, .arrow-right {
+                width: 20px;
+                height: 20px;
+            }
 
             .archive-genre-list {
-                gap: 12px;
+                gap: 10px;
             }
 
             .archive-genre-list-box {
-                max-width: 100%;
-                height: 120px;
-
                 span {
-                    font-size: 16px;
+                    font-size: 11px;
                 }
             }
         }
 
         .archive-carousel-dots {
-            padding: 15px 0;
-            gap: 8px;
+            padding: 12px;
+            max-width: 60%;
+            margin: 0 auto;
+            gap: 6px;
 
             .archive-dot {
-                width: 24px;
-                height: 6px;
+                width: 16px;
+                height: 4px;
             }
         }
 
         .archive-platforms-list {
-            grid-auto-columns: minmax(130px, 1fr);
-            gap: 12px;
+            grid-auto-columns: minmax(110px, 1fr);
+            gap: 8px;
             padding-bottom: 10px;
         }
 
         .archive-platforms-list-box {
-            padding: 12px 14px;
-
+            padding: 10px 12px;
             span {
+                font-size: 10px;
+            }
+        }
+
+        .stories-section {
+            margin-top: 10px;
+            margin-bottom: 10px;
+
+            .archive-section-title {
+                span {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .platform-page-container,
+    .genre-page-container,
+    .developer-page-container {
+        padding: 1.5rem 1rem;
+        gap: 16px;
+
+        .platform-header,
+        .genre-header,
+        .developer-header {
+            padding-bottom: 10px;
+            gap: 8px;
+
+            .platform-name,
+            .genre-name,
+            .developer-name {
+                font-size: 18px;
+            }
+
+            .platform-games-count,
+            .genre-games-count,
+            .developer-games-count {
                 font-size: 12px;
             }
+        }
+
+        .platform-games-list,
+        .genre-games-list,
+        .developer-games-list {
+            grid-template-columns: 1fr;
+            gap: 12px;
+            padding: 0;
         }
     }
 }
 
 // MOBILE 360
 @media (max-width: 360px) {
+    .archive-page-searchbar-wrapper {
+        img {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
     .archive-wrapper {
-        .archive-genre-carousel {
-            .archive-genre-list-box {
-                height: 100px;
+        padding: 1rem 0.5rem;
+        gap: 16px;
+
+        .archive-section-title {
+            span {
+                font-size: 14px;
+            }
+            p {
+                font-size: 11px;
+            }
+        }
+
+        .archive-genre-section {
+            .archive-section-title {
                 span {
                     font-size: 14px;
+                }
+                p {
+                    font-size: 11px;
                 }
             }
         }
 
+        .archive-genre-carousel {
+            gap: 6px;
+
+            .arrow-left, .arrow-right {
+                width: 16px;
+                height: 16px;
+            }
+
+            .archive-genre-list {
+                gap: 6px;
+            }
+
+            .archive-genre-list-box {
+                span {
+                    font-size: 9px;
+                }
+            }
+        }
+
+        .archive-carousel-dots {
+            max-width: 50%;
+            gap: 4px;
+
+            .archive-dot {
+                width: 12px;
+                height: 3px;
+            }
+        }
+
         .archive-platforms-list {
-            grid-auto-columns: minmax(110px, 1fr);
+            grid-auto-columns: minmax(95px, 1fr);
+            gap: 6px;
+        }
+
+        .archive-platforms-list-box {
+            padding: 8px 10px;
+            span {
+                font-size: 9px;
+            }
+        }
+
+        .stories-section {
+            .archive-section-title {
+                span {
+                    font-size: 14px;
+                }
+                p {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    .platform-page-container,
+    .genre-page-container,
+    .developer-page-container {
+        padding: 1rem 0.5rem;
+        gap: 12px;
+
+        .platform-header,
+        .genre-header,
+        .developer-header {
+            .platform-name,
+            .genre-name,
+            .developer-name {
+                font-size: 15px;
+            }
+            .platform-games-count,
+            .genre-games-count,
+            .developer-games-count {
+                font-size: 11px;
+            }
+        }
+
+        .platform-games-list,
+        .genre-games-list,
+        .developer-games-list {
+            gap: 10px;
         }
     }
 }

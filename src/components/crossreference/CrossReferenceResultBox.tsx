@@ -64,14 +64,14 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					<span className="game-title">{game.title}</span>
 				</div>
 
-				{/* info */}
-				<div className="cross-reference-result-upper-content-info">
-
 				{/* explanation */}
 				<div className="cross-reference-result-upper-content-info-explanation">
 					<span>[ EXPLANATION ]</span>
 					<p className="explanation">{game.explanation}</p>
 				</div>
+				{/* info */}
+				<div className="cross-reference-result-upper-content-info">
+
 
 					<div className="cross-reference-result-upper-content-info-left-column">
 						{/* developer */}

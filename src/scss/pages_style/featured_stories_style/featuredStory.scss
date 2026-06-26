@@ -520,49 +520,352 @@
     }
 }
 
-// ==========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // RESPONSIVE 
 
-// DESKTOP 1200 
-@media (max-width: 1200px) {
-    .featured-story-overview {
-        grid-template-columns: repeat(3, 1fr);
+@mixin featured-story-page-responsive-base {
+    width: 100%;
+    max-width: 1850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 
-        .overview-card--overview-container {
-            grid-column: span 2;
+// DESKTOP 1000 
+@media (max-width: 1000px) {
+    .featured-story-page-1,
+    .featured-story-page-2 {
+        @include featured-story-page-responsive-base;
+        padding: 20px;
+        gap: 24px;
+
+        .featured-story-hero {
+            height: 340px;
+        }
+
+        .featured-story-hero-overlay h1 {
+            font-size: 28px;
+        }
+
+        .featured-story-section-header {
+            h2 { font-size: 18px; line-height: 1.3; }
+            p { font-size: 14px; line-height: 1.3; }
+        }
+
+        .featured-story-overview {
+            grid-template-columns: repeat(3, 1fr);
+
+            .overview-card--overview-container {
+                grid-column: span 3;
+                min-height: auto;
+            }
+
+            .overview-card--style-columns {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .overview-card--style-column {
+                width: 100%;
+            }
+        }
+
+        .soundtrack-row {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .characters-row {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .gamecube-posters,
+        .xbox-posters,
+        .ps2-posters {
+            .posters-title {
+                h3 { font-size: 18px; }
+                span { font-size: 13px; }
+            }
+        }
+
+        .game-overview__screenshots {
+            gap: 14px;
+            
+            .game-overview__screenshot-large-box {
+                height: 480px;
+            }
+
+            .game-overview__thumbnail {
+                height: 75px;
+            }
         }
     }
 }
 
-// MOBILE 768
-@media (max-width: 768px) {
-    .featured-story-overview {
-        grid-template-columns: repeat(2, 1fr);
-
-        .overview-card--overview-container {
-            grid-column: span 2;
-        }
-    }
-
+// MOBILE 600
+@media (max-width: 600px) {
+    .featured-story-page-1,
     .featured-story-page-2 {
-        .game-overview__screenshots { gap: 12px; }
-        .game-overview__screenshot-large-box { height: 350px; }
+        @include featured-story-page-responsive-base;
+        padding: 14px;
+        gap: 18px;
+
+        .featured-story-hero {
+            height: 240px;
+        }
+
+        .featured-story-back {
+            top: 10px;
+            left: 10px;
+            width: 85px;
+            height: 30px;
+            font-size: 10px;
+            padding: 4px 8px;
+        }
+
+        .featured-story-hero-overlay {
+            bottom: 14px;
+            left: 14px;
+            h1 { font-size: 22px; }
+        }
+
+        .featured-story-card {
+            padding: 12px;
+            gap: 10px;
+        }
+
+        .featured-story-card-image {
+            width: 44px;
+            height: 44px;
+        }
+
+        .featured-story-card-title {
+            font-size: 14px;
+        }
+
+        .featured-story-card-subtitle {
+            font-size: 11px;
+        }
+
+        .featured-story-section-header {
+            h2 { font-size: 16px; }
+            p { font-size: 12px; }
+        }
+
+        .featured-story-overview {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+
+            .overview-card--overview-container {
+                grid-column: span 2;
+                padding: 14px;
+                gap: 14px;
+            }
+
+            .overview-card--synopsis {
+                h3 { font-size: 14px; }
+                p { font-size: 12px; line-height: 1.4; }
+            }
+
+            .overview-card--style-column {
+                span { font-size: 13px; }
+                ul li { font-size: 11px; line-height: 1.4; }
+            }
+
+            .screens-card {
+                grid-column: span 1;
+                padding: 4px;
+                border-radius: 4px;
+            }
+        }
+
+        .soundtrack-row {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .soundtrack-card {
+            padding: 10px;
+            border-radius: 4px;
+            gap: 8px;
+            
+            .soundtrack-title-container {
+                span { font-size: 11px; }
+                img { width: 12px; height: 12px; }
+            }
+
+            .soundtrack-image-container {
+                height: auto;
+            }
+        }
+
+        .characters-row {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .character-card {
+            padding: 8px;
+            border-radius: 4px;
+            gap: 8px;
+
+            .story-category-box-title-container {
+                padding: 8px;
+                span { font-size: 10px; line-height: 1.2; }
+            }
+
+            .character-image-container {
+                height: auto;
+            }
+        }
+
+        .gamecube-posters,
+        .xbox-posters,
+        .ps2-posters {
+            .posters-title {
+                h3 { font-size: 15px; }
+                span { font-size: 11px; }
+            }
+        }
+
+        .game-overview__screenshots {
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .game-overview__arrow {
+            width: 24px;
+            height: 24px;
+        }
+
+        .game-overview__screenshots-content {
+            width: calc(100% - 60px);
+        }
+
+        .game-overview__screenshot-large-box {
+            height: 320px;
+            
+            .game-overview__save-button {
+                width: 30px;
+                height: 30px;
+                bottom: 10px;
+                right: 10px;
+                img { width: 14px; height: 14px; }
+            }
+        }
+
+        .game-overview__thumbnails {
+            gap: 6px;
+        }
+
+        .game-overview__thumbnail {
+            height: 50px;
+        }
+
+        #screenshoots-number {
+            font-size: 11px;
+            margin-top: 6px;
+        }
     }
 }
 
-// MOBILE 480
-@media (max-width: 480px) {
-    .featured-story-overview {
-        grid-template-columns: 1fr;
-
-        .overview-card--overview-container {
-            grid-column: span 1;
-            min-height: auto;
-        }
-    }
-
+// MOBILE 360 
+@media (max-width: 360px) {
+    .featured-story-page-1,
     .featured-story-page-2 {
-        .game-overview__screenshot-large-box { height: 280px; }
-        .game-overview__thumbnail { width: 60px; height: 80px; }
+        @include featured-story-page-responsive-base;
+        padding: 10px;
+        gap: 14px;
+
+        .featured-story-hero {
+            height: 190px;
+        }
+
+        .featured-story-hero-overlay h1 {
+            font-size: 18px;
+        }
+
+        .featured-story-section-header {
+            h2 { font-size: 14px; }
+            p { font-size: 11px; }
+        }
+
+        .featured-story-overview {
+            grid-template-columns: 1fr;
+            gap: 10px;
+
+            .overview-card--overview-container {
+                grid-column: span 1;
+            }
+
+            .screens-card {
+                grid-column: span 1;
+                padding: 2px;
+            }
+        }
+
+        .soundtrack-row {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .soundtrack-card {
+            padding: 8px;
+            
+            .soundtrack-title-container {
+                span { font-size: 10px; }
+            }
+        }
+
+        .characters-row {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .character-card {
+            padding: 6px;
+
+            .story-category-box-title-container {
+                padding: 6px;
+                span { font-size: 9px; }
+            }
+        }
+
+        .game-overview__screenshots {
+            gap: 6px;
+            padding: 6px;
+        }
+
+        .game-overview__arrow {
+            width: 20px;
+            height: 20px;
+        }
+
+        .game-overview__screenshots-content {
+            width: calc(100% - 48px);
+        }
+
+        .game-overview__screenshot-large-box {
+            height: 240px;
+        }
+
+        .game-overview__thumbnail {
+            height: 40px;
+        }
     }
 }
