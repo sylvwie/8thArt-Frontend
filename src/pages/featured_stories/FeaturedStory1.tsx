@@ -36,9 +36,13 @@ import track6 from "/src/assets/stories/story1/tracks/story1-track6.jpg";
 
 // characters
 import character1 from "/src/assets/stories/story1/pg/story1-pg1.jpg";
-import character2 from "/src/assets/stories/story1/pg/story1-pg2.png";
+import character2 from "/src/assets/stories/story1/pg/story1-pg2.jpg";
 import character3 from "/src/assets/stories/story1/pg/story1-pg3.jpg";
 import character4 from "/src/assets/stories/story1/pg/story1-pg4.png";	
+import character5 from "/src/assets/stories/story1/pg/story1-pg5.jpg";	
+import character6 from "/src/assets/stories/story1/pg/story1-pg6.png";	
+import character7 from "/src/assets/stories/story1/pg/story1-pg7.jpg";	
+import character8 from "/src/assets/stories/story1/pg/story1-pg8.jpg";	
 
 export default function FeaturedStory1() {
 	const navigate = useNavigate();
@@ -71,9 +75,13 @@ export default function FeaturedStory1() {
 
 	const charactersNames = [
 		"Ulala - Space Channel 5 (1999)",
-		"Max Payne - Max Payne (2001)",
+		"Rikku - Final Fantasy X (2001)",
 		"Dante - DMC (2001)",
 		"Solid Snake - MGS2 (2001)",
+		"Sora - Kingdom Hearts (2002)",
+		"Max Payne - Max Payne (2001)",
+		"Sonic - Sonic Adventure 2 (2001)",
+		"Beat - Jet Set Radio (2000)",
 	];
 
 	return (
@@ -308,6 +316,42 @@ export default function FeaturedStory1() {
 							</div>
 							<div className="character-image-container">	
 								<img className="character-image" src={character4} alt="" />
+							</div>
+						</div>
+
+						<div className="character-card" >
+							<div className="story-category-box-title-container">
+								<span> {charactersNames[4]} </span>
+							</div>
+							<div className="character-image-container">	
+								<img className="character-image" src={character5} alt="" />
+							</div>
+						</div>
+
+						<div className="character-card" >
+							<div className="story-category-box-title-container">
+								<span> {charactersNames[5]} </span>
+							</div>
+							<div className="character-image-container">	
+								<img className="character-image" src={character6} alt="" />
+							</div>
+						</div>
+
+						<div className="character-card" >
+							<div className="story-category-box-title-container">
+								<span> {charactersNames[6]} </span>
+							</div>
+							<div className="character-image-container">	
+								<img className="character-image" src={character7} alt="" />
+							</div>
+						</div>
+
+						<div className="character-card" >
+							<div className="story-category-box-title-container">
+								<span> {charactersNames[7]} </span>
+							</div>
+							<div className="character-image-container">	
+								<img className="character-image" src={character8} alt="" />
 							</div>
 						</div>
 

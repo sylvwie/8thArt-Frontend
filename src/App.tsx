@@ -17,6 +17,11 @@ import { GenrePage } from './components/archive_pages/GenrePage.tsx'
 import { DeveloperPage } from './components/archive_pages/DeveloperPage.tsx'
 import FeaturedStory1 from './pages/featured_stories/FeaturedStory1.tsx'
 import FeaturedStory2 from './pages/featured_stories/FeaturedStory2.tsx'
+import FeaturedStory3 from './pages/featured_stories/FeaturedStory3.tsx'
+import FeaturedStory4 from './pages/featured_stories/FeaturedStory4.tsx'
+import FeaturedStory5 from './pages/featured_stories/FeaturedStory5.tsx'
+import FeaturedStory6 from './pages/featured_stories/FeaturedStory6.tsx'
+import FeaturedStory7 from './pages/featured_stories/FeaturedStory7.tsx'
 
 export default function App() {
 	const router = createHashRouter([
@@ -82,6 +87,26 @@ export default function App() {
 				{
 					path: 'featured-story-2',
 					element: <FeaturedStory2 />
+				},
+				{
+					path: 'featured-story-3',
+					element: <FeaturedStory3 />
+				},
+				{
+					path: 'featured-story-4',
+					element: <FeaturedStory4 />
+				},
+				{
+					path: 'featured-story-5',
+					element: <FeaturedStory5 />
+				},
+				{
+					path: 'featured-story-6',
+					element: <FeaturedStory6 />
+				},
+				{
+					path: 'featured-story-7',
+					element: <FeaturedStory7 />
 				},
 			]
 		},

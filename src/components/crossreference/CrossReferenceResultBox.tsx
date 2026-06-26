@@ -59,12 +59,6 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 					)}
 				</div>
 
-				{/* explanation */}
-				<div className="cross-reference-result-upper-content-info-explanation">
-					<span>[ EXPLANATION ]</span>
-					<p className="explanation">{game.explanation}</p>
-				</div>
-
 				{/* title */}
 				<div className="cross-reference-result-upper-content-title">
 					<span className="game-title">{game.title}</span>
@@ -72,6 +66,12 @@ export function CrossReferenceResultBox({ game, similarGames }: Props) {
 
 				{/* info */}
 				<div className="cross-reference-result-upper-content-info">
+
+				{/* explanation */}
+				<div className="cross-reference-result-upper-content-info-explanation">
+					<span>[ EXPLANATION ]</span>
+					<p className="explanation">{game.explanation}</p>
+				</div>
 
 					<div className="cross-reference-result-upper-content-info-left-column">
 						{/* developer */}

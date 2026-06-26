@@ -207,21 +207,9 @@
 
 
 // RESPONSIVE
-// DESKTOP 1280
-@media (max-width: 1280px) {
-    #main-showcase {
-        gap: 24px;
-	}
-    
-	.showcase-suggested-games {
-        .suggested-game-box {
-            width: 220px;
-		}
-	}
-}
 
-// DESKTOP 1024
-@media (max-width: 1024px) {
+// DESKTOP 1400
+@media (max-width: 1400px) {
 
     .showcase-side,
     .suggested-game-box,
@@ -282,21 +270,41 @@
 
 
 
-// MOBILE 430
-@media (max-width: 480px) {
+// MOBILE 600
+@media (max-width: 600px) {
 
-    .showcase-center{
-        max-width: 300px;
+    .showcase-center {
+        max-width: 100% !important;
+        margin: 0px !important;
+        padding: 0 20px !important;
+
+        .cross-search-section {
+            width: 100% !important;
+            padding: 0 8px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px !important;
+            min-height: auto !important; 
+    
+            .cross-search-container {
+                width: 100% !important;
+    
+                .cross-search-logs {
+                    display: none !important;
+                }
+            }
+        }
+
         .archive-search-wrapper {   
             .archive-search-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 100%;
+                width: 85%;
                 padding: 0 8px;
                 gap: 12px;
                 font-family: var(--font-primary);
-
             }
         }
 
@@ -310,9 +318,9 @@
             margin-top: 10px !important;
         }
     }
-    
 
     .archive-search-wrapper {
+        margin: 0px 0px 30px 0px !important;
         .search-bar-container, 
         .search-bar-wrapper,
         input {
@@ -332,8 +340,8 @@
        .search-bar-icons {
             gap: 4px !important;
             img {
-            max-width: 15px !important;
-            max-height: 15px !important;
+                max-width: 15px !important;
+                max-height: 15px !important;
             }
         }
     }
@@ -351,21 +359,32 @@
 
     #filter-box-wrapper {
         width: 100% !important;
+        height: auto !important;
         padding: 0 4px !important;
-        margin-top: 12px !important;
+        margin-top: 10px !important;
         border-radius: 12px !important;
 
         #filter-box-container {
             padding: 10px !important;
             gap: 8px !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
 
         #active-filters-container {
-            font-size: 11px !important;
             border-radius: 12px !important;
+            height: auto !important;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 6px !important;
+            
+            span {
+                font-size: 9px !important;
+            }
             #active-filter-reset-all {
-                padding: 4px 8px !important;
-                font-size: 10px !important;
+                padding: 3px 8px !important;
+                font-size: 8px !important;
             }
         }
 
@@ -374,29 +393,45 @@
         }
 
         #filter-params-box-container {
-            flex-direction: column !important;
+            display: flex !important;
+            height: auto !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
             gap: 10px !important;
+            width: 100% !important;
         }
 
         .filter-params-box {
-            width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            flex: 1 1 calc(50% - 10px) !important;
+            min-width: 120px !important;
+            width: auto !important;
+            height: auto !important;
+            gap: 4px !important;
             
             .filter-params-type {
-                font-size: 10px !important;
+                font-size: 9px !important;
                 margin-bottom: 4px !important;
             }
 
             .filter-params-select-wrapper {
-                height: 32px !important;
-                
-                select, .filter-select {
-                    font-size: 12px !important;
-                    padding: 0 8px !important;
-                }
+                height: auto !important;
 
-                .select-arrow {
-                    font-size: 9px !important;
-                    right: 8px !important;
+                .filter-params-input {
+                    height: 20px !important;
+                    font-size: 12px !important;
+
+                    select, .filter-select {
+                        font-size: 12px !important;
+                        padding: 0 8px !important;
+                        height: 20px !important;
+                    }
+    
+                    .select-arrow {
+                        font-size: 9px !important;
+                        right: 8px !important;
+                    }
                 }
             }
         }
@@ -459,19 +494,6 @@
         }
     }
 
-    .cross-search-section {
-        width: 100% !important;
-        padding: 0 8px !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px !important;
-
-        .cross-search-container {
-            width: 100% !important;
-        }
-    }
-
     .cross-search-box-wrapper {
         width: 100% !important;
         margin: 0 !important;
@@ -479,20 +501,30 @@
 
         .cross-search-box {
             width: 100% !important;
-            padding: 12px !important;
+            gap: 0px !important;
+            padding: 0px !important;
 
             #cross-search-main-text {
-                font-size: 11px !important;
-                margin-bottom: 6px !important;
+                font-size: 10px !important;
+                margin-bottom: 0px !important;
             }
 
             #special-background {
                 display: none !important;
             }
 
+            .cross-search-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 10px !important;
+                box-sizing: border-box !important;
+                flex-direction: column !important;
+            }
+
             .cross-search-header {
                 padding: 6px 0 !important;
                 margin-bottom: 10px !important;
+                max-width: 100% !important;
 
                 #cross-search-header-text {
                     font-size: 10px !important;
@@ -515,14 +547,18 @@
 
             .cross-search-box-body,
             .cross-search-scanning-body {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: auto !important;
                 flex-direction: column !important;
                 align-items: center !important;
-                gap: 12px !important;
-                padding: 12px 0 !important;
+                gap: 10px !important;
+                padding: 18px 12px !important;
                 background-size: cover !important;
+                box-sizing: border-box !important;
 
                 img {
-                    height: 60px !important;
+                    height: 3.5vh !important;
                     width: auto !important;
                 }
 
@@ -530,6 +566,15 @@
                     align-items: center !important;
                     text-align: center !important;
                     width: 100% !important;
+                    gap: 4px !important;
+                    
+                    #cross-search-box-body-text {
+                        font-size: 8px !important;
+                    }
+                    .drop-zone-text {
+                        font-size: 8px !important;
+                        padding: 8px 20px !important;
+                    }
                 }
 
                 #cross-search-box-body-text,
@@ -547,55 +592,85 @@
                     font-size: 9px !important;
                 }
             }
+
+            .cross-search-result-body {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: auto !important;
+            }
         }
     }
 
     #cross-reference-result-container {
         display: flex;
         flex-direction: column;
-        gap: 20px !important;
+        gap: 12px !important;
         width: 100% !important;
         padding: 0 !important;
 
         #cross-reference-result-upper-content {
             padding: 12px !important;
             width: 100% !important;
+            gap: 12px !important;
 
             .cross-reference-result-upper-content-header {
-                font-size: 10px !important;
-                flex-direction: column;
-                gap: 2px;
-                align-items: flex-start !important;
-                margin-bottom: 12px !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 10px !important;
+                margin-bottom: 4px !important;
+                width: 100% !important;
+
+                span {
+                    font-size: 10px !important;
+                }
             }
 
             .cross-reference-result-upper-content-cover {
                 display: flex !important;
-                flex-direction: row !important;
-                gap: 10px !important;
-                height: auto !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+                height: 200px !important;
+                width: 100% !important;
                 justify-content: center;
+                position: relative !important;
 
-                .game-cover,
-                .cross-search-input-image {
-                    width: 70px !important;
-                    height: 105px !important;
-                    background-size: cover;
-                    background-position: center;
+                .game-cover {
+                    width: 100% !important;
+                    height: 100% !important;
+                    position: absolute !important;
+                    inset: 0 !important;
+                    object-fit: cover !important;
                 }
 
-                .cross-search-input-image-title {
-                    font-size: 7px !important;
-                    padding: 2px !important;
+                .cross-search-input-image {
+                    width: 90px !important;
+                    height: 65px !important;
+                    right: 8px !important;
+                    bottom: 8px !important;
+                    position: absolute !important;
+
+                    .cross-search-input-image-title {
+                        padding: 2px !important;
+                        width: 100% !important;
+                        height: 20px !important;
+                        top: auto !important;
+                        bottom: 0 !important;
+                        span {
+                            font-size: 7px !important;
+                        }
+                    }
                 }
             }
 
             .cross-reference-result-upper-content-title {
-                margin: 12px 0 8px 0 !important;
+                margin: 4px 0 !important;
                 text-align: center;
+                width: 100% !important;
 
                 .game-title {
-                    font-size: 14px !important;
+                    font-size: 15px !important;
+                    line-height: 1.2 !important;
                 }
             }
 
@@ -603,6 +678,9 @@
                 display: flex !important;
                 flex-direction: column !important;
                 gap: 12px !important;
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+                width: 100% !important;
 
                 .cross-reference-result-upper-content-info-left-column,
                 .cross-reference-result-upper-content-info-right-column {
@@ -613,7 +691,7 @@
                 }
 
                 span {
-                    font-size: 9px !important;
+                    font-size: 12px !important;
                 }
 
                 button, .release-date, .explanation, li {
@@ -637,7 +715,7 @@
             }
 
             .view-game-button {
-                margin-top: 14px !important;
+                margin-top: 4px !important;
                 width: 100% !important;
 
                 button, a {
@@ -651,7 +729,7 @@
 
         .cross-reference-result-similariar-games-wrapper {
             width: 100% !important;
-            padding: 0 4px !important;
+            padding: 15px !important;
 
             .similar-game-row-title {
                 font-size: 11px !important;
@@ -661,103 +739,161 @@
 
             .cross-reference-similar-games-container {
                 display: flex !important;
-                flex-direction: column !important;
+                flex-direction: row !important;
+                overflow-x: auto !important;
                 gap: 12px !important;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
             }
         }
     }
 
     .gamecard-wrapper {
-        width: 100% !important;
+        width: auto !important;
+        flex-shrink: 0 !important;
 
         .gamecard-container {
             display: flex !important;
             flex-direction: row !important;
-            padding: 10px !important;
-            gap: 12px !important;
-            height: auto !important;
+            padding: 6px !important;
+            gap: 8px !important;
+            height: 90px !important;
+            width: 220px !important;
+            border: 1px solid var(--blue) !important;
         }
 
         #gamecard-cover-container {
-            width: 65px !important;
-            height: 95px !important;
+            width: 100px !important;
+            height: 78px !important;
             flex-shrink: 0 !important;
             position: relative;
 
             .gamecard-rating {
-                font-size: 8px !important;
-                padding: 2px 4px !important;
-                top: 4px !important;
-                left: 4px !important;
+                font-size: 7px !important;
+                padding: 1px 3px !important;
+                top: 2px !important;
+                left: 2px !important;
             }
 
             .gamecard-cover {
                 width: 100% !important;
                 height: 100% !important;
-                object-fit: cover;
+                object-fit: cover !important;
             }
         }
 
         #gamecard-info-container {
             display: flex !important;
             flex-direction: column !important;
-            gap: 6px !important;
-            width: 100% !important;
+            gap: 2px !important;
+            width: calc(100% - 108px) !important;
             padding: 0 !important;
+            height: 78px !important;
+            justify-content: space-between !important;
 
             #gamecard-info-overview {
                 .gamecard-title {
-                    font-size: 12px !important;
-                    line-height: 1.2;
+                    font-size: 10px !important;
+                    line-height: 1.1 !important;
                 }
 
                 .gamecard-description {
-                    font-size: 10px !important;
-                    line-height: 1.3;
-                    margin-top: 2px;
-                    display: -webkit-box;
-                    line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
+                    font-size: 8px !important;
+                    line-height: 1.2 !important;
+                    margin-top: 1px !important;
+                    display: -webkit-box !important;
+                    line-clamp: 1 !important;
+                    -webkit-line-clamp: 1 !important;
+                    -webkit-box-orient: vertical !important;
+                    overflow: hidden !important;
                 }
             }
 
             #game-info-specifics {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 1px !important;
 
                 .gamecard-genre,
                 .gamecard-developer,
                 .gamecard-release {
-                    font-size: 9px !important;
+                    font-size: 7px !important;
+                    line-height: 1 !important;
                     
                     button {
-                        font-size: 9px !important;
+                        font-size: 7px !important;
                     }
                 }
 
                 .gamecard-tags-container {
                     display: flex !important;
-                    flex-wrap: wrap;
-                    gap: 4px !important;
-                    margin-top: 2px;
+                    flex-wrap: wrap !important;
+                    gap: 2px !important;
+                    margin-top: 1px !important;
 
                     .gamecard-tags {
-                        font-size: 8px !important;
-                        padding: 2px 6px !important;
+                        font-size: 7px !important;
+                        padding: 1px 4px !important;
                     }
                 }
             }
 
             .view-game-button {
-                margin-top: 4px !important;
-                align-self: flex-start;
+                margin-top: 0px !important;
+                align-self: flex-start !important;
 
                 button, a {
-                    padding: 4px 10px !important;
-                    font-size: 9px !important;
+                    padding: 2px 6px !important;
+                    font-size: 7px !important;
                 }
+            }
+        }
+    }
+
+    .featured-story-back {
+        padding: 6px 12px !important;
+        font-size: 10px !important;
+        gap: 6px !important;
+        
+        img {
+            width: 12px !important;
+            height: auto !important;
+        }
+    }
+
+    .featured-story-container,
+    .featured-story-wrapper,
+    .featured-story-section {
+        width: 100% !important;
+        padding: 0 12px !important;
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+        gap: 14px !important;
+
+        .featured-story-header {
+            font-size: 18px !important;
+            line-height: 1.3 !important;
+        }
+
+        .featured-story-meta {
+            font-size: 10px !important;
+            gap: 8px !important;
+        }
+
+        .featured-story-content {
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+            
+            p {
+                margin-bottom: 12px !important;
+            }
+
+            img {
+                width: 100% !important;
+                height: auto !important;
+                margin: 10px 0 !important;
+                border-radius: 8px !important;
             }
         }
     }
@@ -834,17 +970,17 @@
         flex-direction: row;
         align-items: center;
         text-align: center;
-		justify-content: space-between;
+        justify-content: space-between;
         gap: 14px;
         margin: 1rem 8px;
         padding: 14px;
 
         #motto {
-			width: 250px;
+            width: 250px;
             font-size: 8px;
             max-width: 100%;
             line-height: 1.2;
-			text-align: left;
+            text-align: left;
         }
 
         a, button {
@@ -852,11 +988,11 @@
         }
 
         button {
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			width: 70px;
-			height: auto;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 70px;
+            height: auto;
             padding: 3px 6px;
             font-size: 8px;
         }
@@ -936,9 +1072,15 @@
     }
 
     .gamecard-wrapper {
+        .gamecard-container {
+            width: 190px !important;
+        }
         #gamecard-cover-container {
-            width: 55px !important;
-            height: 80px !important;
+            width: 80px !important;
+            height: 78px !important;
+        }
+        #gamecard-info-container {
+            width: calc(100% - 88px) !important;
         }
     }
 }
