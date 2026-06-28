@@ -1,14 +1,14 @@
 
 // Box di risultato inserito nel container CrossPlaygroundResult
 import { useNavigate } from "react-router-dom";
-import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundStore";
-import { ViewGameBtn } from "../components/shared/ViewGameBtn.tsx";
-import { GameCard } from "../components/games/GameCard.tsx";
+import { useCrossPlaygroundStore } from "../../store/useCrossPlaygroundStore";
+import { ViewGameBtn } from "../shared/ViewGameBtn.tsx";
+import { GameCard } from "../games/GameCard.tsx";
 
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 import templateCover from "/src/assets/template/template-no-image.jpg";
 
-import type { CrossReferenceProps } from "../components/props/CrossReferenceProps.tsx";
+import type { CrossReferenceProps } from "../props/CrossReferenceProps.tsx";
 
 type Props = {
 	game: CrossReferenceProps;

@@ -1,13 +1,13 @@
-import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundStore";
-import { DropZone } from "../components/upload/DropZone";
-import crossArrow from "../assets/icons/cross-arrow.png";
-import uploadIcon from "../assets/icons/drop-icon.png";
-import input1 from "../assets/cross-samples/01-image.jpg";
-import input2 from "../assets/cross-samples/02-image.png";
-import input3 from "../assets/cross-samples/03-image.png";
-import result1 from "../assets/cross-samples/01-result.jpg";
-import result2 from "../assets/cross-samples/02-result.png";
-import result3 from "../assets/cross-samples/03-result.jpg";
+import { useCrossPlaygroundStore } from "../../store/useCrossPlaygroundStore";
+import { DropZone } from "../upload/DropZone";
+import crossArrow from "../../assets/icons/cross-arrow.png";
+import uploadIcon from "../../assets/icons/drop-icon.png";
+import input1 from "../../assets/cross-samples/01-image.jpg";
+import input2 from "../../assets/cross-samples/02-image.png";
+import input3 from "../../assets/cross-samples/03-image.png";
+import result1 from "../../assets/cross-samples/01-result.jpg";
+import result2 from "../../assets/cross-samples/02-result.png";
+import result3 from "../../assets/cross-samples/03-result.jpg";
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 import crossRefEmpty from "/src/assets/icons/cross-reference-empty.png";
 

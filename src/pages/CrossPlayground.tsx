@@ -1,9 +1,9 @@
 import CrossGif from "../assets/logos/cross-logo.png";
-import { CrossPlaygroundUpload } from "../crossplayground/CrossPlaygroundUpload";
+import { CrossPlaygroundUpload } from "../components/crossplayground/CrossPlaygroundUpload";
 import type { CrossReferenceProps } from "../components/props/CrossReferenceProps";
 import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundStore";
-import { CrossPlaygroundScanning } from "../crossplayground/CrossPlaygroundScanning";
-import { CrossPlaygroundResultBox } from "../crossplayground/CrossPlaygroundResult";
+import { CrossPlaygroundScanning } from "../components/crossplayground/CrossPlaygroundScanning";
+import { CrossPlaygroundResultBox } from "../components/crossplayground/CrossPlaygroundResult";
 
 const EMPTY_RESULTS: CrossReferenceProps[] = [];
 

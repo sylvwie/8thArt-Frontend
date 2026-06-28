@@ -1,12 +1,12 @@
 import { createHashRouter, Outlet, RouterProvider } from 'react-router-dom' // createBrowserRouter     const router = createBrowserRouter([
 import './App.css'
 import { Header } from './components/Header'
+import { Footer } from './components/Footer.tsx'
 import { Dashboard } from './pages/Dashboard'
 import { Login } from './pages/Login'
 import { Shop } from './pages/Shop'
 import { Archive } from './pages/Archive'
 import { Profile } from './pages/Profile'
-import { Footer } from './components/Footer.tsx'
 import { FaultyTerminal } from './components/motion/FaultyTerminal.tsx'
 import { Register } from './pages/Register.tsx'
 import { GameDetail } from './pages/GameDetail.tsx'

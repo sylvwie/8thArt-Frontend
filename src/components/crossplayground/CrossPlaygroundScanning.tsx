@@ -1,6 +1,6 @@
-import { useCrossPlaygroundStore } from "../store/useCrossPlaygroundStore";
+import { useCrossPlaygroundStore } from "../../store/useCrossPlaygroundStore";
 import { useEffect, useRef } from "react";
-import { useCrossReferenceSearch } from "../hooks/useCrossReferenceSearch.tsx";
+import { useCrossReferenceSearch } from "../../hooks/useCrossReferenceSearch.tsx";
 
 import specialBgAscii from "/src/assets/template/special-background-ascii.gif";
 // import crossRefFull from "/src/assets/icons/cross-reference-full.png";
