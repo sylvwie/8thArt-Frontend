@@ -1,6 +1,7 @@
-// ABOUT PAGE (added in App tsx)
+// ABOUT PAGE 
 
 import { useState } from "react";
+import us from "/src/assets/template/frens.jpg"
 
 export function About() {
 	const [secretImageOpen, setSecretImageOpen] = useState(false);
@@ -50,7 +51,7 @@ export function About() {
 			
 			{secretImageOpen && (
 				<div id="secret-image" onClick={() => setSecretImageOpen(false)}>
-					<img src="/src/assets/template/frens.jpg" alt="us"/>
+					<img src={us} alt="us"/>
 					<span className="close-hint">click to hide</span>
 				</div>
 			)}

@@ -1,16 +1,15 @@
 .gamecard-wrapper {
   position: relative;
-
-  flex: 0 0 766px;
-  width: 766px;
   height: 340px;
-  // height: 284px;
 
   border: 1px solid var(--blue);
   border-radius: 18px;
 
   overflow: hidden;
   background: var(--black);
+
+  width: 100%;
+  min-width: 0;
 
   &::before {
     content: "";
@@ -170,33 +169,33 @@
 }
 
 .gamecard-developer-link {
-	background: none;
-	border: none;
-	padding: 0;
-	margin: 0;
-	font: inherit;
-	color: inherit;
-	cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 
-	&:hover {
-		color: var(--aquamarine); 
-		text-decoration: underline;
-	}
+  &:hover {
+    color: var(--aquamarine);
+    text-decoration: underline;
+  }
 }
 
 .gamecard-genre-link {
-	background: none;
-	border: none;
-	padding: 0;
-	margin: 0;
-	font: inherit;
-	color: inherit;
-	cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 
-	&:hover {
-		color: var(--aquamarine); 
-		text-decoration: underline;
-	}
+  &:hover {
+    color: var(--aquamarine);
+    text-decoration: underline;
+  }
 }
 
 .gamecard-genre::before {
@@ -285,36 +284,37 @@
 
 // DESKTOP 1300
 @media (max-width: 1300px) {
-    .gamecard-wrapper {
-        display: flex;
-        height: 140px;
-        flex: 0 0 auto;
-        border-radius: 16px;
-        margin: 0 auto;
-    }
+  .gamecard-wrapper {
+    display: flex;
+    height: 140px;
+    flex: 0 0 auto;
+    border-radius: 16px;
+    margin: 0 auto;
+  }
 }
 
 // MOBILE 600
 @media (max-width: 600px) {
-    .gamecard-wrapper {
-        width: 100%;
-        height: 140px;
-        flex: 0 0 auto;
-        border-radius: 12px;
-        margin: 0 auto;
-    }
+  .gamecard-wrapper {
+    width: 100%;
+    height: 140px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    margin: 0 auto;
+  }
 }
 
 // MOBILE 360
 @media (max-width: 360px) {
-    .gamecard-wrapper {
-        display: flex;
-        height: 130px;
-        flex: 0 0 auto;
-        border-radius: 16px;
-        margin: 0 auto;
-        .gamecard-container {
-          grid-template-rows: 150px 1fr;
-        }
+  .gamecard-wrapper {
+    display: flex;
+    height: 130px;
+    flex: 0 0 auto;
+    border-radius: 16px;
+    margin: 0 auto;
+
+    .gamecard-container {
+      grid-template-rows: 150px 1fr;
     }
+  }
 }

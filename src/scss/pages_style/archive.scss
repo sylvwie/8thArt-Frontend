@@ -261,7 +261,7 @@
     flex-direction: column;
     gap: 32px;
     width: 100%;
-    max-width: 1660px; 
+     max-width: 1500px; 
     margin: 0 auto;
     padding: 2rem 3rem;
     box-sizing: border-box;
@@ -313,7 +313,7 @@
     .genre-games-list,
     .developer-games-list {
         display: grid;
-        grid-template-columns: repeat(2, 766px); 
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
         gap: 24px;
         width: 100%;
         justify-content: center; 
@@ -325,9 +325,26 @@
 
 
 
+
+
+
+
+
 // RESPONSIVE
 
-// DESKTOP MOBILE 1000
+// DESKTOP 1400
+@media (max-width: 1400px) {
+
+    .platform-games-list,
+    .genre-games-list,
+    .developer-games-list {
+
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 22px;
+    }
+}
+
+// DESKTOP 1000
 @media (max-width: 1000px) {
     .archive-page-searchbar-wrapper {
         padding: 0 2rem;
@@ -400,8 +417,8 @@
         .platform-games-list,
         .genre-games-list,
         .developer-games-list {
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 18px !important;
         }
     }
 }
@@ -536,8 +553,8 @@
         .platform-games-list,
         .genre-games-list,
         .developer-games-list {
-            grid-template-columns: 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 15px !important;
             padding: 0;
         }
     }
@@ -653,6 +670,7 @@
         .platform-games-list,
         .genre-games-list,
         .developer-games-list {
+            grid-template-columns: 1fr;
             gap: 10px;
         }
     }
