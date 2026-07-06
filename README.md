@@ -1,9 +1,16 @@
 # React + TypeScript + Vite
 
-8th art archive
-is gaming an art thesys project
+Is gaming an art - 8TH ART - L'archivio dell'arte videoludica (The Archive of Videogames' Art)
 
-dev: silvia penati
+DEV: Silvia Penati - Media Design IED
+GRAPHIC: Martina Marzullo e Mathieu Trevisan - Graphic Design IED
 
-see on https://8thart.vercel.app 
-online on https://www.8th.art/#/
+Vercel: https://8thart.vercel.app/ 
+Domain: https://8th.art/
+
+Contacts:
+Mathieu: trevisanmathieu@gmail.com - Behance: https://www.behance.net/mathieutrevisan
+Silvia: silviapen04@gmail.com - Behance: https://www.behance.net/silviapen1
+Martina: martmarzullo1@icloud.com - Behance: https://www.behance.net/martinamarzullo2
+
+Project link on Behance: https://www.behance.net/gallery/251761695/8thart
